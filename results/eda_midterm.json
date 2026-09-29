@@ -1,0 +1,153 @@
+{
+  "sample": {
+    "all_cities": 29,
+    "primary_cities": 25,
+    "excluded_cities": [
+      "Goteborg",
+      "Kazan",
+      "Lillestrom",
+      "Vilnius"
+    ],
+    "daily_rows": 10578,
+    "primary_rows": 9120,
+    "zero_usage_days_all": 575,
+    "zero_usage_days_primary": 4,
+    "date_min": "2016-07-02",
+    "date_max": "2017-12-31"
+  },
+  "usage": {
+    "median_min_city": "Creteil",
+    "median_min": 11.5,
+    "median_max_city": "Paris",
+    "median_max": 76103.0,
+    "median_spread": 6617.652173913043,
+    "log1p_min": 0.0,
+    "log1p_median": 6.634304734780517,
+    "log1p_max": 11.64845673151316
+  },
+  "weather": {
+    "utci_city_mean_min": -2.5713438526778423,
+    "utci_city_mean_max": 26.57577841594767,
+    "utci_city_mean_spread": 29.147122268625512,
+    "rain_city_mean_min": 0.7639609618076326,
+    "rain_city_mean_max": 7.150238077775581,
+    "dry_day_share": 0.21450179618075252,
+    "rain_max_mm": 179.0045287570419
+  },
+  "thermal_response_absolute": {
+    "peak_utci_c": 27.5,
+    "peak_centered_log1p": 0.2648815161777918,
+    "coldest_bin_centered_log1p": -0.26327216190243524,
+    "hottest_bin_utci_c": 32.5,
+    "hottest_bin_centered_log1p": -0.14276518102308586,
+    "peak_minus_hottest": 0.40764669720087765,
+    "city_band_width_at_peak": 0.38334334218496097,
+    "populated_bins": 12,
+    "populated_utci_range": [
+      -22.5,
+      32.5
+    ]
+  },
+  "thermal_response_anomaly": {
+    "peak_anomaly_c": 22.5,
+    "peak_centered_log1p": 0.44977583880704475,
+    "coldest_bin_centered_log1p": -0.32851980094475086,
+    "positive_bins": 6,
+    "populated_bins": 11
+  },
+  "rainfall_response": {
+    "zero_bin_centered_log1p": 0.15927861266011617,
+    "heaviest_bin_centered_log1p": -0.3605833896149672,
+    "heaviest_bin_vs_city_mean_change": -0.3027305723505101,
+    "heaviest_vs_dry_log1p": -0.5198620022750834,
+    "heaviest_vs_dry_change": -0.4053974038856712,
+    "monotone_decline": true
+  },
+  "seasonality": {
+    "peak_day": 287.5,
+    "peak_centered_log1p": 0.2530526342828567,
+    "trough_day": 357.5,
+    "trough_centered_log1p": -0.5886805889053136,
+    "amplitude": 0.8417332231881702,
+    "seasonal_share_of_thermal_variance": {
+      "min_city": "Dublin",
+      "min": 0.6214741130939935,
+      "max_city": "Toyama",
+      "max": 0.9189276645420579,
+      "mean": 0.7590809773718373,
+      "per_city": {
+        "Amiens": 0.763286,
+        "Besancon": 0.782164,
+        "Brisbane": 0.689266,
+        "Brussels": 0.776353,
+        "Cergy-Pontoise": 0.763036,
+        "Creteil": 0.771543,
+        "Dublin": 0.621474,
+        "Kaohsiung": 0.695861,
+        "Ljubljana": 0.830181,
+        "Lund": 0.79581,
+        "Luxembourg": 0.781823,
+        "Lyon": 0.775116,
+        "Marseille": 0.659461,
+        "Melbourne": 0.628657,
+        "Mulhouse": 0.797226,
+        "Namur": 0.769127,
+        "Nancy": 0.785302,
+        "Nantes": 0.735991,
+        "Paris": 0.768642,
+        "Rouen": 0.738602,
+        "Santander": 0.700467,
+        "Seville": 0.841692,
+        "Toulouse": 0.733478,
+        "Toyama": 0.918928,
+        "Valence": 0.853538
+      }
+    }
+  },
+  "representative_cities": {
+    "cities": [
+      "Lund",
+      "Amiens",
+      "Toyama",
+      "Valence",
+      "Brisbane",
+      "Kaohsiung"
+    ],
+    "selection": "city study-period mean UTCI, equally spaced from coldest to warmest",
+    "utci_mean_c": {
+      "Lund": 1.2143222417449566,
+      "Amiens": 6.5148769252315155,
+      "Toyama": 10.880587642227773,
+      "Valence": 16.29547093406722,
+      "Brisbane": 19.870700161972323,
+      "Kaohsiung": 26.57577841594767
+    }
+  },
+  "weekend": {
+    "negative_cities": 23,
+    "positive_cities": 2,
+    "mean_difference": -0.5502134189353036,
+    "min_city": "Namur",
+    "min_difference": -1.2275735735468363,
+    "max_city": "Melbourne",
+    "max_difference": 0.2738186568923604
+  },
+  "climate_groups": {
+    "codes": [
+      "Aw",
+      "Cf",
+      "Cfb",
+      "Cs",
+      "Dc",
+      "Do"
+    ],
+    "cities_per_code": {
+      "Aw": 1,
+      "Cf": 4,
+      "Cfb": 3,
+      "Cs": 1,
+      "Dc": 5,
+      "Do": 15
+    }
+  }
+}

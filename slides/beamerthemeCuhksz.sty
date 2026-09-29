@@ -1,0 +1,274 @@
+%% beamerthemeCuhksz.sty
+%% ---------------------------------------------------------------------------
+%% A Beamer theme in the visual identity of The Chinese University of Hong
+%% Kong, Shenzhen (香港中文大学（深圳）).
+%%
+%% Brand colours are sampled directly from the official university wordmark and
+%% crest published at cuhk.edu.cn:
+%%   purple  #750F6D   (the shield ground and the logotype rule)
+%%   gold    #DDA300   (the phoenix and the wordmark accent)
+%%   ink     #221815   (the logotype lettering)
+%% The Latin typeface is Palatino, which the university's identity guidelines
+%% specify for the English logotype. Chinese is set in Songti SC (body) and
+%% Heiti SC (headings).
+%%
+%% Usage:
+%%   \documentclass[aspectratio=169,11pt]{beamer}
+%%   \usetheme{Cuhksz}
+%%   ...
+%%   \cuhkszlogopath{assets/cuhksz_logo_alt.png}   % optional, this is the default
+%%
+%% Requires XeLaTeX (fontspec + xeCJK).
+%% ---------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemeCuhksz}[2026/09/26 v1.0 CUHK-Shenzhen Beamer theme]
+
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+
+% ---------------------------------------------------------------- brand colours
+\definecolor{csPurple}{HTML}{750F6D}
+\definecolor{csPurpleDeep}{HTML}{4E0A48}
+\definecolor{csPurpleSoft}{HTML}{F4EBF2}
+\definecolor{csPurpleLine}{HTML}{D9BFD5}
+\definecolor{csGold}{HTML}{DDA300}
+\definecolor{csGoldSoft}{HTML}{F4DFB0}
+\definecolor{csGoldPale}{HTML}{FBF3DE}
+\definecolor{csInk}{HTML}{221815}
+\definecolor{csPaper}{HTML}{FBF9F6}
+\definecolor{csGrey}{HTML}{6E6A6C}
+\definecolor{csGreyLine}{HTML}{DFDBDD}
+
+% ---------------------------------------------------------------- logo control
+\newcommand{\cuhkszlogopath}[1]{\renewcommand{\cuhkszlogo}{#1}}
+\newcommand{\cuhkszlogo}{assets/cuhksz_logo_alt.png}
+\newcommand{\cuhkszwordmarkpath}[1]{\renewcommand{\cuhkszwordmark}{#1}}
+\newcommand{\cuhkszwordmark}{assets/cuhksz_wordmark.png}
+\newcommand{\cuhkszmark}[1][2.1cm]{\includegraphics[width=#1]{\cuhkszlogo}}
+\newcommand{\cuhkszlockup}[1][5.8cm]{\includegraphics[width=#1]{\cuhkszwordmark}}
+% The crest file is 1010x714. Its transparent margin is not purely decorative:
+% the outermost fraction of the artwork is very faint, so the mark reads smaller
+% than the file's ink box suggests. Measured at a canvas height h, the visible
+% mark is about 0.88h wide and 0.69h tall, its left edge sits 0.27h from the
+% canvas's left edge and its top 0.03h from the canvas's top, and its visual
+% centre lies 0.12h above the canvas centre. Size by h and place from those
+% ratios; at h = 1.55 cm the visible mark is about 1.36 x 1.07 cm.
+\newcommand{\cuhkszcrest}[1][1.55cm]{\includegraphics[height=#1]{\cuhkszlogo}}
+
+\newcommand{\cuhkszdept}[1]{\renewcommand{\cuhkszdeptname}{#1}}
+\newcommand{\cuhkszdeptname}{School of Data Science}
+\newcommand{\cuhkszsetfooterleft}[1]{\renewcommand{\cuhkszfooterleft}{#1}}
+\newcommand{\cuhkszfooterleft}{CUHK-Shenzhen}
+\newcommand{\cuhkszsetfootercenter}[1]{\renewcommand{\cuhkszfootercenter}{#1}}
+\newcommand{\cuhkszfootercenter}{}
+
+% ---------------------------------------------------------------- fonts
+\RequirePackage{fontspec}
+\RequirePackage{xeCJK}
+% Keep the real typographic ligatures, but write true text into the PDF text
+% layer as well. Without this, XeLaTeX maps the fi/fl glyphs to U+FB01/U+FB02
+% and a viewer searching the deck for "final" finds nothing.
+\XeTeXgenerateactualtext=1
+\setmainfont{Palatino}
+\setsansfont{Helvetica Neue}
+\setCJKmainfont{Songti SC}
+\setCJKsansfont{Heiti SC}
+\setCJKmonofont{Songti SC}
+\usefonttheme{professionalfonts}
+
+% -------------------------------------------------- official logotype lettering
+% The CUHK visual identity specifies the logotype lettering as
+%   Chinese logotype : Kai script (楷書)
+%   English logotype : Palatino (upper and lower case)
+%   logotype colour  : 100K
+% and the wordmark itself uses the traditional characters 香港中文大學（深圳）.
+% The two name macros below follow that specification so that the university
+% name is always set the way the official wordmark sets it.
+% xeCJK selects CJK glyphs through its own family mechanism, so the Kai script
+% has to be declared as a CJK family rather than as a Latin font family.
+\setCJKfamilyfont{cuhkszkai}{FandolKai-Regular.otf}
+\newcommand{\cuhkszkaifont}{\CJKfamily{cuhkszkai}}
+\newcommand{\cuhksznamezh}{{\cuhkszkaifont 香港中文大學（深圳）}}
+\newcommand{\cuhksznameen}{The Chinese University of Hong Kong, Shenzhen}
+\newcommand{\cuhkszlogocolour}{csInk}
+
+% compatibility aliases
+\newcommand{\cuhkszuniversityzh}{\cuhksznamezh}
+\newcommand{\cuhkszuniversityen}{\cuhksznameen}
+
+% ---------------------------------------------------------------- beamer colours
+\setbeamercolor{normal text}{fg=csInk, bg=white}
+\setbeamercolor{structure}{fg=csPurple}
+\setbeamercolor{alerted text}{fg=csPurple}
+\setbeamercolor{example text}{fg=csGold}
+\setbeamercolor{frametitle}{fg=csPurple, bg=white}
+\setbeamercolor{framesubtitle}{fg=csGrey, bg=white}
+\setbeamercolor{title}{fg=csPurple}
+\setbeamercolor{subtitle}{fg=csGrey}
+\setbeamercolor{author}{fg=csInk}
+\setbeamercolor{institute}{fg=csGrey}
+\setbeamercolor{date}{fg=csGrey}
+\setbeamercolor{item}{fg=csPurple}
+\setbeamercolor{subitem}{fg=csGold}
+\setbeamercolor{subsubitem}{fg=csGrey}
+\setbeamercolor{item projected}{fg=white, bg=csPurple}
+\setbeamercolor{block title}{fg=white, bg=csPurple}
+\setbeamercolor{block body}{fg=csInk, bg=csPurpleSoft}
+\setbeamercolor{block title alerted}{fg=white, bg=csGold}
+\setbeamercolor{block body alerted}{fg=csInk, bg=csGoldPale}
+\setbeamercolor{block title example}{fg=white, bg=csPurpleDeep}
+\setbeamercolor{block body example}{fg=csInk, bg=csPurpleSoft}
+\setbeamercolor{caption name}{fg=csPurple}
+\setbeamercolor{footline}{fg=csGrey, bg=white}
+
+% ---------------------------------------------------------------- fonts theme
+\setbeamerfont{frametitle}{size=\fontsize{18}{21}\selectfont, series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\small}
+% 21pt keeps a cover title line up to about 37 Palatino bold characters inside
+% the 13.7 cm title column; at 24pt the limit is about 32 characters and an
+% ordinary three-line title breaks into five lines, which pushes the title into
+% the author block at the foot of the cover.
+\setbeamerfont{title}{size=\fontsize{21}{26}\selectfont, series=\bfseries, family=\rmfamily}
+\setbeamerfont{subtitle}{size=\normalsize}
+\setbeamerfont{author}{size=\normalsize}
+\setbeamerfont{institute}{size=\small}
+\setbeamerfont{date}{size=\small}
+\setbeamerfont{footline}{size=\scriptsize}
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
+
+% ---------------------------------------------------------------- inner theme
+\setbeamertemplate{itemize item}{\raise0.35ex\hbox{\color{csPurple}\rule{0.42ex}{0.42ex}}}
+\setbeamertemplate{itemize subitem}{\raise0.45ex\hbox{\color{csGold}\rule{0.42ex}{0.42ex}}}
+\setbeamertemplate{itemize subsubitem}{\raise0.35ex\hbox{\color{csGrey}\rule{0.42ex}{0.42ex}}}
+\setbeamertemplate{enumerate item}{\color{csPurple}\insertenumlabel.}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamercolor{block title}{fg=white, bg=csPurple}
+
+% ---------------------------------------------------------------- frame title
+% The title box, the gold rule and the optional subtitle are stacked as the
+% lines of a \vbox. Writing them as successive \hboxes separated by \vspace
+% would leave them inside one paragraph, and the rule would then be set beside
+% the title box instead of under it.
+% The frame title is typeset inside the text area, so its left edge is already
+% the text margin: these lines take \textwidth, not \paperwidth, and no extra
+% indent, which puts the rule flush with the title text.
+% The box is one line tall plus one \baselineskip for every further line. The
+% height has to follow the title: a box whose declared height is smaller than
+% its contents keeps its baseline where it is and lets the surplus run upward,
+% so a title that wraps would be set above the top edge of the paper and cut
+% off there. The line count comes from a first, discarded setting of the title
+% in a plain \vbox. \prevgraf has to be read inside that box: it is a quantity
+% that grouping restores, so after the \vbox has ended it holds the value from
+% before the box again.
+\newbox\cuhksz@titleprobe
+\newcount\cuhksz@titlelines
+\newlength\cuhksz@titleextra
+\setbeamertemplate{frametitle}{%
+  \vbox{%
+    \vskip0.30cm
+    \begingroup
+      \hsize=\textwidth
+      \usebeamerfont{frametitle}%
+      \setbox\cuhksz@titleprobe=\vbox{%
+        \insertframetitle\par
+        \global\cuhksz@titlelines=\prevgraf}%
+      \ifnum\cuhksz@titlelines<1 \global\cuhksz@titlelines=1 \fi
+      \global\cuhksz@titleextra=\baselineskip
+      \global\multiply\cuhksz@titleextra by \cuhksz@titlelines
+      \global\advance\cuhksz@titleextra by -\baselineskip
+    \endgroup
+    \hbox to\textwidth{%
+      \begin{beamercolorbox}[wd=\textwidth,
+        ht=\dimexpr0.62cm+\cuhksz@titleextra\relax, dp=0.06cm]{frametitle}%
+        \usebeamerfont{frametitle}\insertframetitle%
+      \end{beamercolorbox}\hss}%
+    \vskip0.05cm
+    \hbox to\textwidth{%
+      {\color{csGold}\rule{1.15cm}{1.4pt}}\hss}%
+    \ifx\insertframesubtitle\@empty\else
+      \vskip0.05cm
+      \hbox to\textwidth{%
+        {\usebeamerfont{framesubtitle}%
+          \usebeamercolor[fg]{framesubtitle}\insertframesubtitle}\hss}%
+    \fi
+    \vskip0.06cm
+  }%
+}
+
+% ---------------------------------------------------------------- footline
+\setbeamertemplate{footline}{%
+  \vbox{%
+    \hbox to\paperwidth{%
+      \begin{beamercolorbox}[wd=\paperwidth, ht=0.04cm, dp=0cm]{footline}%
+        {\color{csGreyLine}\rule{\paperwidth}{0.5pt}}%
+      \end{beamercolorbox}\hss}%
+    \vskip0.08cm
+    \hbox to\paperwidth{%
+      \begin{beamercolorbox}[wd=0.333333\paperwidth, leftskip=0.62cm, ht=0.26cm, dp=0.10cm]{footline}%
+        \usebeamerfont{footline}{\color{csPurple}\cuhkszfooterleft}%
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=0.333333\paperwidth, center, ht=0.26cm, dp=0.10cm]{footline}%
+        \usebeamerfont{footline}{\color{csPurple}\cuhkszfootercenter}%
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=0.333333\paperwidth, rightskip=0.62cm, ht=0.26cm, dp=0.10cm]{footline}%
+        \usebeamerfont{footline}\hfill
+        {\color{csPurple}\insertframenumber}%
+      \end{beamercolorbox}\hss}%
+    \vskip0.15cm
+  }%
+}
+
+% 封面使用完整画布，标题和作者信息按内容自然排列。
+\setbeamertemplate{title page}{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[csPaper] (current page.south west) rectangle (current page.north east);
+    \node[anchor=center, inner sep=0pt]
+      at ([xshift=1.43cm, yshift=-0.91cm]current page.north west)
+      {\cuhkszcrest[1.25cm]};
+    \node[anchor=west, inner sep=0pt]
+      at ([xshift=2.18cm, yshift=-0.82cm]current page.north west)
+      {\begin{tabular}{@{}l@{}}
+         {\fontsize{12}{15}\selectfont\color{csInk}\cuhksznamezh}\\[0.12em]
+         {\fontsize{8.5}{10}\selectfont\color{csGrey}\cuhksznameen}
+       \end{tabular}};
+    \draw[csGreyLine, line width=0.7pt]
+      ([xshift=1.15cm, yshift=-1.82cm]current page.north west) --
+      ([xshift=-1.15cm, yshift=-1.82cm]current page.north east);
+    \draw[csGold, line width=2pt]
+      ([xshift=1.15cm, yshift=-1.82cm]current page.north west) --
+      ([xshift=2.35cm, yshift=-1.82cm]current page.north west);
+    \node[anchor=north west, inner sep=0pt, text width=13.7cm, align=left]
+      at ([xshift=1.15cm, yshift=-2.50cm]current page.north west)
+      {{\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
+       \vspace{0.65cm}%
+       {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle}};
+    \node[anchor=south west, inner sep=0pt, text width=13.7cm, align=left]
+      at ([xshift=1.15cm, yshift=0.72cm]current page.south west)
+      {{\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}
+       \vspace{0.20cm}%
+       {\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
+       \vspace{0.20cm}%
+       {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate}};
+  \end{tikzpicture}%
+  \vfill
+}
+
+% ---------------------------------------------------------------- outer theme
+\setbeamertemplate{background}{}
+\setbeamersize{text margin left=0.62cm, text margin right=0.62cm}
+\setbeamertemplate{section page}{%
+  \begin{centering}
+    {\color{csGold}\rule{1.2cm}{1.6pt}}\par\vspace{0.5em}
+    {\usebeamerfont{title}\usebeamercolor[fg]{title}\insertsectionhead\par}
+  \end{centering}
+}
+\setbeamertemplate{subsection page}{}
+
+% convenience: a plain, chrome-free frame is written directly as
+%   \begin{frame}[plain] ... \end{frame}
+
+\endinput

@@ -1,0 +1,41 @@
+City,Country,Koppen,Latitude,Longitude,TZ
+New York City,USA,Cfa,40.73654,-73.98476,America/New_York
+Minneapolis,USA,Dfa,44.9751,-93.2412,America/Chicago
+Vancouver,Canada,Do,49.2744,-123.25,America/Vancouver
+Chicago,USA,Dfa,41.8877,-87.6559,America/Chicago
+Los Angeles,USA,Csb,34.04841,-118.255,America/Los_Angeles
+Washington DC,USA,Cfa,38.90052,-77.003387,America/New_York
+Paris,France,Do,48.8566,2.3522,Europe/Paris
+Valence,Spain,Do,39.4717,-0.371314,Europe/Madrid
+Brisbane,Australia,Cf,-27.4698,153.0251,Australia/Brisbane
+Amiens,France,Do,49.8943,2.2982,Europe/Paris
+Besancon,France,Cfb,47.2398,6.0254,Europe/Paris
+Brussels,Belgium,Do,50.8433,4.36032,Europe/Brussels
+Cergy-Pontoise,France,Do,49.0373,2.06069,Europe/Paris
+Creteil,France,Cfb,48.7837,2.46049,Europe/Paris
+Goteborg,Sweden,Cfb,57.7025,11.9699,Europe/Stockholm
+Kazan,Russia,Dc,55.792,49.1215,Europe/Moscow
+Lillestrom,Norway,Dc,59.9591,11.0502,Europe/Oslo
+Ljubljana,Slovenia,Dc,46.057,14.5104,Europe/Ljubljana
+Lund,Sweden,Dc,55.7081,13.1995,Europe/Stockholm
+Luxembourg,Luxembourg,Do,49.6088,6.12972,Europe/Luxembourg
+Lyon,France,Do,45.7606,4.84984,Europe/Paris
+Marseille,France,Cf,43.2861,5.38141,Europe/Paris
+Mulhouse,France,Do,47.7471,7.33665,Europe/Paris
+Namur,France,Do,50.4634,4.86317,Europe/Paris
+Nancy,France,Do,48.689,6.18017,Europe/Paris
+Nantes,France,Do,47.2144,-1.55502,Europe/Paris
+Rouen,France,Do,49.4371,1.09033,Europe/Paris
+Santander,Spain,Do,43.4659,-3.80662,Europe/Madrid
+Seville,Spain,Cs,37.389,-5.97762,Europe/Madrid
+Toulouse,France,Do,43.6066,1.44028,Europe/Paris
+Toyama,Japan,Cf,36.6976,137.208,Asia/Tokyo
+Vilnius,Lithuania,Dc,54.6889,25.2823,Europe/Vilnius
+Dublin,Ireland,Do,53.3498,-6.2603,Europe/Dublin
+Melbourne,Australia,Cf,-37.8136,144.9631,Australia/Melbourne
+London,UK,Cfb,51.50875932,-0.125226703,Europe/London
+Kaohsiung,Taiwan,Aw,22.6313863,120.301913,Asia/Taipei
+Toronto,Canada,Dc,43.6455,-79.3889,America/Toronto
+Trondheim,Norway,E,63.4367,10.3963,Europe/Oslo
+Oslo,Norway,Dc,59.9247,10.7419,Europe/Oslo
+Bergen,Norway,Dc,60.3888,5.324,Europe/Oslo
