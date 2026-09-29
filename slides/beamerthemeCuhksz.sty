@@ -201,9 +201,12 @@
 \setbeamertemplate{title page}{%
   \begin{tikzpicture}[remember picture, overlay]
     \fill[csPaper] (current page.south west) rectangle (current page.north east);
+    \node[anchor=center, inner sep=0pt]
+      at ([xshift=1.43cm, yshift=-0.91cm]current page.north west)
+      {\cuhkszcrest[1.25cm]};
     \node[anchor=west, inner sep=0pt]
-      at ([xshift=1.15cm, yshift=-0.91cm]current page.north west)
-      {\cuhkszlockup[5.8cm]};
+      at ([xshift=2.18cm, yshift=-0.76cm]current page.north west)
+      {\cuhkszlockup[6.5cm]};
     \draw[csGreyLine, line width=0.7pt]
       ([xshift=1.15cm, yshift=-1.82cm]current page.north west) --
       ([xshift=-1.15cm, yshift=-1.82cm]current page.north east);
