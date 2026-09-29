@@ -72,14 +72,6 @@
 \setsansfont{Helvetica Neue}
 \usefonttheme{professionalfonts}
 
-% ------------------------------------------------ English institution name
-% The English university name uses Palatino, as specified by the identity guide.
-\newcommand{\cuhksznameen}{The Chinese University of Hong Kong, Shenzhen}
-\newcommand{\cuhkszlogocolour}{csInk}
-
-% compatibility aliases
-\newcommand{\cuhkszuniversityen}{\cuhksznameen}
-
 % ---------------------------------------------------------------- beamer colours
 \setbeamercolor{normal text}{fg=csInk, bg=white}
 \setbeamercolor{structure}{fg=csPurple}
@@ -209,15 +201,9 @@
 \setbeamertemplate{title page}{%
   \begin{tikzpicture}[remember picture, overlay]
     \fill[csPaper] (current page.south west) rectangle (current page.north east);
-    \node[anchor=center, inner sep=0pt]
-      at ([xshift=1.43cm, yshift=-0.91cm]current page.north west)
-      {\cuhkszcrest[1.25cm]};
     \node[anchor=west, inner sep=0pt]
-      at ([xshift=2.18cm, yshift=-0.82cm]current page.north west)
-      {\begin{tabular}{@{}l@{}}
-         {\fontsize{12}{15}\selectfont\color{csInk}\cuhksznameen}\\[0.12em]
-         {\fontsize{8.5}{10}\selectfont\color{csGrey}CUHK-Shenzhen}
-       \end{tabular}};
+      at ([xshift=1.15cm, yshift=-0.91cm]current page.north west)
+      {\cuhkszlockup[5.8cm]};
     \draw[csGreyLine, line width=0.7pt]
       ([xshift=1.15cm, yshift=-1.82cm]current page.north west) --
       ([xshift=-1.15cm, yshift=-1.82cm]current page.north east);

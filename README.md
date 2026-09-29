@@ -126,10 +126,9 @@ flowchart TD
 | `midterm_slides.tex` | 期中演示 LaTeX 源文件。 |
 | `midterm_slides.pdf` | 13 页期中演示。 |
 | `beamerthemeCuhksz.sty` | Beamer 主题和页面样式。 |
-| `assets/cuhksz_logo_alt.png` | 演示封面使用的校徽图像。 |
+| `assets/cuhksz_logo_alt.png` | 主题自定义布局可使用的校徽图像。 |
 | `assets/cuhksz_wordmark.png` | 演示封面使用的双语校名图像。 |
-| `build/` | 编译生成的 PDF 和 `.aux`、`.log`、`.nav`、`.out`、`.snm`、`.toc` 文件。 |
-| `midterm_slides.aux`、`midterm_slides.log`、`midterm_slides.nav`、`midterm_slides.out`、`midterm_slides.snm`、`midterm_slides.synctex.gz`、`midterm_slides.toc` | 幻灯片根目录中的 LaTeX 编译辅助文件。 |
+| `build/` | 编译过程生成的临时文件目录，已加入 Git 忽略规则。 |
 
 `.venv/` 是本地 Python 环境，已列入忽略规则。报告和幻灯片的编译辅助文件保存在各自的 `build/` 目录中。
 
