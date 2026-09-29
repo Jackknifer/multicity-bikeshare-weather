@@ -45,7 +45,7 @@
 \newcommand{\cuhkszwordmarkpath}[1]{\renewcommand{\cuhkszwordmark}{#1}}
 \newcommand{\cuhkszwordmark}{assets/cuhksz_wordmark.png}
 \newcommand{\cuhkszmark}[1][2.1cm]{\includegraphics[width=#1]{\cuhkszlogo}}
-\newcommand{\cuhkszlockup}[1][5.8cm]{\includegraphics[width=#1]{\cuhkszwordmark}}
+\newcommand{\cuhkszlockup}[1][6.5cm]{\includegraphics[width=#1]{\cuhkszwordmark}}
 % The crest file is 1010x714. Its transparent margin is not purely decorative:
 % the outermost fraction of the artwork is very faint, so the mark reads smaller
 % than the file's ink box suggests. Measured at a canvas height h, the visible
@@ -201,11 +201,8 @@
 \setbeamertemplate{title page}{%
   \begin{tikzpicture}[remember picture, overlay]
     \fill[csPaper] (current page.south west) rectangle (current page.north east);
-    \node[anchor=center, inner sep=0pt]
-      at ([xshift=1.43cm, yshift=-0.91cm]current page.north west)
-      {\cuhkszcrest[1.25cm]};
     \node[anchor=west, inner sep=0pt]
-      at ([xshift=2.18cm, yshift=-0.76cm]current page.north west)
+      at ([xshift=1.15cm, yshift=-0.91cm]current page.north west)
       {\cuhkszlockup[6.5cm]};
     \draw[csGreyLine, line width=0.7pt]
       ([xshift=1.15cm, yshift=-1.82cm]current page.north west) --
