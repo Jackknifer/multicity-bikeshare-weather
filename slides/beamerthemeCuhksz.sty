@@ -1,16 +1,15 @@
 %% beamerthemeCuhksz.sty
 %% ---------------------------------------------------------------------------
-%% A Beamer theme in the visual identity of The Chinese University of Hong
-%% Kong, Shenzhen (香港中文大学（深圳）).
+%% A Beamer theme based on the visual identity of The Chinese University of
+%% Hong Kong, Shenzhen.
 %%
 %% Brand colours are sampled directly from the official university wordmark and
 %% crest published at cuhk.edu.cn:
 %%   purple  #750F6D   (the shield ground and the logotype rule)
 %%   gold    #DDA300   (the phoenix and the wordmark accent)
 %%   ink     #221815   (the logotype lettering)
-%% The Latin typeface is Palatino, which the university's identity guidelines
-%% specify for the English logotype. Chinese is set in Songti SC (body) and
-%% Heiti SC (headings).
+%% English text uses Palatino for the university name and Helvetica Neue for
+%% sans-serif headings.
 %%
 %% Usage:
 %%   \documentclass[aspectratio=169,11pt]{beamer}
@@ -18,7 +17,7 @@
 %%   ...
 %%   \cuhkszlogopath{assets/cuhksz_logo_alt.png}   % optional, this is the default
 %%
-%% Requires XeLaTeX (fontspec + xeCJK).
+%% Requires XeLaTeX and fontspec.
 %% ---------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{beamerthemeCuhksz}[2026/09/26 v1.0 CUHK-Shenzhen Beamer theme]
@@ -65,36 +64,20 @@
 
 % ---------------------------------------------------------------- fonts
 \RequirePackage{fontspec}
-\RequirePackage{xeCJK}
 % Keep the real typographic ligatures, but write true text into the PDF text
 % layer as well. Without this, XeLaTeX maps the fi/fl glyphs to U+FB01/U+FB02
 % and a viewer searching the deck for "final" finds nothing.
 \XeTeXgenerateactualtext=1
 \setmainfont{Palatino}
 \setsansfont{Helvetica Neue}
-\setCJKmainfont{Songti SC}
-\setCJKsansfont{Heiti SC}
-\setCJKmonofont{Songti SC}
 \usefonttheme{professionalfonts}
 
-% -------------------------------------------------- official logotype lettering
-% The CUHK visual identity specifies the logotype lettering as
-%   Chinese logotype : Kai script (楷書)
-%   English logotype : Palatino (upper and lower case)
-%   logotype colour  : 100K
-% and the wordmark itself uses the traditional characters 香港中文大學（深圳）.
-% The two name macros below follow that specification so that the university
-% name is always set the way the official wordmark sets it.
-% xeCJK selects CJK glyphs through its own family mechanism, so the Kai script
-% has to be declared as a CJK family rather than as a Latin font family.
-\setCJKfamilyfont{cuhkszkai}{FandolKai-Regular.otf}
-\newcommand{\cuhkszkaifont}{\CJKfamily{cuhkszkai}}
-\newcommand{\cuhksznamezh}{{\cuhkszkaifont 香港中文大學（深圳）}}
+% ------------------------------------------------ English institution name
+% The English university name uses Palatino, as specified by the identity guide.
 \newcommand{\cuhksznameen}{The Chinese University of Hong Kong, Shenzhen}
 \newcommand{\cuhkszlogocolour}{csInk}
 
 % compatibility aliases
-\newcommand{\cuhkszuniversityzh}{\cuhksznamezh}
 \newcommand{\cuhkszuniversityen}{\cuhksznameen}
 
 % ---------------------------------------------------------------- beamer colours
@@ -222,7 +205,7 @@
   }%
 }
 
-% 封面使用完整画布，标题和作者信息按内容自然排列。
+% Use the full canvas for the cover, with title and author information arranged naturally.
 \setbeamertemplate{title page}{%
   \begin{tikzpicture}[remember picture, overlay]
     \fill[csPaper] (current page.south west) rectangle (current page.north east);
@@ -232,8 +215,8 @@
     \node[anchor=west, inner sep=0pt]
       at ([xshift=2.18cm, yshift=-0.82cm]current page.north west)
       {\begin{tabular}{@{}l@{}}
-         {\fontsize{12}{15}\selectfont\color{csInk}\cuhksznamezh}\\[0.12em]
-         {\fontsize{8.5}{10}\selectfont\color{csGrey}\cuhksznameen}
+         {\fontsize{12}{15}\selectfont\color{csInk}\cuhksznameen}\\[0.12em]
+         {\fontsize{8.5}{10}\selectfont\color{csGrey}CUHK-Shenzhen}
        \end{tabular}};
     \draw[csGreyLine, line width=0.7pt]
       ([xshift=1.15cm, yshift=-1.82cm]current page.north west) --

@@ -4,53 +4,47 @@
 
 研究背景、数据来源、数据字典、模型方案、既有结果、交付说明和运行命令统一收录在 [`docs/project-reference.md`](docs/project-reference.md)。这是项目的详细说明文档。
 
-建议的 GitHub 仓库名：`multicity-bikeshare-weather`。建议简介：`Bayesian hierarchical analysis of daily bike-share usage and weather across 29 cities.`
-
 ## 文件夹结构
 
 ```mermaid
 flowchart TD
-    root["midterm/"]
-    root --> readme["README.md 项目入口"]
-    root --> ignore[".gitignore"]
-    root --> dsstore[".DS_Store macOS 文件夹显示设置"]
-    root --> req["requirements.txt"]
-    root --> code["code/"]
-    code --> prepare["prepare_bikeshare_weather.py"]
-    code --> eda["eda_midterm.py"]
-    code --> fit["fit_pilot_model.py"]
-    code --> run["run_pilot_model.sh"]
-    code --> build["build_midterm.sh"]
-    root --> data["data/"]
-    data --> clean["clean/bikeshare_weather_daily.csv"]
-    data --> raw["raw/"]
-    raw --> archive["bikeshare_weather_40cities.zip"]
-    raw --> extracted["bikeshare-weather-40cities/"]
-    extracted --> bs["bs/bs-ll.csv、stock-data.csv"]
-    extracted --> utci["utci/f_rain.csv、f_utci.csv"]
-    root --> docs["docs/project-reference.md"]
-    root --> figures["figures/ 12 组 PDF 与 PNG"]
-    root --> report["report/"]
-    report --> tex["midterm_report.tex"]
-    report --> pdf["midterm_report.pdf"]
-    report --> bib["references.bib"]
-    report --> style["neurips_2026.sty"]
-    report --> reportbuild["build/ 编译日志与 PDF"]
-    root --> results["results/"]
-    results --> audit["bikeshare_weather_data_audit.json"]
-    results --> edajson["eda_midterm.json"]
-    results --> model["model/"]
-    model --> diag["pilot_diagnostics.json"]
-    model --> netcdf["pilot_model.nc"]
-    root --> slides["slides/"]
-    slides --> slidestex["midterm_slides.tex"]
-    slides --> slidespdf["midterm_slides.pdf"]
-    slides --> theme["beamerthemeCuhksz.sty"]
-    slides --> assets["assets/"]
-    assets --> logo["cuhksz_logo_alt.png"]
-    assets --> wordmark["cuhksz_wordmark.png"]
-    slides --> slidesbuild["build/ 编译日志与 PDF"]
-    root -.-> localenv[".venv/ 本地 Python 环境，已忽略"]
+    project["midterm/"]
+    project --> readmeFile["README.md"]
+    project --> ignoreFile[".gitignore"]
+    project --> requirementsFile["requirements.txt"]
+    project --> codeDir["code/"]
+    codeDir --> prepareScript["prepare_bikeshare_weather.py"]
+    codeDir --> edaScript["eda_midterm.py"]
+    codeDir --> modelScript["fit_pilot_model.py"]
+    codeDir --> pilotRunner["run_pilot_model.sh"]
+    codeDir --> buildScript["build_midterm.sh"]
+    project --> dataDir["data/"]
+    dataDir --> cleanPanel["clean/bikeshare_weather_daily.csv"]
+    dataDir --> rawDir["raw/"]
+    rawDir --> sourceArchive["bikeshare_weather_40cities.zip"]
+    rawDir --> sourceTables["bikeshare-weather-40cities/"]
+    sourceTables --> bikeData["bs/bs-ll.csv and stock-data.csv"]
+    sourceTables --> weatherData["utci/f_rain.csv and f_utci.csv"]
+    project --> projectDocs["docs/project-reference.md"]
+    project --> figuresDir["figures/ (12 PDF and PNG pairs)"]
+    project --> reportDir["report/"]
+    reportDir --> reportSource["midterm_report.tex"]
+    reportDir --> reportPDF["midterm_report.pdf"]
+    reportDir --> bibliography["references.bib"]
+    reportDir --> reportStyle["neurips_2026.sty"]
+    project --> resultsDir["results/"]
+    resultsDir --> auditJSON["bikeshare_weather_data_audit.json"]
+    resultsDir --> edaJSON["eda_midterm.json"]
+    resultsDir --> modelDir["model/"]
+    modelDir --> diagnostics["pilot_diagnostics.json"]
+    modelDir --> modelSamples["pilot_model.nc"]
+    project --> slidesDir["slides/"]
+    slidesDir --> slidesSource["midterm_slides.tex"]
+    slidesDir --> slidesPDF["midterm_slides.pdf"]
+    slidesDir --> slidesTheme["beamerthemeCuhksz.sty"]
+    slidesDir --> assetsDir["assets/"]
+    assetsDir --> crest["cuhksz_logo_alt.png"]
+    assetsDir --> wordmark["cuhksz_wordmark.png"]
 ```
 
 ## 文件用途
@@ -60,7 +54,6 @@ flowchart TD
 | 文件 | 用途 |
 |---|---|
 | `.gitignore` | 忽略 `.DS_Store`、`.venv/`、`.package/`、Python 缓存文件、`report/build/` 和 `slides/build/`。 |
-| `.DS_Store` | macOS 保存的文件夹显示设置，已由忽略规则排除。 |
 | `requirements.txt` | 固定 ArviZ、matplotlib、netCDF4、NumPy、nutpie、pandas 和 PyMC 版本。 |
 | `README.md` | 项目入口、架构图、文件说明和快速运行命令。 |
 
@@ -72,7 +65,7 @@ flowchart TD
 | `eda_midterm.py` | 生成探索性结果 JSON，以及报告和补充图表。 |
 | `fit_pilot_model.py` | 拟合层级 Student-t 模型并写出短链诊断和 NetCDF 样本。 |
 | `run_pilot_model.sh` | 设置 PyTensor 运行参数，再启动 `fit_pilot_model.py`。 |
-| `build_midterm.sh` | 重建探索性分析、报告和幻灯片，并运行期中交付核验。 |
+| `build_midterm.sh` | 重建探索性分析、报告和幻灯片。编译文件写入各自的 `build/` 目录。 |
 
 ### `data/` 与 `docs/`
 

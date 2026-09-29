@@ -12,15 +12,20 @@
 \cuhkszsetfooterleft{CUHK-Shenzhen}
 \cuhkszsetfootercenter{XUE Yantong}
 
-% 三位作者使用等宽列排布。
-\newcommand{\cuhkszcoverrow}[3]{%
+% Arrange author names and placeholder details in equally sized columns.
+\newcommand{\cuhkszcoverrow}[9]{%
   \begin{tabular}{@{}c@{\hspace{0.20cm}}c@{\hspace{0.20cm}}c@{}}
-    \makebox[4.35cm][l]{#1} & \makebox[4.35cm][l]{#2} & \makebox[4.35cm][l]{#3}
+    \makebox[4.35cm][l]{#1} & \makebox[4.35cm][l]{#2} & \makebox[4.35cm][l]{#3} \\[0.12em]
+    \makebox[4.35cm][l]{\footnotesize #4} & \makebox[4.35cm][l]{\footnotesize #5} & \makebox[4.35cm][l]{\footnotesize #6} \\[0.18em]
+    \makebox[4.35cm][l]{\footnotesize #7} & \makebox[4.35cm][l]{\footnotesize #8} & \makebox[4.35cm][l]{\footnotesize #9}
   \end{tabular}}
 
 \title[Weather and bike-share usage]{Weather sensitivity of bike-share usage\\a hierarchical Bayesian plan for 25 cities}
 \subtitle{STA5001 Bayesian \& Computational Statistics}
-\author{\small\cuhkszcoverrow{XUE Yantong}{WANG Ziyu}{ZHAO Jiashen}}
+\author{\small\cuhkszcoverrow
+  {XUE Yantong}{WANG Ziyu}{ZHAO Jiashen}
+  {Student ID: 00000000}{Student ID: 00000000}{Student ID: 00000000}
+  {student1@example.com}{student2@example.com}{student3@example.com}}
 \institute{\footnotesize School of Data Science, CUHK-Shenzhen}
 \date{STA5001 \textperiodcentered\ 3 November 2026}
 
@@ -29,7 +34,7 @@
 
 \begin{document}
 
-% ---------------------------------------------------------------- 封面
+% ---------------------------------------------------------------- Cover
 \begin{frame}[plain,noframenumbering]
   \titlepage
 \end{frame}
