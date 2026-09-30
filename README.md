@@ -6,45 +6,50 @@
 
 ## 文件夹结构
 
-```mermaid
-flowchart TD
-    project["midterm/"]
-    project --> readmeFile["README.md"]
-    project --> ignoreFile[".gitignore"]
-    project --> requirementsFile["requirements.txt"]
-    project --> codeDir["code/"]
-    codeDir --> prepareScript["prepare_bikeshare_weather.py"]
-    codeDir --> edaScript["eda_midterm.py"]
-    codeDir --> modelScript["fit_pilot_model.py"]
-    codeDir --> pilotRunner["run_pilot_model.sh"]
-    codeDir --> buildScript["build_midterm.sh"]
-    project --> dataDir["data/"]
-    dataDir --> cleanPanel["clean/bikeshare_weather_daily.csv"]
-    dataDir --> rawDir["raw/"]
-    rawDir --> sourceArchive["bikeshare_weather_40cities.zip"]
-    rawDir --> sourceTables["bikeshare-weather-40cities/"]
-    sourceTables --> bikeData["bs/bs-ll.csv and stock-data.csv"]
-    sourceTables --> weatherData["utci/f_rain.csv and f_utci.csv"]
-    project --> projectDocs["docs/project-reference.md"]
-    project --> figuresDir["figures/ (12 PDF and PNG pairs)"]
-    project --> reportDir["report/"]
-    reportDir --> reportSource["midterm_report.tex"]
-    reportDir --> reportPDF["midterm_report.pdf"]
-    reportDir --> bibliography["references.bib"]
-    reportDir --> reportStyle["neurips_2026.sty"]
-    project --> resultsDir["results/"]
-    resultsDir --> auditJSON["bikeshare_weather_data_audit.json"]
-    resultsDir --> edaJSON["eda_midterm.json"]
-    resultsDir --> modelDir["model/"]
-    modelDir --> diagnostics["pilot_diagnostics.json"]
-    modelDir --> modelSamples["pilot_model.nc"]
-    project --> slidesDir["slides/"]
-    slidesDir --> slidesSource["midterm_slides.tex"]
-    slidesDir --> slidesPDF["midterm_slides.pdf"]
-    slidesDir --> slidesTheme["beamerthemeCuhksz.sty"]
-    slidesDir --> assetsDir["assets/"]
-    assetsDir --> crest["cuhksz_logo_alt.png"]
-    assetsDir --> wordmark["cuhksz_wordmark.png"]
+```text
+midterm/
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── code/
+│   ├── build_midterm.sh
+│   ├── eda_midterm.py
+│   ├── fit_pilot_model.py
+│   ├── prepare_bikeshare_weather.py
+│   └── run_pilot_model.sh
+├── data/
+│   ├── clean/
+│   │   └── bikeshare_weather_daily.csv
+│   └── raw/
+│       ├── bikeshare_weather_40cities.zip
+│       └── bikeshare-weather-40cities/
+│           ├── bs/
+│           │   ├── bs-ll.csv
+│           │   └── stock-data.csv
+│           └── utci/
+│               ├── f_rain.csv
+│               └── f_utci.csv
+├── docs/
+│   └── project-reference.md
+├── figures/                         # 12 组图表，每组包含 PDF 和 PNG
+├── report/
+│   ├── midterm_report.tex
+│   ├── midterm_report.pdf
+│   ├── references.bib
+│   └── neurips_2026.sty
+├── results/
+│   ├── bikeshare_weather_data_audit.json
+│   ├── eda_midterm.json
+│   └── model/
+│       ├── pilot_diagnostics.json
+│       └── pilot_model.nc
+└── slides/
+    ├── midterm_slides.tex
+    ├── midterm_slides.pdf
+    ├── beamerthemeCuhksz.sty
+    └── assets/
+        ├── cuhksz_logo_alt.png
+        └── cuhksz_wordmark.png
 ```
 
 ## 文件用途
@@ -55,7 +60,7 @@ flowchart TD
 |---|---|
 | `.gitignore` | 忽略 `.DS_Store`、`.venv/`、`.package/`、Python 缓存文件、`report/build/` 和 `slides/build/`。 |
 | `requirements.txt` | 固定 ArviZ、matplotlib、netCDF4、NumPy、nutpie、pandas 和 PyMC 版本。 |
-| `README.md` | 项目入口、架构图、文件说明和快速运行命令。 |
+| `README.md` | 项目入口、文件夹结构、文件说明和快速运行命令。 |
 
 ### `code/`
 
