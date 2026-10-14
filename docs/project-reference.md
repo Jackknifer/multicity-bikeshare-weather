@@ -6,7 +6,7 @@
 
 主分析预先选取 25 个全年持续产生使用记录的城市，包含 9,120 个城市日。分析关注当地热舒适度、降水量与日使用量的关系，以及城市间天气效应差异。所有研究结论均按统计关联解释。
 
-项目包含期中报告、课堂演示、探索性分析、数据处理脚本和层级 Student-t 模型试运行。期末计划使用 No-U-Turn Sampler（无掉头采样器，NUTS）完成正式推断、后验预测、时间外检验与敏感性分析。
+项目包含期中报告、课堂演示、探索性分析和数据处理脚本。期末计划使用 No-U-Turn Sampler（无掉头采样器，NUTS）完成正式推断、后验预测、时间外检验与敏感性分析。
 
 ## 研究问题与来源
 
@@ -107,7 +107,7 @@ UTC 时间转换为当地时间后产生 10,613 个城市日组合。日度记�
 | `utci_anomaly_sq` | `utci_anomaly_10c` 的平方，未在城市内中心化。 |
 | `utci_within_city_z` | `utci_mean_c` 在城市内标准化后的值。 |
 
-模型二次项由 `code/fit_pilot_model.py` 计算：对 `utci_anomaly_10c` 的平方减去城市内均值。该项与模型中的 $Q_{it}$ 一致。模型降水项使用 `precipitation_log1p` 减去城市内均值，再除以城市内标准差。
+模型方案中的二次项 $Q_{it}$ 为 `utci_anomaly_10c` 的平方减去城市内均值。模型降水项使用 `precipitation_log1p` 减去城市内均值，再除以城市内标准差。
 
 ### 降水、日历与完整性
 
@@ -124,7 +124,7 @@ UTC 时间转换为当地时间后产生 10,613 个城市日组合。日度记�
 | `utci_observed_hours` | 当日有效 UTCI 小时数，至少为 20。 |
 | `rain_observed_hours` | 当日有效降水小时数，与 `observed_hours` 相同。 |
 
-## 模型方案与试运行
+## 期末模型方案
 
 ### 层级 Student-t 回归
 
@@ -156,10 +156,6 @@ $$
 正式后验推断计划使用 PyMC 6.3.2、nutpie 0.16.11 和 NUTS，随机种子为 27，`target_accept=0.92`。设置为 4 条链，每条链 2,000 次 warmup 和 2,000 个保留样本。计算核验包括 $\widehat R$、bulk ESS、tail ESS、Monte Carlo standard error（蒙特卡洛标准误，MCSE）、divergence（发散）和 tree depth（树深度）。目标为 $\widehat R\le1.01$、bulk ESS 与 tail ESS 均至少为 400、没有 divergence，并确认 MCSE 相对后验标准差足够小。
 
 正式分析将进行 prior predictive check（先验预测核验），检查日使用量范围、天气变化对应的倍数变化和城市差异。若先验预测大量超出数据与领域知识支持的范围，将在查看观测结果前调整先验尺度。
-
-### 已有短链结果
-
-项目已在 9,120 个观测上运行 2 条链，每条链含 200 次 warmup 和 200 个保留样本。短链的 divergence 为 0。8 个关键超参数的最大 $\widehat R$ 为 1.037，最低 bulk ESS 为 94.2；421 个参数整体的最大 $\widehat R$ 为 1.321，最低 bulk ESS 为 6.1。城市截距项的混合情况最弱；400 个抽样中有 18 个触及最大 tree depth 10。短链只用于模型运行可行性检查，不能支持正式研究结论。
 
 ### 正式模型核验计划
 
@@ -238,9 +234,7 @@ $$
 
 **使用量数据有哪些限制？** 使用量由每分钟站点库存快照估计，29 个城市中有 97,459 个小时值带 0.5 小数部分。库存变化也可能包含人工调度造成的车辆移动。
 
-**为何采用 Student-t 观测分布？** 日使用量可能受节假日、大型活动和数据异常影响。短链估计的自由度约为 2.4，低于先验均值 12，提示重尾观测分布可能适用；该短链未达到正式推断要求。期末将用 Gaussian 观测分布重复主分析。
-
-**模型目前运行到什么程度？** 层级 Student-t 模型已在 9,120 个观测上完成 2 条链、每条 200 次抽样的试运行，divergence 为 0。8 个关键超参数的最大 $\widehat R$ 为 1.037、最低 bulk ESS 为 94.2；全部 421 个参数的最大 $\widehat R$ 为 1.321、最低 bulk ESS 为 6.1；400 个抽样中有 18 个触及最大 tree depth。正式推断计划使用 4 条链，每条链 2,000 次 warmup 和 2,000 个保留样本，并逐项检查收敛。增加抽样次数可降低 Monte Carlo 误差；树深和混合情况仍须单独检查。
+**为何计划采用 Student-t 观测分布？** 日使用量可能受节假日、大型活动和数据异常影响。Student-t 可以描述重尾变化。期末计划通过后验预测核验与 Gaussian 观测分布比较，评估该选择。
 
 ## 研究范围与解释限制
 
@@ -276,18 +270,6 @@ uv pip install --python .venv/bin/python -r requirements.txt
 ```bash
 .venv/bin/python code/prepare_bikeshare_weather.py
 .venv/bin/python code/eda_midterm.py
-```
-
-运行模型试验的入口：
-
-```bash
-code/run_pilot_model.sh --draws 200 --tune 200 --chains 2
-```
-
-正式模型计划采用以下参数：
-
-```bash
-code/run_pilot_model.sh --draws 2000 --tune 2000 --chains 4
 ```
 
 报告使用 `pdflatex` 和 `bibtex`。在项目根目录执行：

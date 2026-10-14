@@ -6,51 +6,16 @@
 
 ## 文件夹结构
 
-```text
-midterm/
-├── .gitignore
-├── README.md
-├── requirements.txt
-├── code/
-│   ├── build_midterm.sh
-│   ├── eda_midterm.py
-│   ├── fit_pilot_model.py
-│   ├── prepare_bikeshare_weather.py
-│   └── run_pilot_model.sh
-├── data/
-│   ├── clean/
-│   │   └── bikeshare_weather_daily.csv
-│   └── raw/
-│       ├── bikeshare_weather_40cities.zip
-│       └── bikeshare-weather-40cities/
-│           ├── bs/
-│           │   ├── bs-ll.csv
-│           │   └── stock-data.csv
-│           └── utci/
-│               ├── f_rain.csv
-│               └── f_utci.csv
-├── docs/
-│   └── project-reference.md
-├── figures/                         # 12 组图表，每组包含 PDF 和 PNG
-├── report/
-│   ├── midterm_report.tex
-│   ├── midterm_report.pdf
-│   ├── references.bib
-│   └── neurips_2026.sty
-├── results/
-│   ├── bikeshare_weather_data_audit.json
-│   ├── eda_midterm.json
-│   └── model/
-│       ├── pilot_diagnostics.json
-│       └── pilot_model.nc
-└── slides/
-    ├── midterm_slides.tex
-    ├── midterm_slides.pdf
-    ├── beamerthemeCuhksz.sty
-    └── assets/
-        ├── cuhksz_logo_alt.png
-        └── cuhksz_wordmark.png
-```
+| 目录 | 内容 |
+|---|---|
+| `code/` | 数据处理、探索性分析和材料构建脚本。 |
+| `data/raw/` | 原始数据包、城市信息、小时使用量和天气数据。 |
+| `data/clean/` | 清理后的日度 CSV。 |
+| `docs/` | 项目背景、数据字典、期末模型方案与复现说明。 |
+| `figures/` | 12 组探索性图表，每组包含 PDF 和 PNG。 |
+| `report/` | 期中报告源文件、PDF、参考文献和样式文件。 |
+| `results/` | 数据审计 JSON 和探索性结果 JSON。 |
+| `slides/` | 演示源文件、PDF、主题和校徽素材。 |
 
 ## 文件用途
 
@@ -68,8 +33,6 @@ midterm/
 |---|---|
 | `prepare_bikeshare_weather.py` | 核验原始数据并生成日度 CSV 与数据审计 JSON。 |
 | `eda_midterm.py` | 生成探索性结果 JSON，以及报告和补充图表。 |
-| `fit_pilot_model.py` | 拟合层级 Student-t 模型并写出短链诊断和 NetCDF 样本。 |
-| `run_pilot_model.sh` | 设置 PyTensor 运行参数，再启动 `fit_pilot_model.py`。 |
 | `build_midterm.sh` | 重建探索性分析、报告和幻灯片。编译文件写入各自的 `build/` 目录。 |
 
 ### `data/` 与 `docs/`
@@ -121,8 +84,6 @@ midterm/
 |---|---|
 | `bikeshare_weather_data_audit.json` | 输入校验和、逐城统计、处理规则和输出校验和。 |
 | `eda_midterm.json` | 探索性分析样本、温度、降水、季节和周末结果。 |
-| `model/pilot_diagnostics.json` | 短链采样设置和收敛诊断。 |
-| `model/pilot_model.nc` | 短链后验样本的 NetCDF 文件。 |
 
 ### `slides/`
 
