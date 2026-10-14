@@ -1,0 +1,18 @@
+% 交付用文档输入，由人工依据已保存的正式结果整理，不通过 src/make_report_inputs.py 写出。
+% 来源：logs/review-20261001/recomputed_metrics.csv 中 M0 与 M2 的 city_equal_mae_log，
+% 以及 logs/review-20261001/followup_checks.json 中 final_baselines_existing_implementation
+% 的 mae_log。整理日期 2026-10-01。
+% 全部数值在 log(1 + usage) 尺度上计算，城市等权汇总，越低越好。
+% 行序按 block MAE 从小到大排列。
+\begin{tabular}{lrr}
+\toprule
+Method & Block MAE & One-step MAE \\
+\midrule
+M0 & 0.3207 & 0.3207 \\
+Seasonal naive, 7-day lag & 0.4252 & 0.3421 \\
+City AR-OLS & 0.5192 & 0.3197 \\
+City OLS, parameter uncertainty & 0.5208 & 0.5208 \\
+M2 & 0.5547 & 0.3601 \\
+City constant & 0.5551 & 0.5551 \\
+\bottomrule
+\end{tabular}

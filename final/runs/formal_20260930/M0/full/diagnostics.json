@@ -1,0 +1,69 @@
+{
+  "parameters": 396,
+  "max_rhat": 1.00259815,
+  "min_ess_bulk": 1428.74480894,
+  "min_ess_tail": 2176.0384246,
+  "rhat_over_1_01": 0,
+  "ess_bulk_under_400": 0,
+  "ess_tail_under_400": 0,
+  "max_mcse_sd_ratio": 0.02650471059602966,
+  "divergences": 0,
+  "bfmi": [
+    0.7098172348989591,
+    0.7136615140688081,
+    0.7036900066579533,
+    0.6803387136164825
+  ],
+  "bfmi_min": 0.6803387136164825,
+  "depth_max": 9.0,
+  "depth_sum": 74082,
+  "maxdepth_reached_max": 0.0,
+  "maxdepth_reached_sum": 0,
+  "model": "M0",
+  "fold": "full",
+  "sampling_seconds": 421.0600299835205,
+  "validation_only": false,
+  "passed": true,
+  "worst_rhat": {
+    "log_sigma_offset[Namur]": {
+      "r_hat": 1.00259815,
+      "ess_bulk": 3905.8126223,
+      "ess_tail": 5324.68050409
+    },
+    "log_sigma_offset[Cergy-Pontoise]": {
+      "r_hat": 1.00256695,
+      "ess_bulk": 4476.50989335,
+      "ess_tail": 5484.75963038
+    },
+    "log_sigma_population": {
+      "r_hat": 1.00234521,
+      "ess_bulk": 3470.77653017,
+      "ess_tail": 4352.35212331
+    },
+    "log_sigma_offset[Amiens]": {
+      "r_hat": 1.00232924,
+      "ess_bulk": 4265.5700766,
+      "ess_tail": 5500.07606211
+    },
+    "log_sigma_offset[Melbourne]": {
+      "r_hat": 1.0023036,
+      "ess_bulk": 4383.6334788,
+      "ess_tail": 5831.50226884
+    },
+    "log_sigma_offset[Lund]": {
+      "r_hat": 1.00219895,
+      "ess_bulk": 3670.83625503,
+      "ess_tail": 5247.66317682
+    },
+    "log_sigma_offset[Besancon]": {
+      "r_hat": 1.00219691,
+      "ess_bulk": 4256.99570073,
+      "ess_tail": 5839.03315652
+    },
+    "beta_weekend_offset[Ljubljana]": {
+      "r_hat": 1.0021793,
+      "ess_bulk": 1985.39307729,
+      "ess_tail": 2622.07585244
+    }
+  }
+}

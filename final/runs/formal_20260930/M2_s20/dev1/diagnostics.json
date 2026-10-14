@@ -1,0 +1,69 @@
+{
+  "parameters": 473,
+  "max_rhat": 1.00582282,
+  "min_ess_bulk": 754.56913561,
+  "min_ess_tail": 958.71359447,
+  "rhat_over_1_01": 0,
+  "ess_bulk_under_400": 0,
+  "ess_tail_under_400": 0,
+  "max_mcse_sd_ratio": 0.034057616934876564,
+  "divergences": 0,
+  "bfmi": [
+    0.7011484412676097,
+    0.6520926077544682,
+    0.6812072819541298,
+    0.7220005269304783
+  ],
+  "bfmi_min": 0.6520926077544682,
+  "depth_max": 8.0,
+  "depth_sum": 48569,
+  "maxdepth_reached_max": 0.0,
+  "maxdepth_reached_sum": 0,
+  "model": "M2",
+  "fold": "dev1",
+  "sampling_seconds": 1038.008125782013,
+  "validation_only": false,
+  "passed": true,
+  "worst_rhat": {
+    "beta_temp_sq_city_sd": {
+      "r_hat": 1.00582282,
+      "ess_bulk": 1834.45738349,
+      "ess_tail": 2567.39351254
+    },
+    "beta_trend_city[Ljubljana]": {
+      "r_hat": 1.00310656,
+      "ess_bulk": 1210.22739996,
+      "ess_tail": 2136.99842793
+    },
+    "beta_cos_city_sd": {
+      "r_hat": 1.00304525,
+      "ess_bulk": 754.56913561,
+      "ess_tail": 958.71359447
+    },
+    "beta_cos_city[Ljubljana]": {
+      "r_hat": 1.00290417,
+      "ess_bulk": 1113.32293211,
+      "ess_tail": 2350.99861933
+    },
+    "log_sigma_offset[Creteil]": {
+      "r_hat": 1.00277121,
+      "ess_bulk": 2040.74938612,
+      "ess_tail": 3103.85146926
+    },
+    "log_sigma_offset[Santander]": {
+      "r_hat": 1.00275051,
+      "ess_bulk": 2081.1604731,
+      "ess_tail": 3245.0415755
+    },
+    "log_sigma_city_sd": {
+      "r_hat": 1.00267199,
+      "ess_bulk": 2120.98372664,
+      "ess_tail": 3042.27799692
+    },
+    "beta_sin_city[Ljubljana]": {
+      "r_hat": 1.00246616,
+      "ess_bulk": 2880.12419586,
+      "ess_tail": 3706.81919799
+    }
+  }
+}

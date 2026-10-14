@@ -1,0 +1,793 @@
+{
+  "frozen_input": {
+    "path": "/Users/apple/Desktop/课程管理/STA5001/期中期末项目/midterm/data/clean/bikeshare_weather_daily.csv",
+    "sha256": "6e30157ee8061f76142b95dd9ca7615bdea068f57c2fbd82796c7ac5e62af33e",
+    "bytes": 3289241
+  },
+  "metrics": [
+    {
+      "run_name": "A0",
+      "fold": "dev1",
+      "model": "A0",
+      "task": "block",
+      "city_equal_wis_log": 0.13334048295153456,
+      "city_equal_mean_log_predictive_density": -0.3229987029579616,
+      "city_equal_mae_log": 0.25807914109551594,
+      "city_equal_coverage_90": 0.8501552795031053
+    },
+    {
+      "run_name": "A0",
+      "fold": "dev1",
+      "model": "A0",
+      "task": "one_step",
+      "city_equal_wis_log": 0.13332478728364225,
+      "city_equal_mean_log_predictive_density": -0.3229987029579616,
+      "city_equal_mae_log": 0.2580807373854248,
+      "city_equal_coverage_90": 0.8501552795031053
+    },
+    {
+      "run_name": "A1",
+      "fold": "dev1",
+      "model": "A1",
+      "task": "block",
+      "city_equal_wis_log": 0.13153255590169954,
+      "city_equal_mean_log_predictive_density": -0.3167662007858867,
+      "city_equal_mae_log": 0.25768295608714614,
+      "city_equal_coverage_90": 0.8501552795031055
+    },
+    {
+      "run_name": "A1",
+      "fold": "dev1",
+      "model": "A1",
+      "task": "one_step",
+      "city_equal_wis_log": 0.1315364381366717,
+      "city_equal_mean_log_predictive_density": -0.3167662007858867,
+      "city_equal_mae_log": 0.25764812661250514,
+      "city_equal_coverage_90": 0.8509316770186335
+    },
+    {
+      "run_name": "M0",
+      "fold": "dev1",
+      "model": "M0",
+      "task": "block",
+      "city_equal_wis_log": 0.13381725438405007,
+      "city_equal_mean_log_predictive_density": -0.4082569579655756,
+      "city_equal_mae_log": 0.25713906710843587,
+      "city_equal_coverage_90": 0.7663043478260869
+    },
+    {
+      "run_name": "M0",
+      "fold": "dev1",
+      "model": "M0",
+      "task": "one_step",
+      "city_equal_wis_log": 0.13379067135472014,
+      "city_equal_mean_log_predictive_density": -0.4082569579655756,
+      "city_equal_mae_log": 0.2571234308435811,
+      "city_equal_coverage_90": 0.7655279503105589
+    },
+    {
+      "run_name": "M0",
+      "fold": "dev2",
+      "model": "M0",
+      "task": "block",
+      "city_equal_wis_log": 0.2045957019661589,
+      "city_equal_mean_log_predictive_density": -1.1429531920884461,
+      "city_equal_mae_log": 0.37013243105887667,
+      "city_equal_coverage_90": 0.5380434782608695
+    },
+    {
+      "run_name": "M0",
+      "fold": "dev2",
+      "model": "M0",
+      "task": "one_step",
+      "city_equal_wis_log": 0.2046888260699402,
+      "city_equal_mean_log_predictive_density": -1.1429531920884461,
+      "city_equal_mae_log": 0.37009399280171906,
+      "city_equal_coverage_90": 0.5357142857142858
+    },
+    {
+      "run_name": "M0",
+      "fold": "final",
+      "model": "M0",
+      "task": "block",
+      "city_equal_wis_log": 0.19567212041291565,
+      "city_equal_mean_log_predictive_density": -0.5992829163838137,
+      "city_equal_mae_log": 0.3207038073464966,
+      "city_equal_coverage_90": 0.7554347826086957
+    },
+    {
+      "run_name": "M0",
+      "fold": "final",
+      "model": "M0",
+      "task": "one_step",
+      "city_equal_wis_log": 0.19569896811429682,
+      "city_equal_mean_log_predictive_density": -0.5992829163838137,
+      "city_equal_mae_log": 0.32072984249991504,
+      "city_equal_coverage_90": 0.7569875776397516
+    },
+    {
+      "run_name": "M1",
+      "fold": "dev1",
+      "model": "M1",
+      "task": "block",
+      "city_equal_wis_log": 0.13198931900554642,
+      "city_equal_mean_log_predictive_density": -0.32002041993391916,
+      "city_equal_mae_log": 0.2583290399253102,
+      "city_equal_coverage_90": 0.8509316770186333
+    },
+    {
+      "run_name": "M1",
+      "fold": "dev1",
+      "model": "M1",
+      "task": "one_step",
+      "city_equal_wis_log": 0.13199654785725826,
+      "city_equal_mean_log_predictive_density": -0.32002041993391916,
+      "city_equal_mae_log": 0.2582301159089499,
+      "city_equal_coverage_90": 0.8524844720496894
+    },
+    {
+      "run_name": "M1",
+      "fold": "dev2",
+      "model": "M1",
+      "task": "block",
+      "city_equal_wis_log": 0.18928212651838403,
+      "city_equal_mean_log_predictive_density": -0.7954895410343551,
+      "city_equal_mae_log": 0.3562165839195842,
+      "city_equal_coverage_90": 0.7080745341614907
+    },
+    {
+      "run_name": "M1",
+      "fold": "dev2",
+      "model": "M1",
+      "task": "one_step",
+      "city_equal_wis_log": 0.18927103844907964,
+      "city_equal_mean_log_predictive_density": -0.7954895410343551,
+      "city_equal_mae_log": 0.3561912069282087,
+      "city_equal_coverage_90": 0.7088509316770185
+    },
+    {
+      "run_name": "M1",
+      "fold": "final",
+      "model": "M1",
+      "task": "block",
+      "city_equal_wis_log": 0.36904772070911684,
+      "city_equal_mean_log_predictive_density": -1.7390257161478606,
+      "city_equal_mae_log": 0.5706995466614073,
+      "city_equal_coverage_90": 0.5489130434782609
+    },
+    {
+      "run_name": "M1",
+      "fold": "final",
+      "model": "M1",
+      "task": "one_step",
+      "city_equal_wis_log": 0.36902860128474296,
+      "city_equal_mean_log_predictive_density": -1.7390257161478606,
+      "city_equal_mae_log": 0.5706893507349361,
+      "city_equal_coverage_90": 0.5496894409937888
+    },
+    {
+      "run_name": "M1nt",
+      "fold": "dev1",
+      "model": "M1nt",
+      "task": "block",
+      "city_equal_wis_log": 0.14122760120258404,
+      "city_equal_mean_log_predictive_density": -0.41698040895945865,
+      "city_equal_mae_log": 0.2774313063798192,
+      "city_equal_coverage_90": 0.8167701863354037
+    },
+    {
+      "run_name": "M1nt",
+      "fold": "dev1",
+      "model": "M1nt",
+      "task": "one_step",
+      "city_equal_wis_log": 0.14120182094709008,
+      "city_equal_mean_log_predictive_density": -0.41698040895945865,
+      "city_equal_mae_log": 0.27742549689069557,
+      "city_equal_coverage_90": 0.8175465838509316
+    },
+    {
+      "run_name": "M1nt",
+      "fold": "dev2",
+      "model": "M1nt",
+      "task": "block",
+      "city_equal_wis_log": 0.20828299703576023,
+      "city_equal_mean_log_predictive_density": -1.1075523476973044,
+      "city_equal_mae_log": 0.3896602500904477,
+      "city_equal_coverage_90": 0.6141304347826086
+    },
+    {
+      "run_name": "M1nt",
+      "fold": "dev2",
+      "model": "M1nt",
+      "task": "one_step",
+      "city_equal_wis_log": 0.2083015748231032,
+      "city_equal_mean_log_predictive_density": -1.1075523476973044,
+      "city_equal_mae_log": 0.38966487647698217,
+      "city_equal_coverage_90": 0.6156832298136646
+    },
+    {
+      "run_name": "M1nt",
+      "fold": "final",
+      "model": "M1nt",
+      "task": "block",
+      "city_equal_wis_log": 0.2027509951493049,
+      "city_equal_mean_log_predictive_density": -0.6720729420641125,
+      "city_equal_mae_log": 0.35184729505789675,
+      "city_equal_coverage_90": 0.7826086956521737
+    },
+    {
+      "run_name": "M1nt",
+      "fold": "final",
+      "model": "M1nt",
+      "task": "one_step",
+      "city_equal_wis_log": 0.2027282560080417,
+      "city_equal_mean_log_predictive_density": -0.6720729420641125,
+      "city_equal_mae_log": 0.3517954838365167,
+      "city_equal_coverage_90": 0.78027950310559
+    },
+    {
+      "run_name": "M2",
+      "fold": "dev1",
+      "model": "M2",
+      "task": "block",
+      "city_equal_wis_log": 0.1264857924867516,
+      "city_equal_mean_log_predictive_density": -0.2417968502511167,
+      "city_equal_mae_log": 0.25025748497937467,
+      "city_equal_coverage_90": 0.8850931677018634
+    },
+    {
+      "run_name": "M2",
+      "fold": "dev1",
+      "model": "M2",
+      "task": "one_step",
+      "city_equal_wis_log": 0.10840303846268763,
+      "city_equal_mean_log_predictive_density": -0.06251732817839137,
+      "city_equal_mae_log": 0.2104298364688175,
+      "city_equal_coverage_90": 0.9029503105590062
+    },
+    {
+      "run_name": "M2",
+      "fold": "dev2",
+      "model": "M2",
+      "task": "block",
+      "city_equal_wis_log": 0.15769345807132093,
+      "city_equal_mean_log_predictive_density": -0.5393165453449519,
+      "city_equal_mae_log": 0.32388645455488596,
+      "city_equal_coverage_90": 0.8012422360248447
+    },
+    {
+      "run_name": "M2",
+      "fold": "dev2",
+      "model": "M2",
+      "task": "one_step",
+      "city_equal_wis_log": 0.12382691699985203,
+      "city_equal_mean_log_predictive_density": -0.23535341824814657,
+      "city_equal_mae_log": 0.25396131325842025,
+      "city_equal_coverage_90": 0.8718944099378881
+    },
+    {
+      "run_name": "M2",
+      "fold": "final",
+      "model": "M2",
+      "task": "block",
+      "city_equal_wis_log": 0.3394238101752958,
+      "city_equal_mean_log_predictive_density": -1.5234159574994972,
+      "city_equal_mae_log": 0.5546523080063358,
+      "city_equal_coverage_90": 0.6048136645962734
+    },
+    {
+      "run_name": "M2",
+      "fold": "final",
+      "model": "M2",
+      "task": "one_step",
+      "city_equal_wis_log": 0.20850059370360677,
+      "city_equal_mean_log_predictive_density": -0.7950263010876973,
+      "city_equal_mae_log": 0.36008823931812417,
+      "city_equal_coverage_90": 0.7204968944099378
+    },
+    {
+      "run_name": "M2_s05",
+      "fold": "dev1",
+      "model": "M2",
+      "task": "block",
+      "city_equal_wis_log": 0.12664375034537415,
+      "city_equal_mean_log_predictive_density": -0.24633702455593195,
+      "city_equal_mae_log": 0.25072667897799017,
+      "city_equal_coverage_90": 0.8843167701863355
+    },
+    {
+      "run_name": "M2_s05",
+      "fold": "dev1",
+      "model": "M2",
+      "task": "one_step",
+      "city_equal_wis_log": 0.10847340382849557,
+      "city_equal_mean_log_predictive_density": -0.06425493663066092,
+      "city_equal_mae_log": 0.21063566206826928,
+      "city_equal_coverage_90": 0.8998447204968943
+    },
+    {
+      "run_name": "M2_s20",
+      "fold": "dev1",
+      "model": "M2",
+      "task": "block",
+      "city_equal_wis_log": 0.126476361375582,
+      "city_equal_mean_log_predictive_density": -0.24448300215879679,
+      "city_equal_mae_log": 0.2505631778854665,
+      "city_equal_coverage_90": 0.8866459627329192
+    },
+    {
+      "run_name": "M2_s20",
+      "fold": "dev1",
+      "model": "M2",
+      "task": "one_step",
+      "city_equal_wis_log": 0.10833046234038324,
+      "city_equal_mean_log_predictive_density": -0.06299123698968741,
+      "city_equal_mae_log": 0.21037261560877468,
+      "city_equal_coverage_90": 0.9006211180124223
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev1",
+      "model": "city_ar_ols",
+      "task": "block",
+      "city_equal_wis_log": 0.19051501302065676,
+      "city_equal_mean_log_predictive_density": -1.4260636443653703,
+      "city_equal_mae_log": 0.3309318924840726,
+      "city_equal_coverage_90": 0.6187888198757764
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev1",
+      "model": "city_ar_ols",
+      "task": "one_step",
+      "city_equal_wis_log": 0.13615678866123843,
+      "city_equal_mean_log_predictive_density": -0.5628582759850251,
+      "city_equal_mae_log": 0.25529319061891326,
+      "city_equal_coverage_90": 0.7694099378881988
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev1",
+      "model": "city_constant",
+      "task": "block",
+      "city_equal_wis_log": 0.1857967653586804,
+      "city_equal_mean_log_predictive_density": -0.6313488133630512,
+      "city_equal_mae_log": 0.37572797391620105,
+      "city_equal_coverage_90": 0.9013975155279504
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev1",
+      "model": "city_constant",
+      "task": "one_step",
+      "city_equal_wis_log": 0.1857967653586804,
+      "city_equal_mean_log_predictive_density": -0.6313488133630512,
+      "city_equal_mae_log": 0.37572797391620105,
+      "city_equal_coverage_90": 0.9013975155279504
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev1",
+      "model": "city_ols",
+      "task": "block",
+      "city_equal_wis_log": 0.16784326996168647,
+      "city_equal_mean_log_predictive_density": -0.7108352893386451,
+      "city_equal_mae_log": 0.33141190443219076,
+      "city_equal_coverage_90": 0.7795031055900619
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev1",
+      "model": "city_ols",
+      "task": "one_step",
+      "city_equal_wis_log": 0.16784326996168647,
+      "city_equal_mean_log_predictive_density": -0.7108352893386451,
+      "city_equal_mae_log": 0.33141190443219076,
+      "city_equal_coverage_90": 0.7795031055900619
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev1",
+      "model": "seasonal_naive_7",
+      "task": "block",
+      "city_equal_wis_log": 0.13918054523752432,
+      "city_equal_mean_log_predictive_density": -0.3671179841854558,
+      "city_equal_mae_log": 0.260246903174336,
+      "city_equal_coverage_90": 0.9099378881987579
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev1",
+      "model": "seasonal_naive_7",
+      "task": "one_step",
+      "city_equal_wis_log": 0.12979438547029484,
+      "city_equal_mean_log_predictive_density": -0.29429872854312394,
+      "city_equal_mae_log": 0.22981517104578988,
+      "city_equal_coverage_90": 0.9231366459627329
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev2",
+      "model": "city_ar_ols",
+      "task": "block",
+      "city_equal_wis_log": 0.16888312514727252,
+      "city_equal_mean_log_predictive_density": -1.0160665318213589,
+      "city_equal_mae_log": 0.31102750500846094,
+      "city_equal_coverage_90": 0.6420807453416149
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev2",
+      "model": "city_ar_ols",
+      "task": "one_step",
+      "city_equal_wis_log": 0.11399809474916825,
+      "city_equal_mean_log_predictive_density": -0.3020321579132529,
+      "city_equal_mae_log": 0.22780401303269257,
+      "city_equal_coverage_90": 0.8563664596273294
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev2",
+      "model": "city_constant",
+      "task": "block",
+      "city_equal_wis_log": 0.1724674778527087,
+      "city_equal_mean_log_predictive_density": -0.6504973278747288,
+      "city_equal_mae_log": 0.36649788377490644,
+      "city_equal_coverage_90": 0.9231366459627331
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev2",
+      "model": "city_constant",
+      "task": "one_step",
+      "city_equal_wis_log": 0.1724674778527087,
+      "city_equal_mean_log_predictive_density": -0.6504973278747288,
+      "city_equal_mae_log": 0.36649788377490644,
+      "city_equal_coverage_90": 0.9231366459627331
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev2",
+      "model": "city_ols",
+      "task": "block",
+      "city_equal_wis_log": 0.1555025785921007,
+      "city_equal_mean_log_predictive_density": -0.6161185125086,
+      "city_equal_mae_log": 0.31308128340390956,
+      "city_equal_coverage_90": 0.763975155279503
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev2",
+      "model": "city_ols",
+      "task": "one_step",
+      "city_equal_wis_log": 0.1555025785921007,
+      "city_equal_mean_log_predictive_density": -0.6161185125086,
+      "city_equal_mae_log": 0.31308128340390956,
+      "city_equal_coverage_90": 0.763975155279503
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev2",
+      "model": "seasonal_naive_7",
+      "task": "block",
+      "city_equal_wis_log": 0.13932507645217132,
+      "city_equal_mean_log_predictive_density": -0.4694156566024881,
+      "city_equal_mae_log": 0.26643789538626633,
+      "city_equal_coverage_90": 0.9114906832298137
+    },
+    {
+      "run_name": "baselines",
+      "fold": "dev2",
+      "model": "seasonal_naive_7",
+      "task": "one_step",
+      "city_equal_wis_log": 0.13375914782258605,
+      "city_equal_mean_log_predictive_density": -0.5808229438251001,
+      "city_equal_mae_log": 0.24053079948476122,
+      "city_equal_coverage_90": 0.9332298136645963
+    }
+  ],
+  "prediction_isolation": {
+    "block_ignores_test_usage": true,
+    "one_step_only_uses_previous_usage": true,
+    "preprocessing_training_only": true,
+    "posterior_source": "/Users/apple/Desktop/课程管理/STA5001/期中期末项目/final/work/runs/formal_20260930/M2/dev1/posterior.nc",
+    "sample_cap": 64,
+    "paths": 20
+  },
+  "ablation_dependencies": {
+    "A0": {
+      "beta_rain_city": [
+        "NoneConst",
+        "beta_rain_city",
+        "beta_rain_population",
+        "city"
+      ],
+      "beta_trend_city": [
+        "NoneConst",
+        "beta_trend_city",
+        "beta_trend_population",
+        "city"
+      ]
+    },
+    "A1": {
+      "beta_rain_city": [
+        "NoneConst",
+        "beta_rain_city",
+        "beta_rain_city_sd",
+        "beta_rain_offset",
+        "beta_rain_population",
+        "city"
+      ],
+      "beta_trend_city": [
+        "NoneConst",
+        "beta_trend_city",
+        "beta_trend_city_sd",
+        "beta_trend_offset",
+        "beta_trend_population",
+        "city"
+      ]
+    }
+  },
+  "posteriors": [
+    {
+      "run_name": "A0",
+      "fold": "dev1",
+      "draws": 3000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00232412,
+      "min_ess_bulk": 1336.12362537,
+      "min_ess_tail": 2108.16290126,
+      "divergences": 0,
+      "rain_cities_interval_includes_zero": [
+        "Amiens",
+        "Creteil",
+        "Namur"
+      ]
+    },
+    {
+      "run_name": "A1",
+      "fold": "dev1",
+      "draws": 3000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00232542,
+      "min_ess_bulk": 1201.35143197,
+      "min_ess_tail": 1784.8441767,
+      "divergences": 0,
+      "rain_cities_interval_includes_zero": [
+        "Namur"
+      ]
+    },
+    {
+      "run_name": "M0",
+      "fold": "dev1",
+      "draws": 3000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00281408,
+      "min_ess_bulk": 1654.13705178,
+      "min_ess_tail": 2332.32743946,
+      "divergences": 0,
+      "rain_cities_interval_includes_zero": []
+    },
+    {
+      "run_name": "M0",
+      "fold": "dev2",
+      "draws": 3000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00282287,
+      "min_ess_bulk": 1257.90736032,
+      "min_ess_tail": 1638.99975706,
+      "divergences": 0,
+      "rain_cities_interval_includes_zero": []
+    },
+    {
+      "run_name": "M0",
+      "fold": "final",
+      "draws": 3000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00352375,
+      "min_ess_bulk": 1282.35709906,
+      "min_ess_tail": 1892.00125272,
+      "divergences": 0,
+      "rain_cities_interval_includes_zero": []
+    },
+    {
+      "run_name": "M0",
+      "fold": "full",
+      "draws": 3000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00259815,
+      "min_ess_bulk": 1428.74480894,
+      "min_ess_tail": 2176.0384246,
+      "divergences": 0,
+      "rain_cities_interval_includes_zero": []
+    },
+    {
+      "run_name": "M1",
+      "fold": "dev1",
+      "draws": 3000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00344721,
+      "min_ess_bulk": 969.72696863,
+      "min_ess_tail": 1386.22838568,
+      "divergences": 0,
+      "rain_cities_interval_includes_zero": [
+        "Namur"
+      ]
+    },
+    {
+      "run_name": "M1",
+      "fold": "dev2",
+      "draws": 3000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00516059,
+      "min_ess_bulk": 854.02083828,
+      "min_ess_tail": 1099.95394333,
+      "divergences": 0,
+      "rain_cities_interval_includes_zero": [
+        "Namur"
+      ]
+    },
+    {
+      "run_name": "M1",
+      "fold": "final",
+      "draws": 3000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00185083,
+      "min_ess_bulk": 1631.74475592,
+      "min_ess_tail": 2423.18200985,
+      "divergences": 0,
+      "rain_cities_interval_includes_zero": []
+    },
+    {
+      "run_name": "M1nt",
+      "fold": "dev1",
+      "draws": 3000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00281272,
+      "min_ess_bulk": 1257.97489093,
+      "min_ess_tail": 1832.35060567,
+      "divergences": 0,
+      "rain_cities_interval_includes_zero": [
+        "Namur"
+      ]
+    },
+    {
+      "run_name": "M1nt",
+      "fold": "dev2",
+      "draws": 3000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00772823,
+      "min_ess_bulk": 926.87567918,
+      "min_ess_tail": 1455.55730024,
+      "divergences": 0,
+      "rain_cities_interval_includes_zero": [
+        "Namur"
+      ]
+    },
+    {
+      "run_name": "M1nt",
+      "fold": "final",
+      "draws": 3000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00455854,
+      "min_ess_bulk": 833.25879088,
+      "min_ess_tail": 1224.19114086,
+      "divergences": 0,
+      "rain_cities_interval_includes_zero": []
+    },
+    {
+      "run_name": "M2",
+      "fold": "dev1",
+      "draws": 3000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00893642,
+      "min_ess_bulk": 581.47646226,
+      "min_ess_tail": 884.71987275,
+      "divergences": 0,
+      "initial_variance_inflation_median": 6.242951029703594,
+      "initial_variance_inflation_95": [
+        3.965212892096586,
+        14.0477590491984
+      ],
+      "rain_cities_interval_includes_zero": []
+    },
+    {
+      "run_name": "M2",
+      "fold": "dev2",
+      "draws": 4000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00417768,
+      "min_ess_bulk": 576.30122499,
+      "min_ess_tail": 908.4568964,
+      "divergences": 0,
+      "initial_variance_inflation_median": 3.937066009649728,
+      "initial_variance_inflation_95": [
+        3.0375373122976512,
+        5.6599642354964255
+      ],
+      "rain_cities_interval_includes_zero": []
+    },
+    {
+      "run_name": "M2",
+      "fold": "final",
+      "draws": 3000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00804264,
+      "min_ess_bulk": 426.65197074,
+      "min_ess_tail": 668.90998802,
+      "divergences": 0,
+      "initial_variance_inflation_median": 3.7421906014083315,
+      "initial_variance_inflation_95": [
+        3.014690469585447,
+        5.019485359478098
+      ],
+      "rain_cities_interval_includes_zero": []
+    },
+    {
+      "run_name": "M2",
+      "fold": "full",
+      "draws": 3000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00601795,
+      "min_ess_bulk": 911.11329754,
+      "min_ess_tail": 1078.45637145,
+      "divergences": 0,
+      "initial_variance_inflation_median": 3.6304172969802377,
+      "initial_variance_inflation_95": [
+        2.9791789979618364,
+        4.656683264097731
+      ],
+      "rain_cities_interval_includes_zero": []
+    },
+    {
+      "run_name": "M2_s05",
+      "fold": "dev1",
+      "draws": 2000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00954294,
+      "min_ess_bulk": 471.65672733,
+      "min_ess_tail": 713.62535189,
+      "divergences": 0,
+      "initial_variance_inflation_median": 6.309502502238585,
+      "initial_variance_inflation_95": [
+        3.9813550495185184,
+        14.228314380290245
+      ],
+      "rain_cities_interval_includes_zero": []
+    },
+    {
+      "run_name": "M2_s20",
+      "fold": "dev1",
+      "draws": 2000,
+      "constant_data_available": false,
+      "constant_data_fields": [],
+      "max_rhat": 1.00582282,
+      "min_ess_bulk": 754.56913561,
+      "min_ess_tail": 958.71359447,
+      "divergences": 0,
+      "initial_variance_inflation_median": 6.239058478476119,
+      "initial_variance_inflation_95": [
+        3.9584580754043994,
+        14.03617316453518
+      ],
+      "rain_cities_interval_includes_zero": []
+    }
+  ]
+}

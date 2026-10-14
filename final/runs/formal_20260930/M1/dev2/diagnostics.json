@@ -1,0 +1,69 @@
+{
+  "parameters": 380,
+  "max_rhat": 1.00516059,
+  "min_ess_bulk": 854.02083828,
+  "min_ess_tail": 1099.95394333,
+  "rhat_over_1_01": 0,
+  "ess_bulk_under_400": 0,
+  "ess_tail_under_400": 0,
+  "max_mcse_sd_ratio": 0.034261899769955986,
+  "divergences": 0,
+  "bfmi": [
+    0.6704786753213587,
+    0.6554993662947,
+    0.6807889081980174,
+    0.6731707607332535
+  ],
+  "bfmi_min": 0.6554993662947,
+  "depth_max": 9.0,
+  "depth_sum": 78922,
+  "maxdepth_reached_max": 0.0,
+  "maxdepth_reached_sum": 0,
+  "model": "M1",
+  "fold": "dev2",
+  "sampling_seconds": 189.8958330154419,
+  "validation_only": false,
+  "passed": true,
+  "worst_rhat": {
+    "weekday_raw[1]": {
+      "r_hat": 1.00516059,
+      "ess_bulk": 856.15470543,
+      "ess_tail": 1125.1038949
+    },
+    "weekday_raw[2]": {
+      "r_hat": 1.00509478,
+      "ess_bulk": 854.57305455,
+      "ess_tail": 1129.84854062
+    },
+    "weekday_raw[4]": {
+      "r_hat": 1.00509318,
+      "ess_bulk": 854.17776388,
+      "ess_tail": 1130.52328207
+    },
+    "weekday_raw[6]": {
+      "r_hat": 1.00508945,
+      "ess_bulk": 854.02083828,
+      "ess_tail": 1099.95394333
+    },
+    "weekday_raw[3]": {
+      "r_hat": 1.00501745,
+      "ess_bulk": 855.82977575,
+      "ess_tail": 1127.02909063
+    },
+    "weekday_raw[5]": {
+      "r_hat": 1.00500245,
+      "ess_bulk": 855.07020032,
+      "ess_tail": 1123.3117901
+    },
+    "weekday_raw[0]": {
+      "r_hat": 1.00500133,
+      "ess_bulk": 858.6825479,
+      "ess_tail": 1118.19950513
+    },
+    "beta_temp_sq_city[Namur]": {
+      "r_hat": 1.00144838,
+      "ess_bulk": 14429.36746089,
+      "ess_tail": 9560.1625768
+    }
+  }
+}

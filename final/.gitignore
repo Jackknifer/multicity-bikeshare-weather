@@ -1,0 +1,16 @@
+.venv/
+logs/*
+!logs/review-20261001/
+logs/review-20261001/*
+!logs/review-20261001/followup_checks.json
+!logs/review-20261001/recomputed_metrics.csv
+!logs/review-20261001/supplementary_final_baselines.csv
+!logs/review-20261001/independent_checks.json
+!logs/review-20261001/audit_followup.py
+!logs/review-20261001/audit_saved_results.py
+configs/paths.local.yaml
+report/build/
+slides/build/
+__pycache__/
+*.pyc
+.DS_Store

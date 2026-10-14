@@ -1,0 +1,10 @@
+# 从仓库的 final 目录运行，使用 BIKESHARE_PATHS 指向本文件。
+# 路径对应仓库内的数据、期中材料和课程考纲。
+project_root: ..
+midterm_root: ../midterm
+work_root: .
+data_csv: data/bikeshare_weather_daily.csv
+data_sha256: 6e30157ee8061f76142b95dd9ca7615bdea068f57c2fbd82796c7ac5e62af33e
+raw_zip: ../midterm/data/raw/bikeshare_weather_40cities.zip
+raw_zip_sha256: fcee01fe98b7f4a12b6ffef2e71262a7c048b113f8a41940c65d6c1d37157740
+syllabus_pdf: ../STA5001-syllabus.pdf

@@ -1,0 +1,69 @@
+{
+  "parameters": 474,
+  "max_rhat": 1.00804264,
+  "min_ess_bulk": 426.65197074,
+  "min_ess_tail": 668.90998802,
+  "rhat_over_1_01": 0,
+  "ess_bulk_under_400": 0,
+  "ess_tail_under_400": 0,
+  "max_mcse_sd_ratio": 0.04843010912640159,
+  "divergences": 0,
+  "bfmi": [
+    0.6252336216424428,
+    0.6197736712677187,
+    0.6353454756370014,
+    0.6268018607147948
+  ],
+  "bfmi_min": 0.6197736712677187,
+  "depth_max": 9.0,
+  "depth_sum": 74670,
+  "maxdepth_reached_max": 0.0,
+  "maxdepth_reached_sum": 0,
+  "model": "M2",
+  "fold": "final",
+  "sampling_seconds": 2502.00989484787,
+  "validation_only": false,
+  "passed": true,
+  "worst_rhat": {
+    "weekday_raw[6]": {
+      "r_hat": 1.00804264,
+      "ess_bulk": 427.07933101,
+      "ess_tail": 671.49361194
+    },
+    "weekday_raw[0]": {
+      "r_hat": 1.00799418,
+      "ess_bulk": 426.65197074,
+      "ess_tail": 676.80960552
+    },
+    "weekday_raw[4]": {
+      "r_hat": 1.00798895,
+      "ess_bulk": 427.19703204,
+      "ess_tail": 676.23412374
+    },
+    "weekday_raw[5]": {
+      "r_hat": 1.00797067,
+      "ess_bulk": 427.89212178,
+      "ess_tail": 688.1992175
+    },
+    "weekday_raw[1]": {
+      "r_hat": 1.00796276,
+      "ess_bulk": 426.6667383,
+      "ess_tail": 671.76093466
+    },
+    "weekday_raw[2]": {
+      "r_hat": 1.00793037,
+      "ess_bulk": 427.88872272,
+      "ess_tail": 668.90998802
+    },
+    "weekday_raw[3]": {
+      "r_hat": 1.00791016,
+      "ess_bulk": 427.16666577,
+      "ess_tail": 678.62612606
+    },
+    "beta_trend_city_sd": {
+      "r_hat": 1.005451,
+      "ess_bulk": 1745.22495256,
+      "ess_tail": 3320.28652152
+    }
+  }
+}

@@ -1,0 +1,517 @@
+{
+  "final_baselines_existing_implementation": [
+    {
+      "model": "city_ar_ols",
+      "task": "block",
+      "wis_log": 0.3616833906751863,
+      "coverage_90": 0.4945652173913045,
+      "mae_log": 0.5192001211633012
+    },
+    {
+      "model": "city_ar_ols",
+      "task": "one_step",
+      "wis_log": 0.19196211342737285,
+      "coverage_90": 0.68944099378882,
+      "mae_log": 0.3197077078600822
+    },
+    {
+      "model": "city_constant",
+      "task": "block",
+      "wis_log": 0.32136965308928106,
+      "coverage_90": 0.7282608695652174,
+      "mae_log": 0.5551006254387969
+    },
+    {
+      "model": "city_constant",
+      "task": "one_step",
+      "wis_log": 0.32136965308928106,
+      "coverage_90": 0.7282608695652174,
+      "mae_log": 0.5551006254387969
+    },
+    {
+      "model": "city_ols",
+      "task": "block",
+      "wis_log": 0.33478015569530034,
+      "coverage_90": 0.5799689440993789,
+      "mae_log": 0.5208160857117199
+    },
+    {
+      "model": "city_ols",
+      "task": "one_step",
+      "wis_log": 0.33478015569530034,
+      "coverage_90": 0.5799689440993789,
+      "mae_log": 0.5208160857117199
+    },
+    {
+      "model": "seasonal_naive_7",
+      "task": "block",
+      "wis_log": 0.24322936686543442,
+      "coverage_90": 0.7725155279503105,
+      "mae_log": 0.42521674111227037
+    },
+    {
+      "model": "seasonal_naive_7",
+      "task": "one_step",
+      "wis_log": 0.197708571854802,
+      "coverage_90": 0.8253105590062113,
+      "mae_log": 0.3421331914758805
+    }
+  ],
+  "ar_ols_variance_accumulation": [
+    {
+      "fold": "dev1",
+      "city": "Amiens",
+      "rho": 0.17659963803733358,
+      "innovation_uncertainty_factor_at_56": 1.0159682077872887
+    },
+    {
+      "fold": "dev1",
+      "city": "Besancon",
+      "rho": 0.16263206641639666,
+      "innovation_uncertainty_factor_at_56": 1.013492848563933
+    },
+    {
+      "fold": "dev1",
+      "city": "Brisbane",
+      "rho": 0.2525634184991875,
+      "innovation_uncertainty_factor_at_56": 1.033505907302054
+    },
+    {
+      "fold": "dev1",
+      "city": "Brussels",
+      "rho": 0.3519705899463156,
+      "innovation_uncertainty_factor_at_56": 1.0683634447217376
+    },
+    {
+      "fold": "dev1",
+      "city": "Cergy-Pontoise",
+      "rho": 0.3081743105961974,
+      "innovation_uncertainty_factor_at_56": 1.0511600564129766
+    },
+    {
+      "fold": "dev1",
+      "city": "Creteil",
+      "rho": 0.13790363506228634,
+      "innovation_uncertainty_factor_at_56": 1.0096465152488612
+    },
+    {
+      "fold": "dev1",
+      "city": "Dublin",
+      "rho": 0.32005895938971357,
+      "innovation_uncertainty_factor_at_56": 1.0555230160292142
+    },
+    {
+      "fold": "dev1",
+      "city": "Ljubljana",
+      "rho": 0.5115883087743054,
+      "innovation_uncertainty_factor_at_56": 1.1638317806799254
+    },
+    {
+      "fold": "dev1",
+      "city": "Lund",
+      "rho": 0.31830099162889186,
+      "innovation_uncertainty_factor_at_56": 1.054863777391933
+    },
+    {
+      "fold": "dev1",
+      "city": "Luxembourg",
+      "rho": 0.32816700457727954,
+      "innovation_uncertainty_factor_at_56": 1.0586270621693479
+    },
+    {
+      "fold": "dev1",
+      "city": "Lyon",
+      "rho": 0.42926429890090534,
+      "innovation_uncertainty_factor_at_56": 1.107200331805709
+    },
+    {
+      "fold": "dev1",
+      "city": "Marseille",
+      "rho": 0.29768816404305576,
+      "innovation_uncertainty_factor_at_56": 1.0474898765872986
+    },
+    {
+      "fold": "dev1",
+      "city": "Mulhouse",
+      "rho": 0.379472029196547,
+      "innovation_uncertainty_factor_at_56": 1.0808436348058086
+    },
+    {
+      "fold": "dev1",
+      "city": "Namur",
+      "rho": 0.15833752246539784,
+      "innovation_uncertainty_factor_at_56": 1.0127761242634243
+    },
+    {
+      "fold": "dev1",
+      "city": "Nancy",
+      "rho": 0.11263125693112758,
+      "innovation_uncertainty_factor_at_56": 1.006403893728211
+    },
+    {
+      "fold": "dev1",
+      "city": "Nantes",
+      "rho": 0.20968267358120507,
+      "innovation_uncertainty_factor_at_56": 1.0227359411353092
+    },
+    {
+      "fold": "dev1",
+      "city": "Paris",
+      "rho": 0.4807570160744091,
+      "innovation_uncertainty_factor_at_56": 1.1404408942171689
+    },
+    {
+      "fold": "dev1",
+      "city": "Rouen",
+      "rho": 0.21060601419311986,
+      "innovation_uncertainty_factor_at_56": 1.0229435770321156
+    },
+    {
+      "fold": "dev1",
+      "city": "Santander",
+      "rho": -0.05603417865481766,
+      "innovation_uncertainty_factor_at_56": 1.0015736212362885
+    },
+    {
+      "fold": "dev1",
+      "city": "Seville",
+      "rho": 0.5748429884191112,
+      "innovation_uncertainty_factor_at_56": 1.2220998661375386
+    },
+    {
+      "fold": "dev1",
+      "city": "Toulouse",
+      "rho": 0.3626199227393155,
+      "innovation_uncertainty_factor_at_56": 1.0730337711020532
+    },
+    {
+      "fold": "dev1",
+      "city": "Toyama",
+      "rho": 0.30369506232903515,
+      "innovation_uncertainty_factor_at_56": 1.0495720385532843
+    },
+    {
+      "fold": "dev1",
+      "city": "Valence",
+      "rho": 0.45355288060706483,
+      "innovation_uncertainty_factor_at_56": 1.1220456114855135
+    },
+    {
+      "fold": "dev2",
+      "city": "Amiens",
+      "rho": 0.3121748392540577,
+      "innovation_uncertainty_factor_at_56": 1.0526042467349703
+    },
+    {
+      "fold": "dev2",
+      "city": "Besancon",
+      "rho": 0.3262058963352017,
+      "innovation_uncertainty_factor_at_56": 1.0578666348440735
+    },
+    {
+      "fold": "dev2",
+      "city": "Brisbane",
+      "rho": 0.26876264240034603,
+      "innovation_uncertainty_factor_at_56": 1.0381990408616362
+    },
+    {
+      "fold": "dev2",
+      "city": "Brussels",
+      "rho": 0.3557436982799513,
+      "innovation_uncertainty_factor_at_56": 1.0699952879884334
+    },
+    {
+      "fold": "dev2",
+      "city": "Cergy-Pontoise",
+      "rho": 0.37962503929319086,
+      "innovation_uncertainty_factor_at_56": 1.0809169713118798
+    },
+    {
+      "fold": "dev2",
+      "city": "Creteil",
+      "rho": 0.19980763545759384,
+      "innovation_uncertainty_factor_at_56": 1.0205798459448803
+    },
+    {
+      "fold": "dev2",
+      "city": "Dublin",
+      "rho": 0.2845557547415396,
+      "innovation_uncertainty_factor_at_56": 1.0431232443709324
+    },
+    {
+      "fold": "dev2",
+      "city": "Ljubljana",
+      "rho": 0.5546314312257855,
+      "innovation_uncertainty_factor_at_56": 1.2017842165829462
+    },
+    {
+      "fold": "dev2",
+      "city": "Lund",
+      "rho": 0.4773908446167913,
+      "innovation_uncertainty_factor_at_56": 1.1380564158092918
+    },
+    {
+      "fold": "dev2",
+      "city": "Luxembourg",
+      "rho": 0.3291742320378598,
+      "innovation_uncertainty_factor_at_56": 1.0590200319753673
+    },
+    {
+      "fold": "dev2",
+      "city": "Lyon",
+      "rho": 0.5538518823765305,
+      "innovation_uncertainty_factor_at_56": 1.2010349856327018
+    },
+    {
+      "fold": "dev2",
+      "city": "Marseille",
+      "rho": 0.27676745453584756,
+      "innovation_uncertainty_factor_at_56": 1.0406510279170844
+    },
+    {
+      "fold": "dev2",
+      "city": "Mulhouse",
+      "rho": 0.4676049325465138,
+      "innovation_uncertainty_factor_at_56": 1.1313016148680357
+    },
+    {
+      "fold": "dev2",
+      "city": "Namur",
+      "rho": 0.21907201363522144,
+      "innovation_uncertainty_factor_at_56": 1.0248960653628036
+    },
+    {
+      "fold": "dev2",
+      "city": "Nancy",
+      "rho": 0.3106747767049921,
+      "innovation_uncertainty_factor_at_56": 1.0520598432431187
+    },
+    {
+      "fold": "dev2",
+      "city": "Nantes",
+      "rho": 0.22143856582325827,
+      "innovation_uncertainty_factor_at_56": 1.0254576804540785
+    },
+    {
+      "fold": "dev2",
+      "city": "Paris",
+      "rho": 0.5338092711308652,
+      "innovation_uncertainty_factor_at_56": 1.182585376936432
+    },
+    {
+      "fold": "dev2",
+      "city": "Rouen",
+      "rho": 0.2447517710759975,
+      "innovation_uncertainty_factor_at_56": 1.0313682689990284
+    },
+    {
+      "fold": "dev2",
+      "city": "Santander",
+      "rho": 0.06723133330316718,
+      "innovation_uncertainty_factor_at_56": 1.0022677166392884
+    },
+    {
+      "fold": "dev2",
+      "city": "Seville",
+      "rho": 0.6484884118379088,
+      "innovation_uncertainty_factor_at_56": 1.3136728589480746
+    },
+    {
+      "fold": "dev2",
+      "city": "Toulouse",
+      "rho": 0.4022194982260413,
+      "innovation_uncertainty_factor_at_56": 1.0922476688440148
+    },
+    {
+      "fold": "dev2",
+      "city": "Toyama",
+      "rho": 0.31376559706087676,
+      "innovation_uncertainty_factor_at_56": 1.0531853615630447
+    },
+    {
+      "fold": "dev2",
+      "city": "Valence",
+      "rho": 0.5110611362775576,
+      "innovation_uncertainty_factor_at_56": 1.1634070805430867
+    },
+    {
+      "fold": "final",
+      "city": "Amiens",
+      "rho": 0.44176709705049033,
+      "innovation_uncertainty_factor_at_56": 1.1146659364447724
+    },
+    {
+      "fold": "final",
+      "city": "Besancon",
+      "rho": 0.39006221064528174,
+      "innovation_uncertainty_factor_at_56": 1.086025720398495
+    },
+    {
+      "fold": "final",
+      "city": "Brisbane",
+      "rho": 0.26753391671030713,
+      "innovation_uncertainty_factor_at_56": 1.037830538266982
+    },
+    {
+      "fold": "final",
+      "city": "Brussels",
+      "rho": 0.4334323855027194,
+      "innovation_uncertainty_factor_at_56": 1.1096487308103977
+    },
+    {
+      "fold": "final",
+      "city": "Cergy-Pontoise",
+      "rho": 0.4601690441051061,
+      "innovation_uncertainty_factor_at_56": 1.1263400813810178
+    },
+    {
+      "fold": "final",
+      "city": "Creteil",
+      "rho": 0.20331993978679785,
+      "innovation_uncertainty_factor_at_56": 1.0213332471423973
+    },
+    {
+      "fold": "final",
+      "city": "Dublin",
+      "rho": 0.06607632648815516,
+      "innovation_uncertainty_factor_at_56": 1.0021902150684243
+    },
+    {
+      "fold": "final",
+      "city": "Ljubljana",
+      "rho": 0.5218500865816516,
+      "innovation_uncertainty_factor_at_56": 1.1722818002600417
+    },
+    {
+      "fold": "final",
+      "city": "Lund",
+      "rho": 0.4957128803382392,
+      "innovation_uncertainty_factor_at_56": 1.151428421799352
+    },
+    {
+      "fold": "final",
+      "city": "Luxembourg",
+      "rho": 0.39102570332417935,
+      "innovation_uncertainty_factor_at_56": 1.0865080322221956
+    },
+    {
+      "fold": "final",
+      "city": "Lyon",
+      "rho": 0.6113504750486403,
+      "innovation_uncertainty_factor_at_56": 1.2636474452451212
+    },
+    {
+      "fold": "final",
+      "city": "Marseille",
+      "rho": 0.27334943140147755,
+      "innovation_uncertainty_factor_at_56": 1.0395931082621
+    },
+    {
+      "fold": "final",
+      "city": "Mulhouse",
+      "rho": 0.537265515714502,
+      "innovation_uncertainty_factor_at_56": 1.1856585151757486
+    },
+    {
+      "fold": "final",
+      "city": "Namur",
+      "rho": 0.2748238127233766,
+      "innovation_uncertainty_factor_at_56": 1.0400474393553936
+    },
+    {
+      "fold": "final",
+      "city": "Nancy",
+      "rho": 0.3969155192536259,
+      "innovation_uncertainty_factor_at_56": 1.0894965326999673
+    },
+    {
+      "fold": "final",
+      "city": "Nantes",
+      "rho": 0.31597563080194857,
+      "innovation_uncertainty_factor_at_56": 1.0539992196025545
+    },
+    {
+      "fold": "final",
+      "city": "Paris",
+      "rho": 0.6412111228825086,
+      "innovation_uncertainty_factor_at_56": 1.3031616435096334
+    },
+    {
+      "fold": "final",
+      "city": "Rouen",
+      "rho": 0.33419007914406884,
+      "innovation_uncertainty_factor_at_56": 1.0610015430011286
+    },
+    {
+      "fold": "final",
+      "city": "Santander",
+      "rho": 0.11713335418778009,
+      "innovation_uncertainty_factor_at_56": 1.006931519945001
+    },
+    {
+      "fold": "final",
+      "city": "Seville",
+      "rho": 0.7009270175242073,
+      "innovation_uncertainty_factor_at_56": 1.4020663601510956
+    },
+    {
+      "fold": "final",
+      "city": "Toulouse",
+      "rho": 0.5101845783043708,
+      "innovation_uncertainty_factor_at_56": 1.1627029039813004
+    },
+    {
+      "fold": "final",
+      "city": "Toyama",
+      "rho": 0.2906207081275639,
+      "innovation_uncertainty_factor_at_56": 1.0451086258402407
+    },
+    {
+      "fold": "final",
+      "city": "Valence",
+      "rho": 0.527010783062499,
+      "innovation_uncertainty_factor_at_56": 1.1766663345861237
+    }
+  ],
+  "predictive_integration_stability": [
+    {
+      "fold": "dev1",
+      "sample_cap": 800,
+      "paths": 200,
+      "seed": 31,
+      "wis_new": 0.12653191223341323,
+      "wis_original": 0.1264857924867516,
+      "mean_log_density_new": -0.24493606540923324,
+      "mean_log_density_original": -0.2417968502511167,
+      "density_stability_max_abs": 0.12562425079984685
+    },
+    {
+      "fold": "final",
+      "sample_cap": 800,
+      "paths": 200,
+      "seed": 31,
+      "wis_new": 0.33730593107990553,
+      "wis_original": 0.33942381017529577,
+      "mean_log_density_new": -1.5100819479680672,
+      "mean_log_density_original": -1.5234159574994972,
+      "density_stability_max_abs": 0.3630469968517058
+    }
+  ],
+  "joint_prior_predictive": {
+    "draws": 1000,
+    "seed": 27,
+    "negative_joint_response_fraction": 0.034974166482667254,
+    "negative_intercept_fraction": 0.011478260869565217,
+    "log_response_quantiles": [
+      -5.8952455462964295,
+      0.8084402334786814,
+      6.906128208032673,
+      12.982168321813857,
+      19.455656196732317
+    ],
+    "observed_log_response_range": [
+      0.0,
+      11.64845673151316
+    ]
+  }
+}

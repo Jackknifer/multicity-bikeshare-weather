@@ -1,0 +1,23 @@
+% 交付用文档输入，由人工依据已保存的正式结果整理，不通过 src/make_report_inputs.py 写出。
+% 来源：logs/review-20261001/recomputed_metrics.csv 中 dev1 与 dev2 的 city_equal_mae_log，
+% 该表由独立核验脚本从已保存的逐日预测复算。整理日期 2026-10-01。
+% 全部数值在 log(1 + usage) 尺度上计算，城市等权汇总，越低越好。
+% 基线在多步任务上的区间未累计未来创新，因此本表只用于点预测比较。
+\begin{tabular}{llrr}
+\toprule
+Fold & Method & Block MAE & One-step MAE \\
+\midrule
+dev 1 & City constant & 0.3757 & 0.3757 \\
+dev 1 & Seasonal naive, 7-day lag & 0.2602 & 0.2298 \\
+dev 1 & City OLS, parameter uncertainty & 0.3314 & 0.3314 \\
+dev 1 & City AR-OLS & 0.3309 & 0.2553 \\
+dev 1 & M0 & 0.2571 & 0.2571 \\
+dev 1 & M2 & 0.2503 & 0.2104 \\
+dev 2 & City constant & 0.3665 & 0.3665 \\
+dev 2 & Seasonal naive, 7-day lag & 0.2664 & 0.2405 \\
+dev 2 & City OLS, parameter uncertainty & 0.3131 & 0.3131 \\
+dev 2 & City AR-OLS & 0.3110 & 0.2278 \\
+dev 2 & M0 & 0.3701 & 0.3701 \\
+dev 2 & M2 & 0.3239 & 0.2540 \\
+\bottomrule
+\end{tabular}

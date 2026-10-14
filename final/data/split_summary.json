@@ -1,0 +1,17 @@
+{
+  "dev1": {
+    "train_rows": 4529,
+    "test_rows": 1288,
+    "after_cutoff_rows": 2576
+  },
+  "dev2": {
+    "train_rows": 5817,
+    "test_rows": 1288,
+    "after_cutoff_rows": 1288
+  },
+  "final": {
+    "train_rows": 7105,
+    "test_rows": 1288,
+    "after_cutoff_rows": 0
+  }
+}

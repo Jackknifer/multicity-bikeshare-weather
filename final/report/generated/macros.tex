@@ -1,0 +1,187 @@
+% 交付用文档输入，由人工依据已保存的正式结果整理，不通过 src/make_report_inputs.py 写出。
+% 整理日期 2026-10-01。运行标识 formal_20260930。
+% 数值来源：runs/formal_20260930/<model>/<fold>/ 下的 effects.json、diagnostics.json、
+% metrics_overall.json、residual_summary.json、prior_predictive.json；
+% tables/paired_comparison.json；logs/review-20261001/ 下的独立核验记录。
+% 宏名中的 MZero / MOne / MTwo 分别对应 M0 / M1 / M2，Sel 表示开发窗口选定的模型。
+
+% ---------------------------------------------------------------- 选模与数据范围
+\newcommand{\SelModel}{M2}
+\newcommand{\PanelCityCount}{29}
+\newcommand{\PanelRows}{10{,}578}
+\newcommand{\CityCount}{25}
+\newcommand{\PredCityCount}{23}
+\newcommand{\PrimaryRows}{9{,}120}
+\newcommand{\PredictionRows}{8{,}393}
+\newcommand{\DevOneTrain}{4{,}529}
+\newcommand{\DevTwoTrain}{5{,}817}
+\newcommand{\FinalTrain}{7{,}105}
+\newcommand{\TestRows}{1{,}288}
+\newcommand{\BlockDays}{56}
+\newcommand{\SelDevMeanWis}{0.1421}
+\newcommand{\MOneDevMeanWis}{0.1606}
+\newcommand{\MZeroDevMeanWis}{0.1692}
+\newcommand{\SelGapToMOne}{13.1}
+\newcommand{\SelGapToMZero}{19.1}
+
+% ---------------------------------------------------------------- 采样与收敛
+\newcommand{\CoreFits}{11}
+\newcommand{\CoreMaxRhat}{1.00894}
+\newcommand{\CoreMinEss}{426.7}
+\newcommand{\CoreMinTailEss}{668.9}
+\newcommand{\WarmupDraws}{3{,}000}
+
+% ---------------------------------------------------------------- 时间相关诊断（开发折 1）
+\newcommand{\MZeroDevOneLagOne}{0.317}
+\newcommand{\MOneDevOneLagOne}{0.329}
+\newcommand{\MTwoDevOneLagOne}{0.066}
+\newcommand{\MTwoDevTwoLagOne}{-0.003}
+\newcommand{\MTwoFinalLagOne}{-0.036}
+\newcommand{\MZeroDevOneTrainCov}{90.1}
+\newcommand{\MTwoDevOneTrainCov}{90.8}
+
+% ---------------------------------------------------------------- 全期关联：M0（25 城市）
+\newcommand{\RainMZeroMed}{-19.98}
+\newcommand{\RainMZeroLo}{-21.07}
+\newcommand{\RainMZeroHi}{-18.89}
+\newcommand{\RainSupportMZeroMed}{-16.40}
+\newcommand{\RainSupportMZeroLo}{-17.28}
+\newcommand{\RainSupportMZeroHi}{-15.53}
+\newcommand{\TempMZeroMed}{5.22}
+\newcommand{\TempMZeroLo}{3.67}
+\newcommand{\TempMZeroHi}{6.76}
+\newcommand{\TempSupportMZeroMed}{19.89}
+\newcommand{\TempSupportMZeroLo}{17.44}
+\newcommand{\TempSupportMZeroHi}{22.47}
+\newcommand{\PeakCitiesMZero}{15}
+\newcommand{\ExtrapCitiesMZero}{1}
+\newcommand{\RainMZeroMinPNeg}{0.998}
+\newcommand{\RainMZeroCityMin}{-33.84}
+\newcommand{\RainMZeroCityMax}{-8.03}
+
+% ---------------------------------------------------------------- 全期关联：M2（25 城市）
+\newcommand{\RainMTwoMed}{-20.21}
+\newcommand{\RainMTwoLo}{-21.37}
+\newcommand{\RainMTwoHi}{-18.99}
+\newcommand{\RainSupportMTwoMed}{-16.99}
+\newcommand{\RainSupportMTwoLo}{-18.02}
+\newcommand{\RainSupportMTwoHi}{-15.95}
+\newcommand{\TempMTwoMed}{6.16}
+\newcommand{\TempMTwoLo}{4.12}
+\newcommand{\TempMTwoHi}{8.32}
+\newcommand{\TempSupportMTwoMed}{14.04}
+\newcommand{\TempSupportMTwoLo}{11.11}
+\newcommand{\TempSupportMTwoHi}{17.27}
+\newcommand{\PeakCitiesMTwo}{5}
+\newcommand{\ExtrapCitiesMTwo}{1}
+\newcommand{\RainMTwoMinPNeg}{0.984}
+\newcommand{\RainMTwoCityMin}{-36.18}
+\newcommand{\RainMTwoCityMax}{-10.05}
+\newcommand{\PhiMTwoMed}{0.498}
+\newcommand{\PhiMTwoLo}{0.147}
+\newcommand{\PhiMTwoHi}{0.912}
+\newcommand{\NuMTwoMed}{2.76}
+\newcommand{\NuMTwoLo}{2.55}
+\newcommand{\NuMTwoHi}{3.01}
+\newcommand{\ObsUtciMinC}{-37.8}
+\newcommand{\ObsUtciMaxC}{34.3}
+
+% ---------------------------------------------------------------- 预测评分（56 天块预测，城市等权 WIS）
+\newcommand{\MZeroDevOneWis}{0.1338}
+\newcommand{\MZeroDevTwoWis}{0.2046}
+\newcommand{\MZeroFinalWis}{0.1957}
+\newcommand{\MOneDevOneWis}{0.1320}
+\newcommand{\MOneDevTwoWis}{0.1893}
+\newcommand{\MOneFinalWis}{0.3690}
+\newcommand{\MTwoDevOneWis}{0.1265}
+\newcommand{\MTwoDevTwoWis}{0.1577}
+\newcommand{\MTwoFinalWis}{0.3394}
+\newcommand{\MTwoDevOneStepWis}{0.1084}
+\newcommand{\MTwoDevTwoStepWis}{0.1238}
+\newcommand{\MTwoFinalStepWis}{0.2085}
+\newcommand{\MZeroFinalStepWis}{0.1957}
+\newcommand{\MZeroFinalStepCov}{75.7}
+\newcommand{\MTwoFinalBlockCov}{60.5}
+\newcommand{\MTwoFinalStepCov}{72.0}
+\newcommand{\MZeroFinalBlockCov}{75.5}
+\newcommand{\MTwoFinalBlockWidth}{1.095}
+\newcommand{\MZeroFinalBlockWidth}{0.844}
+
+% ---------------------------------------------------------------- 配对区间（M2 减 M0，7 日区块）
+\newcommand{\PairDevOneLo}{-0.0153}
+\newcommand{\PairDevOneHi}{0.0011}
+\newcommand{\PairDevTwoLo}{-0.0675}
+\newcommand{\PairDevTwoHi}{-0.0231}
+
+% ---------------------------------------------------------------- 末段基线点预测（对数尺度 MAE）
+\newcommand{\BaseConstFinalMae}{0.5551}
+\newcommand{\BaseNaiveFinalMaeBlock}{0.4252}
+\newcommand{\BaseNaiveFinalMaeStep}{0.3421}
+\newcommand{\BaseOlsFinalMae}{0.5208}
+\newcommand{\BaseArOlsFinalMaeBlock}{0.5192}
+\newcommand{\BaseArOlsFinalMaeStep}{0.3197}
+\newcommand{\MZeroFinalMaeBlock}{0.3207}
+\newcommand{\MZeroFinalMaeStep}{0.3207}
+\newcommand{\MTwoFinalMaeBlock}{0.5547}
+\newcommand{\MTwoFinalMaeStep}{0.3601}
+
+% ---------------------------------------------------------------- 开发折 1 基线点预测
+\newcommand{\BaseConstDevOneMae}{0.3757}
+\newcommand{\BaseNaiveDevOneMaeBlock}{0.2602}
+\newcommand{\BaseNaiveDevOneMaeStep}{0.2298}
+\newcommand{\BaseOlsDevOneMae}{0.3314}
+\newcommand{\BaseArOlsDevOneMaeBlock}{0.3309}
+\newcommand{\BaseArOlsDevOneMaeStep}{0.2553}
+\newcommand{\MZeroDevOneMaeBlock}{0.2571}
+\newcommand{\MTwoDevOneMaeBlock}{0.2503}
+\newcommand{\MTwoDevOneMaeStep}{0.2104}
+
+% ---------------------------------------------------------------- 先验与先验预测
+\newcommand{\PriorNegIntercept}{1.15}
+\newcommand{\PriorNegJoint}{3.50}
+\newcommand{\PriorLogLow}{-5.90}
+\newcommand{\PriorLogHigh}{19.46}
+\newcommand{\ObsLogHigh}{11.65}
+\newcommand{\TrainNegative}{0.056}
+
+% ---------------------------------------------------------------- 天气先验尺度敏感性（M2，开发折 1）
+\newcommand{\SensRainBase}{-18.18}
+\newcommand{\SensRainHalf}{-18.17}
+\newcommand{\SensRainDouble}{-18.15}
+\newcommand{\SensTempBase}{7.49}
+\newcommand{\SensTempHalf}{7.46}
+\newcommand{\SensTempDouble}{7.49}
+
+% ---------------------------------------------------------------- 预测积分稳定性（M2）
+\newcommand{\IntegDevOneWis}{0.1265}
+\newcommand{\IntegFinalWis}{0.3373}
+\newcommand{\IntegDevOneWisNew}{0.12653}
+\newcommand{\IntegDevOneWisSaved}{0.12649}
+\newcommand{\IntegFinalWisNew}{0.33731}
+\newcommand{\IntegFinalWisSaved}{0.33942}
+\newcommand{\IntegFinalDensity}{-1.510}
+\newcommand{\DensityStabilityDevOne}{0.126}
+\newcommand{\DensityStabilityFinal}{0.363}
+
+% ---------------------------------------------------------------- 开发折 1 的关联（用于说明规格依赖）
+\newcommand{\RainMZeroDevOneMed}{-18.17}
+\newcommand{\RainMOneDevOneMed}{-17.94}
+\newcommand{\RainMTwoDevOneMed}{-18.18}
+\newcommand{\TempMZeroDevOneMed}{11.35}
+\newcommand{\TempMZeroDevOneLo}{9.72}
+\newcommand{\TempMZeroDevOneHi}{12.99}
+\newcommand{\TempMOneDevOneMed}{10.07}
+\newcommand{\TempMOneDevOneLo}{8.25}
+\newcommand{\TempMOneDevOneHi}{12.01}
+\newcommand{\TempMTwoDevOneMed}{7.49}
+\newcommand{\TempMTwoDevOneLo}{5.47}
+\newcommand{\TempMTwoDevOneHi}{9.65}
+
+% ---------------------------------------------------------------- 城市趋势（M2，末段折）
+\newcommand{\TrendCityMedian}{0.17}
+\newcommand{\TrendCityMin}{0.06}
+\newcommand{\TrendCityMax}{0.39}
+\newcommand{\TrendWindowLow}{1.55}
+\newcommand{\TrendWindowHigh}{2.10}
+\newcommand{\TrendLogLow}{0.26}
+\newcommand{\TrendLogHigh}{0.36}

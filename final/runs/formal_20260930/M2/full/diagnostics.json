@@ -1,0 +1,69 @@
+{
+  "parameters": 511,
+  "max_rhat": 1.00601795,
+  "min_ess_bulk": 911.11329754,
+  "min_ess_tail": 1078.45637145,
+  "rhat_over_1_01": 0,
+  "ess_bulk_under_400": 0,
+  "ess_tail_under_400": 0,
+  "max_mcse_sd_ratio": 0.03320931495079551,
+  "divergences": 0,
+  "bfmi": [
+    0.6800492144142003,
+    0.6906757765476187,
+    0.710094403250925,
+    0.706407681065701
+  ],
+  "bfmi_min": 0.6800492144142003,
+  "depth_max": 6.0,
+  "depth_sum": 60006,
+  "maxdepth_reached_max": 0.0,
+  "maxdepth_reached_sum": 0,
+  "model": "M2",
+  "fold": "full",
+  "sampling_seconds": 795.4240210056305,
+  "validation_only": false,
+  "passed": true,
+  "worst_rhat": {
+    "beta_cos_population": {
+      "r_hat": 1.00601795,
+      "ess_bulk": 1157.97172779,
+      "ess_tail": 1934.80218153
+    },
+    "beta_sin_city_sd": {
+      "r_hat": 1.00569468,
+      "ess_bulk": 974.05949639,
+      "ess_tail": 1078.45637145
+    },
+    "z_offset[Brisbane]": {
+      "r_hat": 1.0044688,
+      "ess_bulk": 1377.85927637,
+      "ess_tail": 2458.63456934
+    },
+    "z_offset[Nantes]": {
+      "r_hat": 1.00391856,
+      "ess_bulk": 1232.64335724,
+      "ess_tail": 2023.73281173
+    },
+    "z_offset[Creteil]": {
+      "r_hat": 1.00391152,
+      "ess_bulk": 1449.42370464,
+      "ess_tail": 2544.9512919
+    },
+    "beta_cos_offset[Lyon]": {
+      "r_hat": 1.00388792,
+      "ess_bulk": 2260.23385652,
+      "ess_tail": 3903.63286534
+    },
+    "z_offset[Rouen]": {
+      "r_hat": 1.00365576,
+      "ess_bulk": 1423.40742866,
+      "ess_tail": 2524.09388164
+    },
+    "z_offset[Melbourne]": {
+      "r_hat": 1.00360698,
+      "ess_bulk": 1550.26404446,
+      "ess_tail": 3041.04863913
+    }
+  }
+}

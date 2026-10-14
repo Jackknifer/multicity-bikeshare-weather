@@ -1,0 +1,69 @@
+{
+  "parameters": 366,
+  "max_rhat": 1.00282287,
+  "min_ess_bulk": 1257.90736032,
+  "min_ess_tail": 1638.99975706,
+  "rhat_over_1_01": 0,
+  "ess_bulk_under_400": 0,
+  "ess_tail_under_400": 0,
+  "max_mcse_sd_ratio": 0.028229056417766546,
+  "divergences": 0,
+  "bfmi": [
+    0.6985418137050206,
+    0.7366810359967647,
+    0.6990776985426447,
+    0.7164167983036961
+  ],
+  "bfmi_min": 0.6985418137050206,
+  "depth_max": 8.0,
+  "depth_sum": 73648,
+  "maxdepth_reached_max": 0.0,
+  "maxdepth_reached_sum": 0,
+  "model": "M0",
+  "fold": "dev2",
+  "sampling_seconds": 223.88175630569458,
+  "validation_only": false,
+  "passed": true,
+  "worst_rhat": {
+    "beta_sin_population": {
+      "r_hat": 1.00282287,
+      "ess_bulk": 1899.30208603,
+      "ess_tail": 2697.95757295
+    },
+    "beta_weekend_offset[Marseille]": {
+      "r_hat": 1.00268233,
+      "ess_bulk": 1325.30671418,
+      "ess_tail": 2087.79953336
+    },
+    "beta_cos_population": {
+      "r_hat": 1.00261024,
+      "ess_bulk": 2470.62871842,
+      "ess_tail": 3633.16805083
+    },
+    "log_sigma_city_sd": {
+      "r_hat": 1.00260315,
+      "ess_bulk": 3602.73133247,
+      "ess_tail": 5507.40224188
+    },
+    "beta_sin_offset[Brussels]": {
+      "r_hat": 1.00252354,
+      "ess_bulk": 2362.10082125,
+      "ess_tail": 3250.3339215
+    },
+    "beta_weekend_offset[Paris]": {
+      "r_hat": 1.0024446,
+      "ess_bulk": 1331.02897875,
+      "ess_tail": 1995.21090243
+    },
+    "beta_cos_offset[Dublin]": {
+      "r_hat": 1.00240108,
+      "ess_bulk": 2886.81899521,
+      "ess_tail": 4459.56281451
+    },
+    "beta_weekend_offset[Brisbane]": {
+      "r_hat": 1.00237184,
+      "ess_bulk": 1345.95390201,
+      "ess_tail": 2060.60684469
+    }
+  }
+}

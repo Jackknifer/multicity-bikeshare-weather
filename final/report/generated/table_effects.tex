@@ -1,0 +1,22 @@
+% 交付用文档输入，由人工依据已保存的正式结果整理，不通过 src/make_report_inputs.py 写出。
+% 来源：runs/formal_20260930/M0/full/effects.json 与 runs/formal_20260930/M2/full/effects.json。
+% 字段：rain_10mm_city_equal_percent、rain_support_city_equal_percent、
+% temp_10c_city_equal_percent、temp_support_city_equal_percent、
+% cities_with_interior_maximum_probability_above_0_95、cities_with_temp_10c_outside_support。
+% 整理日期 2026-10-01。区间为 95% 后验可信区间。
+\begin{tabular}{lrr}
+\toprule
+Contrast & M0 & M2 \\
+\midrule
+Precipitation: city median $+10$ mm & $-19.98$ & $-20.21$ \\
+ & $[-21.07,\,-18.89]$ & $[-21.37,\,-18.99]$ \\
+Precipitation: median to 90th percentile & $-16.40$ & $-16.99$ \\
+ & $[-17.28,\,-15.53]$ & $[-18.02,\,-15.95]$ \\
+UTCI: city mean $+10^\circ$C & $5.22$ & $6.16$ \\
+ & $[3.67,\,6.76]$ & $[4.12,\,8.32]$ \\
+UTCI: 25th to 75th percentile & $19.89$ & $14.04$ \\
+ & $[17.44,\,22.47]$ & $[11.11,\,17.27]$ \\
+Cities with interior peak, $P>0.95$ & 15 of 25 & 5 of 25 \\
+Cities leaving the observed range at $+10^\circ$C & 1 of 25 & 1 of 25 \\
+\bottomrule
+\end{tabular}

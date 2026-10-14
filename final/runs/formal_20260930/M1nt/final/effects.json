@@ -1,0 +1,754 @@
+{
+  "model": "M1nt",
+  "fold": "final",
+  "sample_cap": 4000,
+  "rain_step_mm": 10.0,
+  "rain_baseline_definition": "city training-period median daily precipitation",
+  "temp_baseline_definition": "city training-period mean daily UTCI, evaluated at T = 0 so that a +10 C step gives delta T = 1 and delta Q = 1",
+  "rain_10mm_city_equal_percent": {
+    "median": -19.764924326120763,
+    "q025": -21.133821323031835,
+    "q975": -18.296621916897628
+  },
+  "temp_10c_city_equal_percent": {
+    "median": 3.527593705022917,
+    "q025": 1.6397361873984913,
+    "q975": 5.465780984255333
+  },
+  "rain_support_city_equal_percent": {
+    "median": -15.755310124041243,
+    "q025": -16.861909007110842,
+    "q975": -14.602632711276257
+  },
+  "temp_support_city_equal_percent": {
+    "median": 14.274095359910865,
+    "q025": 11.670743356620806,
+    "q975": 17.08694415141358
+  },
+  "rain_support_definition": "city training median to 90th percentile of daily precipitation",
+  "temp_support_definition": "city training 25th to 75th percentile of daily UTCI",
+  "p_population_rain_negative": 1.0,
+  "p_population_temp_positive": 1.0,
+  "beta_rain_population_interval": {
+    "median": -0.08722585834964788,
+    "q025": -0.10298625725017271,
+    "q975": -0.07322880263840618
+  },
+  "beta_temp_population_interval": {
+    "median": 0.09708355149408113,
+    "q025": 0.06403280909192609,
+    "q975": 0.13266596953944526
+  },
+  "beta_temp_sq_population_interval": {
+    "median": -0.06816686108303377,
+    "q025": -0.08431009144406348,
+    "q975": -0.05234177976900535
+  },
+  "nu_interval": {
+    "median": 3.5824845447519724,
+    "q025": 3.230963614702953,
+    "q975": 3.970911608581837
+  },
+  "beta_rain_city_sd_interval": {
+    "median": 0.029776912857648413,
+    "q025": 0.019465177140947133,
+    "q975": 0.04708179468192303
+  },
+  "beta_temp_city_sd_interval": {
+    "median": 0.07343388055649148,
+    "q025": 0.046933337213444205,
+    "q975": 0.11688432648165623
+  },
+  "beta_temp_sq_city_sd_interval": {
+    "median": 0.032280986029119774,
+    "q025": 0.020860872521646288,
+    "q975": 0.049765926575323784
+  },
+  "beta_rain_moderator_interval": {
+    "median": -0.012205994300948172,
+    "q025": -0.027752740293954293,
+    "q975": 0.002812782363750632
+  },
+  "beta_temp_moderator_interval": {
+    "median": -0.03213797707728332,
+    "q025": -0.06827904786733505,
+    "q975": 0.005889487551346477
+  },
+  "beta_temp_sq_moderator_interval": {
+    "median": -0.04611891828604306,
+    "q025": -0.06347736850738829,
+    "q975": -0.028197924135625496
+  },
+  "cities": [
+    {
+      "city": "Amiens",
+      "rain_10mm_percent": {
+        "median": -14.737912924482856,
+        "q025": -22.80194296054347,
+        "q975": -5.306938698878278
+      },
+      "rain_support_percent": {
+        "median": -10.916164681805189,
+        "q025": -17.10735945179362,
+        "q975": -3.876195922814355
+      },
+      "temp_10c_percent": {
+        "median": 10.185692931488443,
+        "q025": 0.038277643355223274,
+        "q975": 21.163442567169373
+      },
+      "p_rain_negative": 0.9985,
+      "p_concave_temperature": 0.90525,
+      "p_interior_temperature_maximum": 0.395,
+      "temperature_maximum_c_conditional": {
+        "median": 20.38465334586578,
+        "q025": 11.674179989357343,
+        "q975": 27.082142271570685
+      },
+      "observed_utci_min_c": -16.71632983287175,
+      "observed_utci_max_c": 27.443821390469868,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Besancon",
+      "rain_10mm_percent": {
+        "median": -22.675088951023437,
+        "q025": -28.019228930450268,
+        "q975": -17.07393974806159
+      },
+      "rain_support_percent": {
+        "median": -21.479546531231236,
+        "q025": -26.593315878057386,
+        "q975": -16.142425818031935
+      },
+      "temp_10c_percent": {
+        "median": 7.533969176233976,
+        "q025": 0.065424091144306,
+        "q975": 16.376425385645216
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 1.0,
+      "p_interior_temperature_maximum": 0.7745,
+      "temperature_maximum_c_conditional": {
+        "median": 22.15051672926198,
+        "q025": 15.424045785088751,
+        "q975": 28.824501273543017
+      },
+      "observed_utci_min_c": -21.381755550702405,
+      "observed_utci_max_c": 29.378934542338055,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Brisbane",
+      "rain_10mm_percent": {
+        "median": -20.913865190558496,
+        "q025": -26.610920296382165,
+        "q975": -14.589947506369548
+      },
+      "rain_support_percent": {
+        "median": -16.546700077982702,
+        "q025": -21.220616049112966,
+        "q975": -11.447891994478367
+      },
+      "temp_10c_percent": {
+        "median": -12.658043826222766,
+        "q025": -20.667196542097184,
+        "q975": -3.648505412140134
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 1.0,
+      "p_interior_temperature_maximum": 1.0,
+      "temperature_maximum_c_conditional": {
+        "median": 20.411246427345326,
+        "q025": 18.12678745738075,
+        "q975": 22.994007128887915
+      },
+      "observed_utci_min_c": 5.171907424926761,
+      "observed_utci_max_c": 31.192846298217784,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Brussels",
+      "rain_10mm_percent": {
+        "median": -19.45077035171132,
+        "q025": -22.818432506918555,
+        "q975": -16.01534683830512
+      },
+      "rain_support_percent": {
+        "median": -14.481338735415802,
+        "q025": -17.08242485592143,
+        "q975": -11.858749196879138
+      },
+      "temp_10c_percent": {
+        "median": 6.223957055603632,
+        "q025": 2.4654247413123733,
+        "q975": 10.040683402296468
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 1.0,
+      "p_interior_temperature_maximum": 0.975,
+      "temperature_maximum_c_conditional": {
+        "median": 18.959415523701296,
+        "q025": 14.944265026835795,
+        "q975": 24.212249789823474
+      },
+      "observed_utci_min_c": -17.37270740667979,
+      "observed_utci_max_c": 25.547147512435913,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Cergy-Pontoise",
+      "rain_10mm_percent": {
+        "median": -18.553459632964454,
+        "q025": -25.085459096936763,
+        "q975": -11.583759026301413
+      },
+      "rain_support_percent": {
+        "median": -14.136753880266891,
+        "q025": -19.305609665287754,
+        "q975": -8.737856172511519
+      },
+      "temp_10c_percent": {
+        "median": 8.903448264364377,
+        "q025": 1.7394858620113607,
+        "q975": 16.642560336600916
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 0.99975,
+      "p_interior_temperature_maximum": 0.79725,
+      "temperature_maximum_c_conditional": {
+        "median": 22.102780986462257,
+        "q025": 15.482995637353902,
+        "q975": 28.295403057551184
+      },
+      "observed_utci_min_c": -14.8132645090421,
+      "observed_utci_max_c": 28.863629897435505,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Creteil",
+      "rain_10mm_percent": {
+        "median": -22.07877005939691,
+        "q025": -30.721576851411772,
+        "q975": -12.616816339949493
+      },
+      "rain_support_percent": {
+        "median": -17.642438649581358,
+        "q025": -24.841470274692103,
+        "q975": -9.961485974230282
+      },
+      "temp_10c_percent": {
+        "median": 16.975010011304754,
+        "q025": 5.867516862340889,
+        "q975": 30.551096083832604
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 0.9165,
+      "p_interior_temperature_maximum": 0.25225,
+      "temperature_maximum_c_conditional": {
+        "median": 25.346483998114095,
+        "q025": 17.384834591468938,
+        "q975": 29.63259928308345
+      },
+      "observed_utci_min_c": -15.87336321671804,
+      "observed_utci_max_c": 29.850712855656937,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Dublin",
+      "rain_10mm_percent": {
+        "median": -9.442491614078293,
+        "q025": -12.00595825745623,
+        "q975": -6.743377227855567
+      },
+      "rain_support_percent": {
+        "median": -7.565356403395592,
+        "q025": -9.646854164254998,
+        "q975": -5.386843023858204
+      },
+      "temp_10c_percent": {
+        "median": 4.273785542780974,
+        "q025": 0.9707064214817127,
+        "q975": 7.700334062868186
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 0.794,
+      "p_interior_temperature_maximum": 0.193,
+      "temperature_maximum_c_conditional": {
+        "median": 15.763378477539163,
+        "q025": 9.43164932015197,
+        "q975": 19.750666634253097
+      },
+      "observed_utci_min_c": -17.7877376874288,
+      "observed_utci_max_c": 19.965886910756435,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Ljubljana",
+      "rain_10mm_percent": {
+        "median": -30.187901531781,
+        "q025": -35.00822626810516,
+        "q975": -24.701795811563912
+      },
+      "rain_support_percent": {
+        "median": -30.000766401096634,
+        "q025": -34.79927179655978,
+        "q975": -24.54248903267845
+      },
+      "temp_10c_percent": {
+        "median": 0.00982644458347385,
+        "q025": -7.562716283957676,
+        "q975": 8.492778968951026
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 1.0,
+      "p_interior_temperature_maximum": 1.0,
+      "temperature_maximum_c_conditional": {
+        "median": 15.46571541238103,
+        "q025": 12.171834297000935,
+        "q975": 19.955153563718124
+      },
+      "observed_utci_min_c": -25.692314465840663,
+      "observed_utci_max_c": 28.86592483520508,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Lund",
+      "rain_10mm_percent": {
+        "median": -17.296036569684208,
+        "q025": -24.542859015344376,
+        "q975": -9.667821223336649
+      },
+      "rain_support_percent": {
+        "median": -14.915550850997224,
+        "q025": -21.299892242117025,
+        "q975": -8.284898670794785
+      },
+      "temp_10c_percent": {
+        "median": 3.339109767033359,
+        "q025": -7.9773882400818135,
+        "q975": 14.944905032501879
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 0.977,
+      "p_interior_temperature_maximum": 0.781,
+      "temperature_maximum_c_conditional": {
+        "median": 9.494265808780462,
+        "q025": 1.263638808747725,
+        "q975": 18.83960394627798
+      },
+      "observed_utci_min_c": -24.902579943339035,
+      "observed_utci_max_c": 20.020978132883712,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Luxembourg",
+      "rain_10mm_percent": {
+        "median": -24.61731826330916,
+        "q025": -29.711547346096065,
+        "q975": -19.10042969921746
+      },
+      "rain_support_percent": {
+        "median": -19.28820054188804,
+        "q025": -23.458916684543343,
+        "q975": -14.847558225862159
+      },
+      "temp_10c_percent": {
+        "median": 16.292165044880257,
+        "q025": 9.229638490877637,
+        "q975": 23.50001097265078
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 1.0,
+      "p_interior_temperature_maximum": 0.40675,
+      "temperature_maximum_c_conditional": {
+        "median": 23.39799526325292,
+        "q025": 18.46332950272846,
+        "q975": 26.02120885301061
+      },
+      "observed_utci_min_c": -19.905784447987873,
+      "observed_utci_max_c": 26.12081893285115,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Lyon",
+      "rain_10mm_percent": {
+        "median": -17.811164747566437,
+        "q025": -22.46121574241356,
+        "q975": -12.65061631119211
+      },
+      "rain_support_percent": {
+        "median": -14.956021808675375,
+        "q025": -18.949950637915812,
+        "q975": -10.569374593503897
+      },
+      "temp_10c_percent": {
+        "median": 0.26200668264270477,
+        "q025": -4.941620873530566,
+        "q975": 5.7199278049026345
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 1.0,
+      "p_interior_temperature_maximum": 1.0,
+      "temperature_maximum_c_conditional": {
+        "median": 16.594595595746355,
+        "q025": 13.346993813847488,
+        "q975": 20.891433780553587
+      },
+      "observed_utci_min_c": -22.066827535629276,
+      "observed_utci_max_c": 29.312934080759693,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Marseille",
+      "rain_10mm_percent": {
+        "median": -23.315748373272257,
+        "q025": -28.716538692251866,
+        "q975": -17.514784289438833
+      },
+      "rain_support_percent": {
+        "median": -11.57136318655145,
+        "q025": -14.512894926027933,
+        "q975": -8.533247669674546
+      },
+      "temp_10c_percent": {
+        "median": 4.2758400626653845,
+        "q025": -0.46926291344846166,
+        "q975": 8.856534729869587
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 0.99725,
+      "p_interior_temperature_maximum": 0.5465,
+      "temperature_maximum_c_conditional": {
+        "median": 20.80358408798544,
+        "q025": 13.901261943170285,
+        "q975": 25.727285662648633
+      },
+      "observed_utci_min_c": -20.50360989570618,
+      "observed_utci_max_c": 26.05191842714947,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Mulhouse",
+      "rain_10mm_percent": {
+        "median": -16.29103190240361,
+        "q025": -21.216298141992507,
+        "q975": -10.657631630082218
+      },
+      "rain_support_percent": {
+        "median": -13.07469509453127,
+        "q025": -17.13055836840479,
+        "q975": -8.497179563878088
+      },
+      "temp_10c_percent": {
+        "median": 4.998144484571839,
+        "q025": -1.3977108863394336,
+        "q975": 11.910077056890895
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 1.0,
+      "p_interior_temperature_maximum": 0.91975,
+      "temperature_maximum_c_conditional": {
+        "median": 20.0055529507314,
+        "q025": 14.626397315065145,
+        "q975": 26.566896216176133
+      },
+      "observed_utci_min_c": -19.30015023549397,
+      "observed_utci_max_c": 27.55324943860371,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Namur",
+      "rain_10mm_percent": {
+        "median": -13.016588426208088,
+        "q025": -20.800328304464795,
+        "q975": -4.062375491640441
+      },
+      "rain_support_percent": {
+        "median": -10.215817585240664,
+        "q025": -16.489893563615233,
+        "q975": -3.153915651995098
+      },
+      "temp_10c_percent": {
+        "median": 11.353102622597536,
+        "q025": 1.9073995060883122,
+        "q975": 21.825542147335902
+      },
+      "p_rain_negative": 0.9985,
+      "p_concave_temperature": 0.9955,
+      "p_interior_temperature_maximum": 0.619,
+      "temperature_maximum_c_conditional": {
+        "median": 19.96128682858819,
+        "q025": 12.971829081461319,
+        "q975": 25.7141932567512
+      },
+      "observed_utci_min_c": -19.073904375235227,
+      "observed_utci_max_c": 25.972781141599015,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Nancy",
+      "rain_10mm_percent": {
+        "median": -18.87147886971789,
+        "q025": -24.566002227654387,
+        "q975": -13.214420828373923
+      },
+      "rain_support_percent": {
+        "median": -14.996912930803965,
+        "q025": -19.669794212392112,
+        "q975": -10.426736794415339
+      },
+      "temp_10c_percent": {
+        "median": 5.96061027763435,
+        "q025": -0.25462629463422526,
+        "q975": 12.421655364820854
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 0.99875,
+      "p_interior_temperature_maximum": 0.6985,
+      "temperature_maximum_c_conditional": {
+        "median": 20.864857529693005,
+        "q025": 12.6591169997616,
+        "q975": 27.338775878862073
+      },
+      "observed_utci_min_c": -23.20006771882375,
+      "observed_utci_max_c": 27.796196540196735,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Nantes",
+      "rain_10mm_percent": {
+        "median": -17.825628403154433,
+        "q025": -21.69017062481315,
+        "q975": -13.766044741116398
+      },
+      "rain_support_percent": {
+        "median": -13.420089144074574,
+        "q025": -16.427782950169544,
+        "q975": -10.300846081559127
+      },
+      "temp_10c_percent": {
+        "median": 3.3473114493974956,
+        "q025": -0.5308919880141327,
+        "q975": 7.653868387491011
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 1.0,
+      "p_interior_temperature_maximum": 0.9865,
+      "temperature_maximum_c_conditional": {
+        "median": 18.999354836398364,
+        "q025": 14.737744602440813,
+        "q975": 25.83122251055385
+      },
+      "observed_utci_min_c": -15.403033792972572,
+      "observed_utci_max_c": 28.374589999516804,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Paris",
+      "rain_10mm_percent": {
+        "median": -18.978446337142298,
+        "q025": -23.59402606500094,
+        "q975": -13.97491348421942
+      },
+      "rain_support_percent": {
+        "median": -14.7835183126713,
+        "q025": -18.499485048573742,
+        "q975": -10.812105391544586
+      },
+      "temp_10c_percent": {
+        "median": 1.5897430864971323,
+        "q025": -3.4820571622630703,
+        "q975": 6.7020578319642015
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 1.0,
+      "p_interior_temperature_maximum": 0.97675,
+      "temperature_maximum_c_conditional": {
+        "median": 16.65719050358312,
+        "q025": 10.810569839143108,
+        "q975": 26.33363094076544
+      },
+      "observed_utci_min_c": -15.552176475524904,
+      "observed_utci_max_c": 29.53113929430644,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Rouen",
+      "rain_10mm_percent": {
+        "median": -16.291237549049022,
+        "q025": -20.908955321177963,
+        "q975": -11.437248193514046
+      },
+      "rain_support_percent": {
+        "median": -13.635024790122408,
+        "q025": -17.581794572954642,
+        "q975": -9.527324783826518
+      },
+      "temp_10c_percent": {
+        "median": 12.09696263434715,
+        "q025": 6.7943193319440365,
+        "q975": 17.800412507817498
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 0.99975,
+      "p_interior_temperature_maximum": 0.42325,
+      "temperature_maximum_c_conditional": {
+        "median": 24.245705909332735,
+        "q025": 18.729777145800202,
+        "q975": 27.497493901115476
+      },
+      "observed_utci_min_c": -14.55939316749572,
+      "observed_utci_max_c": 27.66164032618205,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Santander",
+      "rain_10mm_percent": {
+        "median": -32.68144062576497,
+        "q025": -40.86077450678959,
+        "q975": -25.049597381157568
+      },
+      "rain_support_percent": {
+        "median": -31.08130738869121,
+        "q025": -38.98768660700933,
+        "q975": -23.755660696105828
+      },
+      "temp_10c_percent": {
+        "median": 13.988693825337112,
+        "q025": 0.01582485359599567,
+        "q975": 31.653026807200256
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 0.9995,
+      "p_interior_temperature_maximum": 0.69525,
+      "temperature_maximum_c_conditional": {
+        "median": 23.78411863558729,
+        "q025": 18.08304270774539,
+        "q975": 28.306045757582503
+      },
+      "observed_utci_min_c": -6.783613840738929,
+      "observed_utci_max_c": 28.586117267608643,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Seville",
+      "rain_10mm_percent": {
+        "median": -20.051285027488806,
+        "q025": -27.122087138747457,
+        "q975": -12.138247038690686
+      },
+      "rain_support_percent": {
+        "median": -7.857295342729659,
+        "q025": -10.925112777647996,
+        "q975": -4.621777122930568
+      },
+      "temp_10c_percent": {
+        "median": -23.653259593548007,
+        "q025": -30.424904145984883,
+        "q975": -16.321054465422986
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 1.0,
+      "p_interior_temperature_maximum": 1.0,
+      "temperature_maximum_c_conditional": {
+        "median": 18.694054788590925,
+        "q025": 16.791762459087916,
+        "q975": 20.441730781330868
+      },
+      "observed_utci_min_c": -5.17429490884145,
+      "observed_utci_max_c": 34.31713247299195,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Toulouse",
+      "rain_10mm_percent": {
+        "median": -14.874465861740154,
+        "q025": -19.818396385569905,
+        "q975": -9.859573780463299
+      },
+      "rain_support_percent": {
+        "median": -13.230801196032605,
+        "q025": -17.687397099886844,
+        "q975": -8.741542054577
+      },
+      "temp_10c_percent": {
+        "median": -1.500518754677184,
+        "q025": -6.135292401007634,
+        "q975": 3.314865019616631
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 1.0,
+      "p_interior_temperature_maximum": 1.0,
+      "temperature_maximum_c_conditional": {
+        "median": 16.11996067633706,
+        "q025": 12.705740838173407,
+        "q975": 20.65279011443229
+      },
+      "observed_utci_min_c": -13.755540132522585,
+      "observed_utci_max_c": 31.242847283681225,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Toyama",
+      "rain_10mm_percent": {
+        "median": -21.64137890168852,
+        "q025": -25.4804103810741,
+        "q975": -17.862660741073245
+      },
+      "rain_support_percent": {
+        "median": -27.109420400554484,
+        "q025": -31.705766319011456,
+        "q975": -22.519546613123495
+      },
+      "temp_10c_percent": {
+        "median": 4.687697848709064,
+        "q025": -4.093548663413581,
+        "q975": 15.389541103926115
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 1.0,
+      "p_interior_temperature_maximum": 0.9995,
+      "temperature_maximum_c_conditional": {
+        "median": 19.889616039398014,
+        "q025": 16.03510740738954,
+        "q975": 25.233548648642206
+      },
+      "observed_utci_min_c": -9.48073919614156,
+      "observed_utci_max_c": 30.9031728108724,
+      "temp_10c_within_observed_support": true
+    },
+    {
+      "city": "Valence",
+      "rain_10mm_percent": {
+        "median": -23.591796602883672,
+        "q025": -30.632738772901654,
+        "q975": -15.568268486791828
+      },
+      "rain_support_percent": {
+        "median": -9.824255074134484,
+        "q025": -13.113082933354693,
+        "q975": -6.296559766456735
+      },
+      "temp_10c_percent": {
+        "median": -19.768017042366075,
+        "q025": -25.759799970526995,
+        "q975": -13.333169009228513
+      },
+      "p_rain_negative": 1.0,
+      "p_concave_temperature": 1.0,
+      "p_interior_temperature_maximum": 1.0,
+      "temperature_maximum_c_conditional": {
+        "median": 16.067312850345054,
+        "q025": 14.239312412790675,
+        "q975": 18.151211647811486
+      },
+      "observed_utci_min_c": -9.889741341272984,
+      "observed_utci_max_c": 32.2254327138265,
+      "temp_10c_within_observed_support": true
+    }
+  ],
+  "cities_with_interior_maximum_probability_above_0_95": 10,
+  "cities_with_concave_probability_above_0_95": 20,
+  "cities_with_temp_10c_outside_support": 0
+}

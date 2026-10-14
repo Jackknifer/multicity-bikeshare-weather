@@ -1,0 +1,48 @@
+{
+  "run_id": "formal_20260930",
+  "criterion": "city-equal weighted interval score on the log1p scale, block task",
+  "development_folds": [
+    "dev1",
+    "dev2"
+  ],
+  "wis_relative_tolerance": 0.02,
+  "selected_model": "M2",
+  "table": [
+    {
+      "model": "M0",
+      "dev_mean_wis": 0.16920647817510448,
+      "dev_mean_density": -0.7756050750270109,
+      "wis_dev1": 0.13381725438405007,
+      "density_dev1": -0.4082569579655756,
+      "wis_dev2": 0.2045957019661589,
+      "density_dev2": -1.1429531920884464,
+      "all_diagnostics_passed": true,
+      "relative_gap_to_best": 0.19084329938104916,
+      "within_tolerance": false
+    },
+    {
+      "model": "M1",
+      "dev_mean_wis": 0.1606357227619652,
+      "dev_mean_density": -0.5577549804841371,
+      "wis_dev1": 0.13198931900554642,
+      "density_dev1": -0.32002041993391916,
+      "wis_dev2": 0.189282126518384,
+      "density_dev2": -0.7954895410343551,
+      "all_diagnostics_passed": true,
+      "relative_gap_to_best": 0.13052393829956288,
+      "within_tolerance": false
+    },
+    {
+      "model": "M2",
+      "dev_mean_wis": 0.14208962527903626,
+      "dev_mean_density": -0.39055669779803426,
+      "wis_dev1": 0.1264857924867516,
+      "density_dev1": -0.2417968502511167,
+      "wis_dev2": 0.15769345807132093,
+      "density_dev2": -0.5393165453449519,
+      "all_diagnostics_passed": true,
+      "relative_gap_to_best": 0.0,
+      "within_tolerance": true
+    }
+  ]
+}

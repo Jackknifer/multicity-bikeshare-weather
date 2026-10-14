@@ -1,0 +1,48 @@
+{
+  "run_id": "formal_20260930",
+  "task": "block",
+  "first_model": "M2",
+  "second_model": "M0",
+  "folds": {
+    "dev1": {
+      "block_7": {
+        "observed_city_equal_wis_difference": -0.007331461897298414,
+        "bootstrap_mean": -0.007334227042489553,
+        "q025": -0.015293028902247367,
+        "q975": 0.0011029699603827643,
+        "block_days": 7,
+        "draws": 2000,
+        "note": "positive values mean the first model has the larger weighted interval score"
+      },
+      "block_14": {
+        "observed_city_equal_wis_difference": -0.007331461897298414,
+        "bootstrap_mean": -0.007664082940935476,
+        "q025": -0.018596916051283455,
+        "q975": 0.003933992256686616,
+        "block_days": 14,
+        "draws": 2000,
+        "note": "positive values mean the first model has the larger weighted interval score"
+      }
+    },
+    "dev2": {
+      "block_7": {
+        "observed_city_equal_wis_difference": -0.04690224389483799,
+        "bootstrap_mean": -0.04698489972316877,
+        "q025": -0.06752097877052828,
+        "q975": -0.023146744371274883,
+        "block_days": 7,
+        "draws": 2000,
+        "note": "positive values mean the first model has the larger weighted interval score"
+      },
+      "block_14": {
+        "observed_city_equal_wis_difference": -0.04690224389483799,
+        "bootstrap_mean": -0.04677574993737406,
+        "q025": -0.07240981368330904,
+        "q975": -0.020721277667320473,
+        "block_days": 14,
+        "draws": 2000,
+        "note": "positive values mean the first model has the larger weighted interval score"
+      }
+    }
+  }
+}

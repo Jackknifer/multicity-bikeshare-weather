@@ -1,0 +1,69 @@
+{
+  "parameters": 474,
+  "max_rhat": 1.00893642,
+  "min_ess_bulk": 581.47646226,
+  "min_ess_tail": 884.71987275,
+  "rhat_over_1_01": 0,
+  "ess_bulk_under_400": 0,
+  "ess_tail_under_400": 0,
+  "max_mcse_sd_ratio": 0.04151181416822319,
+  "divergences": 0,
+  "bfmi": [
+    0.6755011130382493,
+    0.654838797803456,
+    0.7359917329703113,
+    0.651127099489964
+  ],
+  "bfmi_min": 0.651127099489964,
+  "depth_max": 8.0,
+  "depth_sum": 75857,
+  "maxdepth_reached_max": 0.0,
+  "maxdepth_reached_sum": 0,
+  "model": "M2",
+  "fold": "dev1",
+  "sampling_seconds": 1490.1650340557098,
+  "validation_only": false,
+  "passed": true,
+  "worst_rhat": {
+    "weekday_raw[3]": {
+      "r_hat": 1.00893642,
+      "ess_bulk": 581.47646226,
+      "ess_tail": 902.19669646
+    },
+    "weekday_raw[4]": {
+      "r_hat": 1.00890634,
+      "ess_bulk": 582.73728825,
+      "ess_tail": 916.02063581
+    },
+    "weekday_raw[5]": {
+      "r_hat": 1.00885164,
+      "ess_bulk": 585.08866713,
+      "ess_tail": 927.10513698
+    },
+    "weekday_raw[2]": {
+      "r_hat": 1.00882452,
+      "ess_bulk": 581.80136358,
+      "ess_tail": 894.53073034
+    },
+    "weekday_raw[6]": {
+      "r_hat": 1.00877471,
+      "ess_bulk": 582.20189994,
+      "ess_tail": 884.71987275
+    },
+    "weekday_raw[1]": {
+      "r_hat": 1.00873724,
+      "ess_bulk": 583.18637182,
+      "ess_tail": 897.26869941
+    },
+    "weekday_raw[0]": {
+      "r_hat": 1.00873622,
+      "ess_bulk": 582.00162982,
+      "ess_tail": 907.69685505
+    },
+    "beta_temp_offset[Cergy-Pontoise]": {
+      "r_hat": 1.00157827,
+      "ess_bulk": 18218.40670603,
+      "ess_tail": 9816.32302859
+    }
+  }
+}

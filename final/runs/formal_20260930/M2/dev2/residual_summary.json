@@ -1,0 +1,12 @@
+{
+  "model": "M2",
+  "fold": "dev2",
+  "residual_kind": "innovation",
+  "lag1_median": -0.003352264280216623,
+  "lag1_min": -0.21117931217415511,
+  "lag1_max": 0.19328521583970873,
+  "cities_lag1_above_0_5": 0,
+  "training_coverage_90": 0.9063090940347258,
+  "negative_log_prediction_fraction": 0.00038441421695031803,
+  "training_log_residual_rmse": 0.29859936532489206
+}

@@ -1,0 +1,37 @@
+{
+  "roster": "prediction",
+  "roster_rule": "continuous_system == 1 in the frozen input and observed study period spanning 2017-01-02 through 2017-12-31",
+  "city_count": 23,
+  "predictive_task": {
+    "block_days": 56,
+    "block_start_offset": 1,
+    "weather_input": "actual future weather",
+    "state_update": "posterior predictive recursion, no future usage observed"
+  },
+  "folds": {
+    "dev1": {
+      "cutoff": "2017-07-16",
+      "test_start": "2017-07-17",
+      "test_end": "2017-09-10",
+      "role": "development"
+    },
+    "dev2": {
+      "cutoff": "2017-09-10",
+      "test_start": "2017-09-11",
+      "test_end": "2017-11-05",
+      "role": "development"
+    },
+    "final": {
+      "cutoff": "2017-11-05",
+      "test_start": "2017-11-06",
+      "test_end": "2017-12-31",
+      "role": "locked_final"
+    }
+  },
+  "development_folds": ["dev1", "dev2"],
+  "final_fold": "final",
+  "notes": [
+    "dev2 reuses observations that fell inside the dev1 test window; the training window expands.",
+    "The final fold was inspected in the archived midterm holdout and in full-period association analysis, so it is a pre-specified repeated evaluation, not an untouched blind test set."
+  ]
+}

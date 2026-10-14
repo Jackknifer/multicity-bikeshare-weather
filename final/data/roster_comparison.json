@@ -1,0 +1,9 @@
+{
+  "primary_not_prediction": [
+    "Kaohsiung",
+    "Melbourne"
+  ],
+  "prediction_not_primary": [],
+  "prediction_rows": 8393,
+  "primary_rows": 9120
+}

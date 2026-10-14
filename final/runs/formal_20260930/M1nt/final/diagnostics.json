@@ -1,0 +1,69 @@
+{
+  "parameters": 332,
+  "max_rhat": 1.00455854,
+  "min_ess_bulk": 833.25879088,
+  "min_ess_tail": 1224.19114086,
+  "rhat_over_1_01": 0,
+  "ess_bulk_under_400": 0,
+  "ess_tail_under_400": 0,
+  "max_mcse_sd_ratio": 0.03458815104243519,
+  "divergences": 0,
+  "bfmi": [
+    0.6847470378023988,
+    0.7299923575978982,
+    0.7552885027919204,
+    0.7343617301322843
+  ],
+  "bfmi_min": 0.6847470378023988,
+  "depth_max": 9.0,
+  "depth_sum": 70436,
+  "maxdepth_reached_max": 0.0,
+  "maxdepth_reached_sum": 0,
+  "model": "M1nt",
+  "fold": "final",
+  "sampling_seconds": 308.0738580226898,
+  "validation_only": false,
+  "passed": true,
+  "worst_rhat": {
+    "weekday_raw[4]": {
+      "r_hat": 1.00455854,
+      "ess_bulk": 833.25879088,
+      "ess_tail": 1231.34630966
+    },
+    "weekday_raw[1]": {
+      "r_hat": 1.0045582,
+      "ess_bulk": 836.08665363,
+      "ess_tail": 1224.19114086
+    },
+    "weekday_raw[0]": {
+      "r_hat": 1.00454997,
+      "ess_bulk": 836.79806868,
+      "ess_tail": 1248.12141678
+    },
+    "weekday_raw[6]": {
+      "r_hat": 1.00451871,
+      "ess_bulk": 837.02816649,
+      "ess_tail": 1233.12776608
+    },
+    "weekday_raw[2]": {
+      "r_hat": 1.00447896,
+      "ess_bulk": 836.63584692,
+      "ess_tail": 1235.66401534
+    },
+    "weekday_raw[3]": {
+      "r_hat": 1.00447464,
+      "ess_bulk": 835.52947522,
+      "ess_tail": 1243.12216772
+    },
+    "weekday_raw[5]": {
+      "r_hat": 1.0044624,
+      "ess_bulk": 835.83261474,
+      "ess_tail": 1241.0925484
+    },
+    "beta_cos_population": {
+      "r_hat": 1.00370697,
+      "ess_bulk": 2467.0067432,
+      "ess_tail": 3452.96848868
+    }
+  }
+}

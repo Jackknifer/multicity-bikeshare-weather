@@ -1,0 +1,12 @@
+{
+  "model": "M2",
+  "fold": "full",
+  "residual_kind": "innovation",
+  "lag1_median": -0.004162759133506657,
+  "lag1_min": -0.275466264845563,
+  "lag1_max": 0.2629207277227558,
+  "cities_lag1_above_0_5": 0,
+  "training_coverage_90": 0.9028508771929824,
+  "negative_log_prediction_fraction": 0.0004058018092105263,
+  "training_log_residual_rmse": 0.3339343589041309
+}

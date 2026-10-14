@@ -1,0 +1,69 @@
+{
+  "parameters": 331,
+  "max_rhat": 1.00772823,
+  "min_ess_bulk": 926.87567918,
+  "min_ess_tail": 1455.55730024,
+  "rhat_over_1_01": 0,
+  "ess_bulk_under_400": 0,
+  "ess_tail_under_400": 0,
+  "max_mcse_sd_ratio": 0.03284272944014205,
+  "divergences": 0,
+  "bfmi": [
+    0.6807021444049703,
+    0.7212217353125662,
+    0.7390701427172114,
+    0.7239442275430804
+  ],
+  "bfmi_min": 0.6807021444049703,
+  "depth_max": 7.0,
+  "depth_sum": 63147,
+  "maxdepth_reached_max": 0.0,
+  "maxdepth_reached_sum": 0,
+  "model": "M1nt",
+  "fold": "dev2",
+  "sampling_seconds": 67.39748501777649,
+  "validation_only": false,
+  "passed": true,
+  "worst_rhat": {
+    "beta_cos_population": {
+      "r_hat": 1.00772823,
+      "ess_bulk": 1003.32121466,
+      "ess_tail": 1691.10511502
+    },
+    "beta_cos_offset[Dublin]": {
+      "r_hat": 1.00602385,
+      "ess_bulk": 1143.89738055,
+      "ess_tail": 2015.92898085
+    },
+    "beta_cos_offset[Brussels]": {
+      "r_hat": 1.00562996,
+      "ess_bulk": 1360.7053084,
+      "ess_tail": 2363.03920012
+    },
+    "beta_cos_offset[Marseille]": {
+      "r_hat": 1.00517975,
+      "ess_bulk": 1593.89397593,
+      "ess_tail": 2664.83241212
+    },
+    "beta_cos_offset[Paris]": {
+      "r_hat": 1.00473974,
+      "ess_bulk": 1718.47345828,
+      "ess_tail": 3081.12638637
+    },
+    "beta_cos_offset[Nantes]": {
+      "r_hat": 1.00458576,
+      "ess_bulk": 1334.96249045,
+      "ess_tail": 2296.79638281
+    },
+    "beta_cos_offset[Luxembourg]": {
+      "r_hat": 1.00428653,
+      "ess_bulk": 2238.93985557,
+      "ess_tail": 3921.06433009
+    },
+    "beta_cos_offset[Brisbane]": {
+      "r_hat": 1.00417901,
+      "ess_bulk": 1828.83764696,
+      "ess_tail": 3094.38657191
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "parameters": 281,
+  "max_rhat": 1.00232412,
+  "min_ess_bulk": 1336.12362537,
+  "min_ess_tail": 2108.16290126,
+  "rhat_over_1_01": 0,
+  "ess_bulk_under_400": 0,
+  "ess_tail_under_400": 0,
+  "max_mcse_sd_ratio": 0.027366625856287418,
+  "divergences": 0,
+  "bfmi": [
+    0.9221464777414449,
+    0.8040372690787722,
+    0.7738306145243442,
+    0.8433233928163485
+  ],
+  "bfmi_min": 0.7738306145243442,
+  "depth_max": 9.0,
+  "depth_sum": 84525,
+  "maxdepth_reached_max": 0.0,
+  "maxdepth_reached_sum": 0,
+  "model": "A0",
+  "fold": "dev1",
+  "sampling_seconds": 1392.3025410175323,
+  "validation_only": false,
+  "passed": true,
+  "worst_rhat": {
+    "beta_temp_city[Ljubljana]": {
+      "r_hat": 1.00232412,
+      "ess_bulk": 18430.95380325,
+      "ess_tail": 8194.22476714
+    },
+    "weekday_raw[2]": {
+      "r_hat": 1.00222382,
+      "ess_bulk": 1338.30920451,
+      "ess_tail": 2159.47021308
+    },
+    "weekday_raw[3]": {
+      "r_hat": 1.00220375,
+      "ess_bulk": 1337.58251239,
+      "ess_tail": 2119.71088151
+    },
+    "weekday_raw[1]": {
+      "r_hat": 1.00216663,
+      "ess_bulk": 1338.20005833,
+      "ess_tail": 2152.83513102
+    },
+    "weekday_raw[0]": {
+      "r_hat": 1.00216069,
+      "ess_bulk": 1337.50843116,
+      "ess_tail": 2165.03622299
+    },
+    "weekday_raw[6]": {
+      "r_hat": 1.00215972,
+      "ess_bulk": 1346.02286713,
+      "ess_tail": 2108.16290126
+    },
+    "weekday_raw[5]": {
+      "r_hat": 1.00214027,
+      "ess_bulk": 1343.66799756,
+      "ess_tail": 2173.75436004
+    },
+    "weekday_raw[4]": {
+      "r_hat": 1.00213209,
+      "ess_bulk": 1336.12362537,
+      "ess_tail": 2172.52709992
+    }
+  }
+}

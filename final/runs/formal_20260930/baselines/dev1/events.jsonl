@@ -1,0 +1,1 @@
+{"tag": "BASELINES", "time_utc": "2026-09-30T14:32:09.996783+00:00", "payload": {"fold": "dev1", "block": {"city_constant": 0.1858, "seasonal_naive_7": 0.13918, "city_ols": 0.16784, "city_ar_ols": 0.19052}}}
