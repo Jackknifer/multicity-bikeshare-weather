@@ -10,7 +10,6 @@ import yaml
 WORK_ROOT = Path(__file__).resolve().parents[1]
 CONFIG_DIR = WORK_ROOT / "configs"
 DEFAULT_PATHS_FILE = CONFIG_DIR / "paths.local.yaml"
-EXAMPLE_PATHS_FILE = CONFIG_DIR / "paths.example.yaml"
 
 
 def load_paths(path=None):

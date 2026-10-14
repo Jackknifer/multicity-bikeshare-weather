@@ -5,12 +5,12 @@ import subprocess
 import sys
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
+from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from common import WORK_ROOT, read_json
+from common import WORK_ROOT, load_paths, read_json, verify_frozen_input
 
 RESULTS = []
 
@@ -77,10 +77,10 @@ def main(argv=None):
     parser.add_argument("--run-id", default="formal_20260930")
     parser.add_argument("--out", default=None)
     args = parser.parse_args(argv)
-    out = Path(args.out) if args.out else WORK_ROOT / "docs" / "deliverable_verification.json"
+    out = Path(args.out) if args.out else WORK_ROOT / "docs" / "deliverable-verification.json"
 
     for relative in (
-        "configs/paths.local.yaml", "configs/splits.json", "configs/models.json",
+        "configs/paths.github.yaml", "configs/splits.json", "configs/models.json",
         "data/city_data_audit.csv", "data/split_index.csv", "data/split_summary.json",
         "data/integrity_report.json",
         "docs/course_requirements.md", "docs/data_audit.md", "docs/analysis_protocol.md",
@@ -90,6 +90,10 @@ def main(argv=None):
         "README.md", "requirements.txt",
     ):
         check(f"exists {relative}", (WORK_ROOT / relative).exists())
+
+    paths = load_paths()
+    integrity = verify_frozen_input(paths)
+    check("frozen data hash verified", integrity["sha256"] == paths["data_sha256"], integrity["sha256"])
 
     selection = read_json(WORK_ROOT / "tables" / "selection.json")
     selected = selection["selected_model"]
@@ -137,7 +141,9 @@ def main(argv=None):
         start = references_start_page(report)
         check("report references section found", start is not None, f"total pages {total}")
         if start:
-            main_pages = start - 1
+            reference_page = pdf_text(report, start, start)
+            preceding_text = reference_page.split("References", 1)[0].strip()
+            main_pages = start if preceding_text else start - 1
             check("main text within nine pages", main_pages <= 9,
                   f"main text pages {main_pages}, total {total}")
         fonts = run(["pdffonts", str(report)]).stdout
@@ -146,8 +152,12 @@ def main(argv=None):
         del fonts
         text = pdf_text(report)
         check("report has searchable text", len(text.split()) > 1500, f"{len(text.split())} words")
+        contribution = ""
+        if "Contribution statement" in text:
+            contribution = text.split("Contribution statement", 1)[1].split("References", 1)[0]
         check("contribution statement filled",
-              "Contribution statement" in text and len(text.split("Contribution statement")[1].split()) > 30)
+              all(name in contribution for name in ("XUE Yantong", "WANG Ziyu", "ZHAO Jiashen"))
+              and len(contribution.split()) > 30)
 
     slides = WORK_ROOT / "slides" / "final_slides.pdf"
     if slides.exists():
@@ -162,12 +172,12 @@ def main(argv=None):
         png = figure.with_suffix(".png")
         if not check(f"{figure.name} has PNG", png.exists()):
             continue
-        from PIL import Image
-
         with Image.open(png) as image:
             width, height = image.size
-        inches = width / 300.0
-        check(f"{figure.stem} PNG is 300 dpi", inches > 2.0, f"{width}x{height}")
+            dpi = image.info.get("dpi")
+        check(f"{figure.stem} PNG is 300 dpi",
+              dpi is not None and all(abs(value - 300.0) < 1.0 for value in dpi),
+              f"{width}x{height}, dpi={dpi}")
 
     failures = [item for item in RESULTS if not item["passed"]]
     summary = {

@@ -52,11 +52,11 @@ final/
   tests/test_pipeline.py    防泄漏与指标测试
   runs/formal_20260930/     正式结果，按 <model>/<fold>/ 组织
   tables/                   汇总表与选模记录
-  figures/                  13 张图，各含 PDF 与 300 dpi PNG
+  figures/                  报告与演示使用的 10 张图，各含 PDF 与 300 dpi PNG
   report/                   期末报告（NeurIPS 2026 模板）
   slides/                   期末演示（CUHK-SZ 主题）
   docs/                     课程要求、审计、协议、讲稿、验收与交付状态
-  scripts/                  驱动脚本
+  scripts/build_documents.sh 文档编译入口
   logs/                     运行日志与独立核验证据（提交范围见第三节）
 ```
 
@@ -146,7 +146,6 @@ uv pip install --python .venv/bin/python -r requirements.txt
 | `src/audit.py` | 城市审计 |
 | `src/aggregate.py` | 结果汇总、选模规则、配对自助区间 |
 | `src/figures.py`、`src/make_figures.py` | 图表 |
-| `src/make_report_inputs.py` | 报告表格与数字宏生成器 |
 | `src/check_diagnostics.py` | 收敛验收汇总 |
 | `src/verify_deliverables.py` | 交付核验 |
 
@@ -165,7 +164,7 @@ uv pip install --python .venv/bin/python -r requirements.txt
 | 末段窗口的模型点预测 MAE | `logs/review-20261001/recomputed_metrics.csv` |
 | 末段窗口的基线点预测 MAE | `logs/review-20261001/followup_checks.json` 的 `final_baselines_existing_implementation` |
 | 配对自助区间 | `tables/paired_comparison.json` |
-| 收敛诊断 | `runs/formal_20260930/<model>/<fold>/diagnostics.json`、`docs/deliverable_verification.json` |
+| 收敛诊断 | `runs/formal_20260930/<model>/<fold>/diagnostics.json`、`logs/review-20261001/independent_checks.json` |
 | 选模记录 | `tables/selection.json`、`tables/selection_dev_folds.csv` |
 | 先验尺度敏感性（M2，开发折 1） | `runs/formal_20260930/M2_s05/dev1/effects.json`、`runs/formal_20260930/M2_s20/dev1/effects.json` |
 | 完整递推先验预测（M2，开发折 1） | `logs/review-20261001/followup_checks.json` 的 `joint_prior_predictive` |
@@ -273,7 +272,7 @@ done
 .venv/bin/python src/check_diagnostics.py --run-id "$RUN_ID"
 ```
 
-`scripts/` 下的驱动脚本把上述步骤分组执行，全部接受 `--run-id` 参数。
+统计复现按上述命令逐步执行，使用独立的运行标识与输出目录。
 
 正式报告使用 `tables/` 下现有的正式汇总文件，它们由 `--run-id formal_20260930` 生成。
 复现得到的汇总文件保存在 `tables/<运行标识>/`，两套文件互不覆盖。
@@ -298,7 +297,7 @@ MAE 一列；基线的区间评分、密度与覆盖率不用于模型优劣结�
 
 两个脚本依赖以下包内文件：
 
-- `src/` 下的模块。脚本用 `Path(__file__).resolve().parents[2]` 定位 `work` 目录后导入，
+- `src/` 下的模块。脚本用 `Path(__file__).resolve().parents[2]` 定位 `final` 目录后导入，
   因此脚本文件必须留在 `logs/review-20261001/`。
 - `configs/splits.json` 与 `configs/models.json`，由 `load_splits` 与 `load_model_config`
   按默认路径读取。
@@ -321,23 +320,20 @@ MAE 一列；基线的区间评分、密度与覆盖率不用于模型优劣结�
 
 **M0 的完整先验预测未评估。** 报告写明这一点，仓库中也没有对应产物。
 
-**驱动脚本的一处缺陷。** `scripts/run_stage_final.sh` 给 `predict` 传入 `--roster`，而
-`predict` 子命令没有该参数，直接运行会以参数错误终止。本轮未修改该脚本，请按 7.2 节的
-逐步命令执行末段窗口。
-
 ### 7.4 编译报告与演示
 
-这一步只更新文档，不运行统计代码。需要 pdfLaTeX、BibTeX 与 XeLaTeX。
+这一步只编译已有文档。需要 latexmk、pdfLaTeX、BibTeX 与 XeLaTeX。
 
 ```bash
-cd report && pdflatex final_report.tex && bibtex final_report \
-  && pdflatex final_report.tex && pdflatex final_report.tex
-cd ../slides && xelatex final_slides.tex && xelatex final_slides.tex
+./scripts/build_documents.sh
 ```
 
-`report/generated/` 下的五个文件是人工整理输入，编译时直接使用。**不要为了编译而运行
-`src/make_report_inputs.py`**：它写出的宏与表格集合同当前报告不一致，会删掉报告引用的宏
-（例如末段基线 MAE、完整递推先验预测和城市趋势相关的那几组），导致编译失败。
+`report/generated/` 下的五个文件是人工整理输入，编译时直接使用。
+可从本目录核验已有交付文件：
+
+```bash
+BIKESHARE_PATHS=configs/paths.github.yaml .venv/bin/python src/verify_deliverables.py --out docs/deliverable-verification.json
+```
 
 ## 八、运行输出
 
@@ -371,6 +367,7 @@ events.jsonl            耗时、错误、完成状态
 | `docs/local-review-20261001.md` | 2026-10-01 的本地核验记录 | 2026-10-01 13:19 的源文件与运行结果 |
 | `docs/presentation-notes.md` | 讲稿与预设问答 | 当前 |
 | `docs/final-delivery-status.md` | 交付状态、证据来源、阅读核对结果与待确认事项 | 当前 |
+| `docs/deliverable-verification.json` | 当前文件、数据哈希、诊断、PDF 与图片元数据的核验结果 | 当前 |
 
 ### 报告与演示的当前版本
 

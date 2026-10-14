@@ -53,3 +53,6 @@ export BIKESHARE_PATHS=configs/paths.github.yaml
 无需重新运行统计实验。期中正文为 4 页，期末正文截至第 7 页；期末演示共 12 页。
 报告已填写组员贡献，学号、邮箱、演示分工及数据集批准状态尚待确认。
 页面视觉效果和实际演示计时尚未验证。
+
+当前文件与数据的 [100 项交付核验](final/docs/deliverable-verification.json) 全部通过。
+期末文档可通过 `final/scripts/build_documents.sh` 编译。
