@@ -32,6 +32,6 @@
   "final_fold": "final",
   "notes": [
     "dev2 reuses observations that fell inside the dev1 test window; the training window expands.",
-    "The final fold was inspected in the archived midterm holdout and in full-period association analysis, so it is a pre-specified repeated evaluation, not an untouched blind test set."
+    "The final-window observations were included in the full-period midterm exploratory analysis. The midterm did not include holdout prediction evaluation. The final project evaluates this pre-specified window with disclosure of that prior exposure."
   ]
 }

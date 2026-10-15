@@ -11,3 +11,22 @@
 | [slides/](slides/) | 演示源文件、主题与 PDF |
 | [docs/](docs/) | 项目参考文档 |
 | [requirements.txt](requirements.txt) | Python 依赖 |
+
+## 软件依赖
+
+Python 3.12，依赖版本见 `requirements.txt`。文档编译需要 TeX Live、
+pdfLaTeX、BibTeX、XeLaTeX，以及演示主题使用的字体。
+
+## 主要结果复现
+
+在 `midterm/` 目录执行：
+
+```bash
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python code/prepare_bikeshare_weather.py
+.venv/bin/python code/eda_midterm.py
+```
+
+清理数据写入 `data/clean/`，审计与分析结果写入 `results/`，图表写入 `figures/`。
+编译报告与演示可执行 `zsh code/build_midterm.sh`，该脚本同时重新生成探索性分析图表。
