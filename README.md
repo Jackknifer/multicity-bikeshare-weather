@@ -1,58 +1,7 @@
 # 多城市共享单车天气研究
 
-STA5001 课程项目使用公开日度数据，研究 UTCI、降雨与共享单车使用量的关联。
-期中完成数据准备与探索性分析；期末完成贝叶斯建模、后验计算和时间外预测评估。
-
-## 材料入口
-
-| 阶段 | 报告 | 演示 | 项目说明 |
-|---|---|---|---|
-| 期中 | [报告 PDF](midterm/report/midterm_report.pdf) | [演示 PDF](midterm/slides/midterm_slides.pdf) | [期中说明](midterm/README.md) |
-| 期末 | [报告 PDF](final/report/final_report.pdf) | [演示 PDF](final/slides/final_slides.pdf) | [期末说明](final/README.md) |
-
-顶层只保存期中目录、期末目录、本说明和 [课程考纲](STA5001-syllabus.pdf)。
-期中和期末均保留各自的代码、数据、图表与报告。正式运行结果按模型和评估窗口组织。
-
-## 数据与方法
-
-数据来自 Mendeley Data Version 1（DOI：10.17632/2nxpvtz935.1，CC BY 4.0）。
-对应研究为 Bean、Pojani 和 Corcoran（2021），Journal of Transport Geography，95:103155。
-完整日度面板包含 29 个城市、10,578 个城市日；全期关联分析使用 25 个城市、
-9,120 个城市日；预测评估使用 23 个城市、8,393 个城市日。
-
-三个层级 Student-t 模型共同包含天气和季节项。M0 使用周末效应，M1 使用完整星期效应
-与城市线性趋势，M2 在 M1 基础上加入城市 AR(1) 残差过程。
-
-## 主要结果
-
-- 降雨从城市中位数增加 10 mm，M2 下 `1 + usage` 的条件中位数平均变化为 −20.21%，
-  95% 可信区间为 [−21.37%，−18.99%]。25 个城市的关联均为负。
-- UTCI 增加 10 °C 的全期关联在 M0 与 M2 下均为正，峰值位置随规格变化。
-- M2 在两个开发窗口的块预测 WIS 最低。最终窗口 M0 为 0.1957，M2 为 0.3394，
-  M0 表现更好；90% 区间覆盖率分别为 75.5% 和 60.5%。
-
-这些结果描述观测关联。预测使用已知天气；期中的全期探索性分析曾接触年末观测。
-最终窗口结果按预先设定的评估方案报告，不能直接解释为因果效应或业务预报能力。
-
-## 组员贡献
-
-XUE Yantong 负责数据搜寻、课题确定、实验设计、代码编写、实验运行、主要统计分析，
-以及报告和演示文稿编写。WANG Ziyu 和 ZHAO Jiashen 共同参与数据处理、代码编写与检查，
-以及报告和演示文稿核验。上述贡献依据组员提供的信息记录。
-
-## 复现与状态
-
-期中处理流程见 [项目参考文档](midterm/docs/project-reference.md)。期末运行命令见
-[期末 README](final/README.md)。在 `final/` 目录执行命令前设置路径配置：
-
-```bash
-export BIKESHARE_PATHS=configs/paths.github.yaml
-```
-
-仓库保留正式后验、逐日预测、评分、诊断和六个独立核验证据文件。文档可以直接编译，
-无需重新运行统计实验。期中正文为 4 页，期末正文截至第 7 页；期末演示共 12 页。
-报告已填写组员贡献，学号、邮箱、演示分工及数据集批准状态尚待确认。
-页面视觉效果和实际演示计时尚未验证。
-
-当前文件与数据的 [100 项交付核验](final/docs/deliverable-verification.json) 全部通过。
-期末文档可通过 `final/scripts/build_documents.sh` 编译。
+| 目录或文件 | 内容 |
+|---|---|
+| [midterm/](midterm/) | 期中项目 |
+| [final/](final/) | 期末项目 |
+| [STA5001-syllabus.pdf](STA5001-syllabus.pdf) | 课程考纲 |

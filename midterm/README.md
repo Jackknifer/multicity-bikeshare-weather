@@ -1,26 +1,13 @@
-# 期中项目
+# 期中项目文件结构
 
-期中材料包括研究背景、数据清理、数据字典、探索性分析和期末模型方案。
-
-| 材料 | 位置 |
+| 目录或文件 | 内容 |
 |---|---|
-| 报告 | [midterm_report.pdf](report/midterm_report.pdf) |
-| 演示 | [midterm_slides.pdf](slides/midterm_slides.pdf) |
-| 项目说明与数据字典 | [project-reference.md](docs/project-reference.md) |
-| 数据处理 | `code/prepare_bikeshare_weather.py` |
-| 探索性分析 | `code/eda_midterm.py` |
-| 日度数据 | `data/clean/bikeshare_weather_daily.csv` |
-| 结果与图表 | `results/`、`figures/` |
-
-所有期中命令均在本目录执行。Python 依赖记录在 `requirements.txt`。
-数据处理和图表复现命令见项目说明。只编译已有文档时可以分别执行：
-
-```bash
-cd report
-latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build midterm_report.tex
-```
-
-```bash
-cd slides
-latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=build midterm_slides.tex
-```
+| [code/](code/) | 数据处理、探索性分析与文档编译脚本 |
+| [data/raw/](data/raw/) | 原始数据 |
+| [data/clean/](data/clean/) | 清理后的日度数据 |
+| [results/](results/) | 数据审计与分析结果 |
+| [figures/](figures/) | 图表 |
+| [report/](report/) | 报告源文件、参考文献与 PDF |
+| [slides/](slides/) | 演示源文件、主题与 PDF |
+| [docs/](docs/) | 项目参考文档 |
+| [requirements.txt](requirements.txt) | Python 依赖 |
