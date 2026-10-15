@@ -20,7 +20,7 @@ from run import resolve_spec_for_run
 from model import load_model_config
 from splits import load_splits, prepare_fold, prepare_full_period, assert_no_leakage
 
-RUNS = ROOT / "runs" / "formal_20260930"
+RUNS = ROOT / "runs" / "formal"
 OUT = Path(__file__).resolve().parent
 
 

@@ -6,13 +6,12 @@
 | [data/](data/) | 日度数据、审计与日期切分记录 |
 | [src/](src/) | 建模、预测、评估与核验代码 |
 | [tests/](tests/) | 数据隔离与指标测试 |
-| [runs/formal_20260930/](runs/formal_20260930/) | 按模型与评估窗口保存的正式实验结果 |
+| [runs/formal/](runs/formal/) | 按模型与评估窗口保存的正式实验结果 |
 | [tables/](tables/) | 汇总表与模型选择记录 |
 | [figures/](figures/) | PDF 与 PNG 图表 |
 | [report/](report/) | 报告源文件、表格、参考文献与 PDF |
 | [slides/](slides/) | 演示源文件、主题与 PDF |
-| [docs/](docs/) | 课程要求、分析协议、讲稿与核验记录 |
-| [logs/review-20261001/](logs/review-20261001/) | 补充核验脚本与结果 |
+| [logs/review/](logs/review/) | 补充核验脚本与结果 |
 | [scripts/build_documents.sh](scripts/build_documents.sh) | 文档编译脚本 |
 | [requirements.txt](requirements.txt) | Python 依赖 |
 
@@ -32,11 +31,11 @@ python3.12 -m venv .venv
 export BIKESHARE_PATHS=configs/paths.github.yaml
 ```
 
-已有天气关联、逐日预测与诊断保存在 `runs/formal_20260930/`。
+已有天气关联、逐日预测与诊断保存在 `runs/formal/`。
 重新拟合主要模型并计算预测评分时，使用新的运行标识：
 
 ```bash
-RUN_ID=reproduce_20261015
+RUN_ID=reproduce
 for fold in dev1 dev2; do
   .venv/bin/python src/run.py baselines --fold "$fold" --run-id "$RUN_ID"
 done

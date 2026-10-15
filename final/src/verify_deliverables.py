@@ -74,7 +74,7 @@ def references_start_page(path):
 
 def main(argv=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument("--run-id", default="formal_20260930")
+    parser.add_argument("--run-id", default="formal")
     parser.add_argument("--out", default=None)
     args = parser.parse_args(argv)
     out = Path(args.out) if args.out else WORK_ROOT / "docs" / "deliverable-verification.json"
@@ -83,7 +83,6 @@ def main(argv=None):
         "configs/paths.github.yaml", "configs/splits.json", "configs/models.json",
         "data/city_data_audit.csv", "data/split_index.csv", "data/split_summary.json",
         "data/integrity_report.json",
-        "docs/course_requirements.md", "docs/data_audit.md", "docs/analysis_protocol.md",
         "tables/all_metrics.csv", "tables/selection.json",
         "report/final_report.pdf", "report/final_report.tex",
         "slides/final_slides.pdf", "slides/final_slides.tex",

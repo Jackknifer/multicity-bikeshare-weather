@@ -3,6 +3,7 @@
 .cache/
 .package/
 .local-private-originals/
+docs/
 __pycache__/
 *.pyc
 **/report/build/

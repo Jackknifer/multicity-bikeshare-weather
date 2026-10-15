@@ -21,7 +21,7 @@ from run import resolve_spec_for_run
 from splits import load_splits, prepare_fold
 
 OUT = Path(__file__).resolve().parent
-RUNS = ROOT / "runs" / "formal_20260930"
+RUNS = ROOT / "runs" / "formal"
 
 
 def main():

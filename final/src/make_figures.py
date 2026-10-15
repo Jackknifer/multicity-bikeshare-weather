@@ -42,7 +42,7 @@ def choose_temperature_cities(run_id, model, fold):
 
 def main(argv=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument("--run-id", default="formal_20260930")
+    parser.add_argument("--run-id", default="formal")
     parser.add_argument("--fold", default="dev1")
     parser.add_argument("--final-fold", default="final")
     args = parser.parse_args(argv)

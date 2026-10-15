@@ -520,7 +520,7 @@ def figure_prediction_attribution(run_id, output_name="fig08_prediction_attribut
 
 def main(argv=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument("--run-id", default="formal_20260930")
+    parser.add_argument("--run-id", default="formal")
     parser.add_argument("--only", default=None)
     args = parser.parse_args(argv)
     produced = []

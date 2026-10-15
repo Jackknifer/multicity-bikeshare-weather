@@ -9,7 +9,7 @@ from common import WORK_ROOT, read_json
 
 def main(argv=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument("--run-id", default="formal_20260930")
+    parser.add_argument("--run-id", default="formal")
     parser.add_argument("--only-failed", action="store_true")
     args = parser.parse_args(argv)
 

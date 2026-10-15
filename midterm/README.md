@@ -9,7 +9,6 @@
 | [figures/](figures/) | 图表 |
 | [report/](report/) | 报告源文件、参考文献与 PDF |
 | [slides/](slides/) | 演示源文件、主题与 PDF |
-| [docs/](docs/) | 项目参考文档 |
 | [requirements.txt](requirements.txt) | Python 依赖 |
 
 ## 软件依赖

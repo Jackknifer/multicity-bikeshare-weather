@@ -3,8 +3,7 @@
 % ---------------------------------------------------------------------------
 % STA5001 Bayesian & Computational Statistics - Final Project Report
 % Official NeurIPS 2026 LaTeX template (course-mandated, single column).
-% Student IDs and email addresses are placeholders in this working copy; see
-% docs/final-delivery-status.md for the items that still need confirmation.
+% Student IDs and email addresses are placeholders in this working copy.
 % ---------------------------------------------------------------------------
 
 \usepackage[main, final]{neurips_2026}
@@ -502,8 +501,8 @@ stationary innovation scale.
 \paragraph{Prior predictive check.}
 The saved prior predictive draw for M2 on the first development fold gives an intercept-only
 negative-usage fraction of \PriorNegIntercept\%, which describes the city intercepts alone. The
-supplementary full check stored at \texttt{logs/review-20261001/followup\_checks.json}, with its
-implementation at \texttt{logs/review-20261001/audit\_followup.py}, uses 1{,}000 parameter draws and
+supplementary full check stored at \texttt{logs/review/followup\_checks.json}, with its
+implementation at \texttt{logs/review/audit\_followup.py}, uses 1{,}000 parameter draws and
 places \PriorNegJoint\% of the log response below zero, with log-response quantiles
 $[\PriorLogLow,\ \PriorLogHigh]$ against an observed range of $0$ to $\ObsLogHigh$. The corresponding
 full check was not run for M0.

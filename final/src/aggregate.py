@@ -166,7 +166,7 @@ def paired_comparison(run_id, model_a, model_b, task="block", block_days=(7, 14)
 
 def main(argv=None):
     parser = argparse.ArgumentParser()
-    parser.add_argument("--run-id", default="formal_20260930")
+    parser.add_argument("--run-id", default="formal")
     parser.add_argument("--out", default=None)
     args = parser.parse_args(argv)
 
