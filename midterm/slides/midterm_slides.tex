@@ -21,10 +21,10 @@
 
 \title[Weather and bike-share usage]{Weather sensitivity of bike-share usage\\a hierarchical Bayesian plan for 25 cities}
 \subtitle{STA5001 Bayesian \& Computational Statistics}
-\author{\small\cuhkszcoverrow
-  {XUE Yantong}{WANG Ziyu}{ZHAO Jiashen}}
-\institute{\footnotesize\cuhkszcoverrow
-  {student1@example.com}{student2@example.com}{student3@example.com}}
+\author{\texorpdfstring{\small\cuhkszcoverrow
+  {XUE Yantong}{WANG Ziyu}{ZHAO Jiashen}}{XUE Yantong, WANG Ziyu, ZHAO Jiashen}}
+\institute{\texorpdfstring{\footnotesize\cuhkszcoverrow
+  {student1@example.com}{student2@example.com}{student3@example.com}}{CUHK-Shenzhen}}
 \date{STA5001 \textperiodcentered\ 3 November 2026}
 \hypersetup{
   pdftitle={Weather sensitivity of bike-share usage: a hierarchical Bayesian plan for 25 cities},
@@ -42,7 +42,7 @@
 \end{frame}
 
 % ---------------------------------------------------------------- 1
-\begin{frame}{Weather drives bike-share usage}
+\begin{frame}{Weather associations in bike-share usage}
   \small
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.50\textwidth}
@@ -53,17 +53,19 @@
       \vspace{0.30cm}
       Two robust patterns: hires rise with UTCI up to about
       \hlg{27--28\,$^\circ$C} and then fall; rainfall is associated with lower use.
+      \par\vspace{0.15cm}
+      \footnotesize UTCI combines temperature, humidity, wind and radiation to describe thermal stress.
     \end{column}
     \begin{column}{0.46\textwidth}
-      \begin{alertblock}{What a per-city fit cannot answer}
+      \begin{alertblock}{Why estimate cities jointly?}
         \begin{itemize}
-          \item How much cities differ --- no quantity describes the spread.
-          \item Small systems are estimated noisily.
+          \item About one year of daily observations per city
+          \item Shared estimation of city weather coefficients and their spread
         \end{itemize}
       \end{alertblock}
       \vspace{0.20cm}
-      \textbf{Question.} Do a city's thermal and rainfall background explain
-      part of its weather sensitivity?
+      \textbf{Question.} Are city thermal and rainfall backgrounds associated
+      with weather sensitivity?
     \end{column}
   \end{columns}
 \end{frame}
@@ -159,13 +161,13 @@
   \end{center}
   \vspace{-0.25cm}
   \centering
-  \small The seasonal amplitude of \hlg{0.84} log units exceeds the whole thermal effect.
+  \small The seasonal range is \hlg{0.84} log units; weather estimates require seasonal adjustment.
   \par\vspace{0.12cm}
   \footnotesize 23 of 25 cities have lower weekend use; Melbourne is the only clearly positive city.
 \end{frame}
 
 % ---------------------------------------------------------------- 7
-\begin{frame}{Plan: one hierarchy instead of 25 separate fits}
+\begin{frame}{Plan: jointly estimate city weather associations}
   \small
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.54\textwidth}
@@ -178,18 +180,18 @@
 
       \vspace{0.24cm}
       \textbf{Hierarchy.} city coefficients share a normal population
-      distribution, written in non-centred form.
+      distribution; weather coefficients use a non-centred form.
     \end{column}
     \begin{column}{0.42\textwidth}
       \begin{block}{What this buys}
         \begin{itemize}
           \item Between-city spread is an estimated quantity
           \item Population means vary with city climate background
-          \item Low-volume systems borrow strength
+          \item City estimates share information
         \end{itemize}
       \end{block}
       \vspace{0.18cm}
-      \footnotesize NUTS via PyMC and nutpie, four chains of 2{,}000 draws.
+      \footnotesize NUTS via PyMC and nutpie; multiple chains and convergence checks.
     \end{column}
   \end{columns}
 \end{frame}
@@ -204,7 +206,7 @@
     \item The thermal response is \hl{non-monotone}, peaking near
       \hlg{27.5\,$^\circ$C}, and rainfall is associated with monotonically lower use.
     \item Cities differ in scale, in weekend behaviour and in their weather
-      response --- which is why the final model is a \hl{hierarchy}.
+      response, motivating \hl{city coefficients with a shared distribution}.
   \end{enumerate}
   \vspace{0.60cm}
   \centering \hl{Questions}
@@ -254,8 +256,8 @@
       HalfNormal priors matched to the population scale.
 
       \vspace{0.30cm}
-      A prior predictive check will verify the implied range of daily hires and
-      weather multipliers before the observed outcomes are examined.
+      Prior predictive checks will assess the implied ranges of log usage and
+      weather contrasts.
 
       \vspace{0.30cm}
       Convergence thresholds: $\widehat{R}\le 1.01$, bulk and tail ESS at 400,
@@ -292,7 +294,7 @@
     \item Preparation: \texttt{python code/prepare\_bikeshare\_weather.py}
     \item Daily panel: \texttt{data/clean/bikeshare\_weather\_daily.csv},
       10{,}578 rows $\times$ 28 columns.
-    \item Verification: \texttt{python code/verify\_project\_setup.py}
+    \item Data audit: \texttt{results/bikeshare\_weather\_data\_audit.json}
   \end{itemize}
 \end{frame}
 

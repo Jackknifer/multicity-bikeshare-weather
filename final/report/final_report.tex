@@ -89,14 +89,15 @@ city-to-city spread in weather sensitivity is signal rather than noise? Second, 
 as exchangeable observations leave structure in the residuals that matters once the model is asked
 to predict?
 
-We address three questions, using the same dataset and the same scientific problem as the midterm
-project.
+We continue the midterm questions about weather associations, city variation and city backgrounds,
+using the same dataset. We also evaluate daily time structure as a predictive extension.
 
 \begin{enumerate}
   \item Once calendar effects and seasonal variation are controlled, what is the association
-        between precipitation and daily usage, and how much does it differ between cities?
+        between precipitation and daily usage, and how does it vary across cities and rainfall
+        backgrounds?
   \item What are the direction, shape and uncertainty of the temperature association, and how do
-        they change across model specifications?
+        they change across model specifications and city thermal backgrounds?
   \item What do calendar, trend and AR(1) (first-order autoregressive) residual structure change
         about diagnostics and prediction in the development windows, and does the final window
         support extending those results?
@@ -341,9 +342,8 @@ change in the conditional median of $(1+\text{usage})$ for a $+10$ mm step from 
 \paragraph{Temperature.}
 Over the full period the city-equal $+10^\circ$C effect is positive under both specifications:
 \TempMZeroMed\% ($[\TempMZeroLo,\TempMZeroHi]$) under M0 and \TempMTwoMed\%
-($[\TempMTwoLo,\TempMTwoHi]$) under M2, on the same 25 cities and the same window. We therefore
-describe the full-period comparison as a positive association rather than a reversal, and we report
-the location of the response peak as uncertain rather than identified.
+($[\TempMTwoLo,\TempMTwoHi]$) under M2, on the same 25 cities and the same window. The location
+of the response peak remains uncertain across specifications.
 
 That uncertainty is visible in how often a concave curve peaks inside the observed support:
 \PeakCitiesMZero{} of \CityCount{} cities under M0 and \PeakCitiesMTwo{} of \CityCount{} under M2
@@ -357,6 +357,38 @@ the curve for three cities with their observed support, and Figure~\ref{fig:allc
 specifications is that every model already carries an annual harmonic pair fitted to the same city
 means, so the temperature coefficient is estimated alongside a seasonal control that shares much of
 its variation; we did not run a decomposition that would confirm that overlap as the cause.
+
+\paragraph{City-background associations.}
+The midterm's third question concerns whether city backgrounds are associated with differences in
+weather coefficients. For weather term $k$, the hierarchy has the form
+$\beta_i^k=\bar\beta^k+\gamma_k Z_i^k+\tau_k u_i^k$, with $u_i^k\sim N(0,1)$.
+For the two thermal terms, $Z_i^k$ is the city's mean UTCI standardised across cities; for rain it is
+the standardised $\log(1+\text{mean daily precipitation})$. Each city receives equal weight in
+this standardisation, and prediction fits compute the backgrounds from training observations.
+Table~\ref{tab:backgrounds} reports the saved full-period estimates. In both specifications, the
+intervals for the rainfall and thermal linear moderators include zero. The thermal quadratic
+moderator is negative in both, associating a warmer study-period background with a lower quadratic
+coefficient. This is an association between fitted coefficients and city backgrounds; each city has
+about one year of data, so its interpretation is limited to that observation period.
+
+\begin{table}[t]
+\centering
+\footnotesize
+% 数值来源：runs/formal/M0/full/effects.json 和 runs/formal/M2/full/effects.json。
+\caption{City-background moderators in the 25-city full-period fits. Entries are posterior medians
+and 95\% intervals. Each moderator is the change in its weather coefficient per one standard
+deviation of the corresponding city background; entries are coefficients on the log-response scale.}
+\label{tab:backgrounds}
+\begin{tabular}{lcc}
+\toprule
+Weather coefficient & M0 & M2 \\
+\midrule
+Rainfall & $-0.0031\;[-0.0210,\,0.0136]$ & $-0.0147\;[-0.0332,\,0.0021]$ \\
+UTCI linear & $-0.0320\;[-0.0772,\,0.0163]$ & $-0.0179\;[-0.0510,\,0.0165]$ \\
+UTCI quadratic & $-0.0282\;[-0.0504,\,-0.0056]$ & $-0.0150\;[-0.0250,\,-0.0051]$ \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 % ===========================================================================
 \section{Prediction and evaluation}
@@ -417,10 +449,15 @@ and across the three model specifications on the development fold, and it is bou
 in the city-equal summary. The city estimates differ in size, and the intervals overlap, so the
 hierarchy describes a shared signal with city-level variation rather than a confirmed ranking.
 
-The temperature result answers the second question in the negative. The full-period association is
-positive under both specifications, and the peak location is not identified well enough to name a
+The temperature association is positive under both full-period specifications, and the peak
+location is not identified well enough to name a
 single optimal temperature, because the estimate moves with the specification and with the contrast
 definition. Both statements are conditional associations from observational data.
+
+The city-background estimates complete the midterm question about between-city variation. The
+rainfall and thermal linear moderators remain uncertain, while the thermal quadratic moderator is
+negative under both full-period specifications. Study-period backgrounds therefore provide limited
+evidence about the form of city variation, with the clearest association in the quadratic term.
 
 The time-structure result answers the third question in two parts. M2 shows lower lag-one correlation
 in its innovation residuals and lower prediction scores in the development windows, but the
@@ -431,6 +468,11 @@ window, where the block forecast is worse than the archived specification and co
 richer specification as a general improvement. Sampling reliability, residual diagnostics and
 predictive performance are three separate claims, and only the first is settled by the convergence
 results in Section~\ref{sec:diagnostics}.
+
+The reported prior-sensitivity analysis compares weather scales of $0.5$, $1$ and $2$ times the
+baseline for M2 on the first development fold. The full 29-city roster, a Gaussian likelihood and
+removal of seasonal terms are unassessed extensions. The reported findings are conditional on the
+continuous-system roster, Student-$t$ observations and the annual harmonic control used here.
 
 The limitations are short and bound what the evidence supports. The study is observational and
 cannot identify causal effects or climate adaptation. Each city has about one year of data, so the

@@ -60,14 +60,14 @@
       \begin{block}{01 \quad Precipitation}
         How large is the association after calendar and seasonal adjustment?
         \par\vspace{0.18cm}
-        How much does it vary across cities?
+        How does it vary across cities and rainfall backgrounds?
       \end{block}
     \end{column}
     \begin{column}{0.31\textwidth}
       \begin{block}{02 \quad Temperature}
         What are the direction, shape and uncertainty of the association?
         \par\vspace{0.18cm}
-        How does the shape change across specifications?
+        How does shape vary with specification and city background?
       \end{block}
     \end{column}
     \begin{column}{0.31\textwidth}
@@ -80,7 +80,7 @@
   \end{columns}
   \vspace{0.12cm}
   \begin{alertblock}{From the midterm to the final project}
-    Same panel; added hierarchical estimation, time structure and final-window evaluation.
+    Same panel and background question; added time structure and final-window evaluation.
   \end{alertblock}
   \slidenote{Observational associations; predictions condition on realised weather.
     Scope excludes causal effects, climate adaptation and operational forecasting.}
@@ -148,9 +148,9 @@
       \end{block}
       \begin{block}{City coefficients}
         \[
-          \beta_i=\beta_{\text{pop}}+\tau_\beta\tilde\beta_i
+          \beta_i=\beta_{\text{pop}}+\gamma Z_i+\tau_\beta\tilde\beta_i
         \]
-        \footnotesize Estimated group spread; training-only centring.
+        \footnotesize $Z_i$: standardised city background; training-only preprocessing.
       \end{block}
     \end{column}
     \begin{column}{0.40\textwidth}
@@ -191,7 +191,7 @@
       M2 city medians: \RainMTwoCityMin\% to \RainMTwoCityMax\%.
       Smallest $P(\beta_{\mathrm{rain}}<0)$: \RainMTwoMinPNeg.
       \par\vspace{0.15cm}
-      Each specification uses its own saved fit. City ordering has not been tested pairwise.
+      Rainfall-background moderator intervals include zero under both full-period fits.
     \end{column}
   \end{columns}
 \end{frame}
@@ -220,7 +220,7 @@
       \par\vspace{0.12cm}
       $+10^\circ$C leaves the observed range in \ExtrapCitiesMTwo{} city: Kaohsiung.
       \par\vspace{0.12cm}
-      Separate fits; no single optimal temperature is identified.
+      Warmer city backgrounds are associated with lower quadratic coefficients in both fits.
     \end{column}
   \end{columns}
 \end{frame}
@@ -319,8 +319,7 @@
         \hl{Positive full-period association}
         \par under both specifications.
         \par\vspace{0.14cm}
-        \footnotesize Peak location changes with the specification.
-        A single optimal temperature is not identified.
+        \footnotesize Peak location is uncertain. City thermal background is associated with curvature.
       \end{block}
     \end{column}
     \begin{column}{0.31\textwidth}

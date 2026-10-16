@@ -69,8 +69,9 @@ We assemble a reproducible daily panel from the public release behind
 \citet{bean2021weather}: 29 dock-based systems with 8{,}760 hourly records each,
 reduced to 10{,}578 city-days. The primary analysis keeps the 25 systems that
 record hires on at least 99\% of their analysis days, giving 9{,}120 city-days.
-Median daily hires span 6{,}618-fold across these cities,
-which is the empirical reason for treating cities as a hierarchy. Binned
+Median daily hires span 6{,}618-fold across these cities, motivating city-specific
+usage levels. Each city supplies about one year of data, and a hierarchy will
+jointly estimate weather associations and their between-city variation. Binned
 within-city averages show a thermal response
 peaking near $27.5^\circ$C and then falling, and a rainfall response that
 declines monotonically to about $41\%$ below the dry-day bin. We close with the
@@ -81,19 +82,21 @@ hierarchical Student-$t$ regression and inference plan for the final project.
 \section{Introduction}
 % ===========================================================================
 
-Bike-share is part of the transport mix in many cities, and usage responds to
-weather in ways operators can plan around.
+Bike-share operators allocate bicycles and plan maintenance around changes in
+daily use. Thermal comfort and rainfall are relevant to these decisions, but
+their associations with use may differ across cities with different climates
+and travel patterns.
 
 The reference study \citep{bean2021weather} compares forty cities across climate
 zones. It fits a frequentist generalized additive model to each city separately
 and reports two robust patterns: hires rise with the Universal Thermal Climate
 Index (UTCI) up to roughly $27$--$28^\circ$C and then decline, and rainfall is
-associated with lower use. That design gives a clear within-city picture but
-leaves two questions open. Modelling each city in isolation cannot quantify how
-much cities differ, because no quantity in the model describes the spread of the
-coefficients. And small systems are estimated noisily: median daily hires in our
-panel range from $11.5$ in Cr{\'e}teil to $76{,}103$ in Paris, so low-volume
-systems carry far less signal per day.
+associated with lower use. Our question is how to estimate the distribution of
+city weather associations jointly, allowing cities to share information while
+retaining their own coefficients. Each city supplies about one year of daily
+observations. The uncertainty in its weather response therefore matters alongside
+the differences between cities. Median daily hires range from $11.5$ in
+Cr{\'e}teil to $76{,}103$ in Paris, which motivates separate city intercepts.
 
 We therefore recast the comparison as a hierarchy. Each city keeps its own
 intercept, weather coefficients, weekend coefficient and seasonal coefficients,
@@ -103,8 +106,8 @@ three questions that the midterm is designed to set up.
 \begin{quote}
 \textbf{Research questions.} (1)~How does thermal comfort relative to the local
 study-period average relate to daily hires? (2)~How much do cities differ in
-their rainfall response? (3)~Do a city's thermal and rainfall background explain
-part of that between-city variation?
+their rainfall response? (3)~Are a city's thermal and rainfall background
+associated with part of that between-city variation?
 \end{quote}
 
 This report documents the data, the cleaning decisions and the exploratory
@@ -120,8 +123,10 @@ describe statistical association; the data cannot identify a causal effect.
 \citet{bean2021weather}, distributed through Mendeley Data
 \citep{mendeley2021bikeshare} under CC BY 4.0 (DOI
 \texttt{10.17632/2nxpvtz935.1}, Version 1). Hourly hires are estimated from
-per-minute station inventory snapshots and may carry a $0.5$ fractional part;
-UTCI and precipitation come from the Copernicus Climate Data Store. The archive
+per-minute station inventory snapshots, may include rebalancing moves and may
+carry a $0.5$ fractional part. UTCI combines air temperature, humidity, wind and
+radiation to describe thermal stress. UTCI and precipitation come from the
+Copernicus Climate Data Store. The archive
 carries metadata and weather arrays for forty cities but hourly stock data for
 thirty; the paper's R code designates metadata rows 7--34 and row 36 as the 29
 dock-based systems, and we keep that scope. Archive and paper
@@ -156,8 +161,8 @@ Table~\ref{tab:audit} summarises the panel.
 
 \begin{table}[t]
   \centering
-  \caption{Frozen daily panel and primary sample. The full 29-city panel is kept
-  for the sample-range sensitivity analysis planned for the final project.}
+  \caption{Frozen daily panel and primary sample. The full 29-city panel is
+  retained with an indicator identifying the 25-city primary sample.}
   \label{tab:audit}
   \footnotesize
   \begin{tabular}{lrlr}
@@ -226,8 +231,8 @@ cities is what the hierarchical model will estimate.
 \end{figure}
 
 \paragraph{Season and week.} Figure~\ref{fig:season}a shows the seasonal profile,
-peaking in mid-October and troughing at the end of December with an amplitude of
-$0.84$ log units, so the annual cycle is larger than the whole thermal effect.
+peaking in mid-October and troughing at the end of December with a descriptive
+range of $0.84$ log units.
 Figure~\ref{fig:season}b ranks cities by the weekend-minus-weekday difference:
 23 of 25 are negative, with a mean of $-0.55$, and Melbourne is the only clearly
 positive city at $+0.27$.
@@ -241,11 +246,11 @@ positive city at $+0.27$.
   \label{fig:season}
 \end{figure}
 
-\paragraph{Implications for the specification.} Three features shape the model:
-the thermal response is non-monotone, so a quadratic term is needed; between-city
-variation is visible in every panel, so city coefficients must be free to differ;
-and the seasonal amplitude exceeds the weather effects, so the annual cycle must
-be absorbed before weather coefficients can be read as weather effects. Within
+\paragraph{Implications for the specification.} The thermal curve motivates a
+nonlinear term; we use a quadratic as a compact representation. Variation across
+cities motivates city-specific coefficients with a shared distribution. The
+seasonal profile motivates adjustment for the annual cycle when estimating
+weather associations. Within
 cities the annual sine and cosine alone explain $62$--$92\%$ of the variance of
 daily UTCI, $76\%$ on average, so they enter as controls and the thermal
 coefficient is read with them in the model.
@@ -268,41 +273,34 @@ distribution,
   \mu_{it}=\alpha_i+\beta_{1i}T_{it}+\beta_{2i}Q_{it}+\beta_{3i}R_{it}
   +\beta_{4i}W_{it}+\beta_{5i}S_{it}+\beta_{6i}C_{it},
 \]
-where $T_{it}$ is the daily mean UTCI minus the city mean in units of
-$10^\circ$C, $Q_{it}$ is $T_{it}^2$ centred within city, $R_{it}$ is
-$\log(1+\text{mm})$ minus the city mean, scaled by its within-city standard
-deviation, $W_{it}$ is a weekend indicator, and $S_{it}$
-and $C_{it}$ are the annual sine and cosine of $2\pi d_{it}/365.25$ with $d_{it}$
-the day of year. Student-$t$ accommodates extreme days. Each city parameter has a normal population
-distribution in non-centred form, $\theta_i=\mu_\theta+\tau_\theta z_i$ with
-$z_i\sim\text{Normal}(0,1)$. The population means of the thermal
-and rainfall coefficients are linear in the city's mean UTCI and mean
-precipitation, addressing question~(3).
+where $T_{it}$ is the training-centred daily UTCI in $10^\circ$C units,
+$Q_{it}$ its training-centred square, and $R_{it}$ training-centred
+$\log(1+\text{mm})$ divided by the pooled within-city training standard deviation.
+$W_{it}$ indicates weekends; $S_{it}$ and $C_{it}$ are the annual sine and cosine
+of $2\pi d_{it}/365.25$. Student-$t$ accommodates extreme days. City coefficients
+share normal population distributions, whose weather centres vary with city
+thermal and rainfall backgrounds to address question~(3).
 
-\paragraph{Priors.} Priors sit on the $\log(1+U)$ scale: population intercept
-$\text{Normal}(7,2)$ with city intercept scale $\text{HalfNormal}(2)$; thermal
-coefficient per $10^\circ$C $\text{Normal}(0,0.5)$; quadratic
-$\text{Normal}(0,0.3)$; within-city rainfall $\text{Normal}(0,0.3)$; weekend
-$\text{Normal}(0,0.4)$; seasonal $\text{Normal}(0,0.8)$; moderators
-$\text{Normal}(0,0.2)$ to $\text{Normal}(0,0.3)$; and city scales HalfNormal
-matched to the population scale. Degrees of freedom are
-$\nu=2+\text{Exponential}(0.1)$. A prior predictive check will verify the implied
-range of daily hires before the outcomes are examined.
+\paragraph{Priors and computation.} Normal priors on population coefficients and
+HalfNormal priors on between-city scales regularise the weather response on the
+$\log(1+U)$ scale. We use $\nu=2+\text{Exponential}(0.1)$ to allow heavy tails with
+finite variance. NUTS through PyMC \citep{abrilpla2023pymc} and nutpie
+\citep{nutpie} will estimate the posterior. The accompanying model configuration
+specifies the numerical prior scales.
 
-\paragraph{Inference and checks.} We plan NUTS via PyMC \citep{abrilpla2023pymc}
-and nutpie \citep{nutpie}: four chains,
-2{,}000 warmup and 2{,}000 retained draws each, seed 27 and
-\texttt{target\_accept} $=0.92$. Checks cover $\widehat{R}\le1.01$
-\citep{vehtari2021rank}, bulk and tail ESS $\ge400$, Monte Carlo error,
-divergences and tree depth. Following \citet{gabry2019visualization}, we plan prior
-and posterior predictive checks, residual checks, and eight-week holdouts scored by
-coverage, MAE and log predictive density. Sensitivity analyses cover all 29 cities,
-weather prior scales multiplied by $0.5$ and $2$, Gaussian observations, and removal
-of seasonal terms. We will report weather percentage changes, city-level variation
-and climate-background moderators.
+\paragraph{Questions and assessment.} Posterior contrasts will quantify weather
+associations, city variation and background associations. A predictive extension
+will compare calendar and residual time
+structures on eight-week holdouts, using interval scores, coverage and point
+errors. All preprocessing will use training observations. Checks cover
+$\widehat{R}\le1.01$ \citep{vehtari2021rank}, bulk and tail ESS $\ge400$, Monte
+Carlo error, divergences, prior and posterior prediction, and residuals
+\citep{gabry2019visualization}. Weather prior scales of $0.5$, $1$ and $2$ times
+the baseline define the sensitivity comparison. Broader city coverage and
+alternative likelihood or seasonal specifications are possible extensions.
 
-\paragraph{Scope.} Each city contributes one year, so study-period averages stand
-in for climate normals, and hires are inventory-change estimates that may include
+\paragraph{Scope.} Each city contributes about one year, so background variables
+describe the study period. Hires are inventory-change estimates that may include
 rebalancing moves; system size, pricing and operating policy are unobserved.
 Conclusions are limited to the 25 continuous dock-based systems.
 
